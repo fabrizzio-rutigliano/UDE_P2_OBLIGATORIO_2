@@ -1,6 +1,6 @@
 #ifndef ARCHIVOS_H_INCLUDED
 #define ARCHIVOS_H_INCLUDED
-#include "Boolean.h"
+#include "String.h"
 
 // Agrega el nuevo entero al final del archivo
 void Agregar (string nomArch, int entero);
