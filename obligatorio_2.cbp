@@ -38,6 +38,8 @@
 		<Unit filename="Alumnos.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="Arbol.cpp" />
+		<Unit filename="Arbol.h" />
 		<Unit filename="Archivos.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
