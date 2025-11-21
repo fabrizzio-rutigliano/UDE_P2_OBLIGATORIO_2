@@ -17,9 +17,9 @@ Boolean EsVacioAlumnoTree(AlumnoTree a)
 
 //operacion que devuelve la raiz del Arbol
 //Precondicion: arbol no vacio
-int DarRaizAlumnoTree(AlumnoTree a)
+alumno DarRaizAlumnoTree(AlumnoTree a)
 {
-    return a->info;
+    return a->alu;
 }
 
 //operacion que devuelve el hijo izquierdo del Arbol
@@ -38,10 +38,10 @@ AlumnoTree HijoDerAlumnoTree(AlumnoTree a)
 
 //operacion que agrega elemento a la raiz del Arbol
 //dados dos arboles, agregar un valor como raiz de los dos arboles
-AlumnoTree ConsAlumnoTree(int valor, AlumnoTree izq, AlumnoTree der)
+AlumnoTree ConsAlumnoTree(alumno al, AlumnoTree izq, AlumnoTree der)
 {
     AlumnoTree aux = new nodoAlumno;
-    aux->info = valor;
+    aux->alu = al;
     aux->hizq = izq;
     aux->hder = der;
     return aux;
@@ -53,7 +53,7 @@ void PreOrdenAlumnoTree(AlumnoTree a)
 {
     if(a!=NULL)
     {
-        printf("%d",a->info);
+        printf("%d",a->alu);
         PreOrdenAlumnoTree(a->hizq);
         PreOrdenAlumnoTree(a->hder);
     }
@@ -65,7 +65,7 @@ void OrdenAlumnoTree(AlumnoTree a)
     if(a!=NULL)
     {
         PreOrdenAlumnoTree(a->hizq);
-        printf("%d",a->info);
+        printf("%d",a->alu);
         PreOrdenAlumnoTree(a->hder);
     }
 }
@@ -77,7 +77,7 @@ void PostOrdenAlumnoTree(AlumnoTree a)
     {
         PreOrdenAlumnoTree(a->hizq);
         PreOrdenAlumnoTree(a->hder);
-        printf("%d",a->info);
+        printf("%d",a->alu);
     }
 }
 

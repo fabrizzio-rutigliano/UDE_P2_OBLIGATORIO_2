@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1763664141 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Boolean.cpp
+	"Boolean.h"
+
+1763664141 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Boolean.h
+	<stdio.h>
+
+1758903581 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Fecha.cpp
+	"Fecha.h"
+
+1758903483 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Fecha.h
+	"Boolean.h"
+
+1763684105 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/main.cpp
+	<iostream>
+
+1763739430 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnosTree.cpp
+	"AlumnosTree.h"
+
+1763739394 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnosTree.h
+	"AlumnoStruct.h"
+
+1763738729 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnoStruct.h
+	"String.h"
+	"Fecha.h"
+
+1763738690 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/String.h
+	"Boolean.h"
+
+1763739636 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/ArchivoRegistros.cpp
+	"ArchivoRegistros.h"
+
+1763739636 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/ArchivoRegistros.h
+	"String.h"
+
+1763739722 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/String.cpp
+	"String.h"
+

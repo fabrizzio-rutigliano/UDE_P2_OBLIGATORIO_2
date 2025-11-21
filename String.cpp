@@ -1,18 +1,18 @@
 #include "String.h"
 
-void strcrear (string & s)
+void strcrear (String & s)
 {
     s = new char[1];
     s[0] = '\0';
 }
 
-void strdestruir (string &s)
+void strdestruir (String &s)
 {
     delete [] s;
     s = NULL;
 }
 
-int strlar (string s)
+int strlar (String s)
 {
     int i = 0;
     while (s[i] != '\0')
@@ -20,7 +20,7 @@ int strlar (string s)
     return i;
 }
 
-void strcop (string &s1,string s2)
+void strcop (String &s1,String s2)
 {
     int i = 0;
     int largo = strlar(s2) + 1;
@@ -35,14 +35,14 @@ void strcop (string &s1,string s2)
 }
 
 
-void strscan (string &s)
+void strscan (String &s)
 {
-    string aux = new char[MAX];
+    String aux = new char[MAX];
     int i=0;
     char c;
     fflush (stdin);
     scanf ("%c", &c);
-    while ((c!= '\n' && i < MAX-1)
+    while (c!='\n' && i < MAX-1)
 {
     aux[i] = c;
         i++;
@@ -54,10 +54,10 @@ void strscan (string &s)
 }
 
 
-void strcon (string &s1,string s2)
+void strcon (String &s1,String s2)
 {
-    string aux;
-    strecrear (aux);
+    String aux;
+    strcrear (aux);
     strcop (aux, s1);
     int largo = strlar (s1) + strlar (s2) + 1;
     if (largo > MAX)
@@ -82,14 +82,14 @@ void strcon (string &s1,string s2)
 }
 
 
-void strswp (string &s1, string &s2)
+void strswp (String &s1, String &s2)
 {
-    string aux;
+    String aux;
     aux = s1;
     s1 = s2;
     s2 = aux;
 }
-void strprint (string s)
+void strprint (String s)
 {
     int i = 0;
     while(s[i]!= '\0')
@@ -101,11 +101,11 @@ void strprint (string s)
 
 
 
-boolean strmen (string s1, string s2)
+Boolean strmen (String s1, String s2)
 {
     int i = 0;
-    boolean encontre = FALSE;
-    boolean menor = FALSE;
+    Boolean encontre = FALSE;
+    Boolean menor = FALSE;
     while ((!encontre) && (s1[i] != '\0') && (s2[i] != '\0'))
     {
         if (s1[i] != s2[i])
@@ -120,10 +120,10 @@ boolean strmen (string s1, string s2)
 }
 
 
-boolean streq(string s1,string s2)
+Boolean streq(String s1,String s2)
 {
     int i = 0;
-    boolean iguales = TRUE;
+    Boolean iguales = TRUE;
     while (iguales && (s1[i] != '\0') && (s2[i] != '\0'))
     {
         if (s1[i] != s2[i])

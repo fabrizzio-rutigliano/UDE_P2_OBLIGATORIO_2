@@ -3,31 +3,31 @@
 #include "String.h"
 
 // Agrega el nuevo entero al final del archivo
-void Agregar (string nomArch, int entero);
+void Agregar(String nomArch, int entero);
 
 // Determina si existe o no un archivo con el nombre recibido por parámetro
-boolean Existe (string nomArch);
+Boolean Existe (String nomArch);
 
 
 // Determina si el archivo está vacío o no. Precondición: El archivo existe
-boolean Vacio (string nomArch);
+Boolean Vacio (String nomArch);
 
 
 // Determina si el entero recibido está en el archivo. Precondición: El archivo existe
-boolean Pertenece (string nomArch, int entero);
+Boolean Pertenece (String nomArch, int entero);
 
 
 // Devuelve la cantidad de enteros almacenados en el archivo. Precondición: El archivo existe
-int Largo (string nomArch);
+int Largo (String nomArch);
 
 
 // Devuelve el k-ésimo entero almacenado en el archivo. Precondición: El archivo existe
 // y su largo es  k.
-int K-esimo (string nomArch, int k);
+int Kesimo (String nomArch, int k);
 
 
 // Despliega por pantalla los enteros almacenados en el archivo. Precondición: El archivo existe
-void Desplegar (string nomArch);
+void Desplegar (String nomArch);
 
 
 #endif // ARCHIVOS_H_INCLUDED

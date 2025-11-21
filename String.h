@@ -8,34 +8,34 @@ typedef char * String;
 
 
 /* crea un string vacío */
-void strcrear (string &s);
+void strcrear (String &s);
 
 /* libera la memoria usada por el string */
-void strdestruir (string &s);
+void strdestruir (String &s);
 
 /* devuelve el largo del string s */
-int strlar (string s);
+int strlar (String s);
 
 /* copia el contenido del string s2 en s1 */
-void strcop (string &s1, string s2);
+void strcop (String &s1, String s2);
 
 /* lee el string s desde teclado */
-void strscan (string &s);
+void strscan (String &s);
 
 /* concatena el contenido de s2 al final de s1 */
-void strcon (string &s1, string s2);
+void strcon (String &s1, String s2);
 
 /* intercambia los contenidos de s1 y s2 */
-void strswp (string &s1, string &s2);
+void strswp (String &s1, String &s2);
 
 /* imprime el string s por pantalla */
-void strprint (string s);
+void strprint (String s);
 
 /* determina si s1 es alfabéticamente menor que s2 */
-boolean strmen (string s1, string s2);
+Boolean strmen (String s1, String s2);
 
 /* determina si los strings s1 y s2 son iguales */
-boolean streq (string s1, string s2);
+Boolean streq (String s1, String s2);
 
 
 

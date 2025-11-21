@@ -1,6 +1,7 @@
 #ifndef ALUMNOS_H_INCLUDED
 #define ALUMNOS_H_INCLUDED
-#include "string.h"
+#include "String.h"
+#include "Fecha.h"
 
 typedef struct
 {

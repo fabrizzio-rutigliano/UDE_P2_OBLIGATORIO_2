@@ -19,7 +19,7 @@ Boolean EsVacio(AlumnoTree a);
 
 //operacion que devuelve la raiz del Arbol
 //Precondicion: arbol no vacio
-int DarRaizAlumnoTree(AlumnoTree a);
+alumno DarRaizAlumnoTree(AlumnoTree a);
 
 //operacion que devuelve el hijo izquierdo del Arbol
 //precondicion: arbol no vacio
