@@ -48,19 +48,22 @@ int main()
     switch(seleccion)
     {
         case 1:
+            int seleccionSubMenu;
             //Menu AB
             desplegarMenuAB();
-
+            scanf(&seleccionSubMenu);
         break;
         case 2:
+            int seleccionSubMenu;
             //Menu de Listado
             desplegarMenuListados();
-
+            scanf(&seleccionSubMenu);
         break;
         case 3:
+            int seleccionSubMenu;
             //Menu de Consultas
             desplegarMenuConsultas();
-
+            scanf(&seleccionSubMenu);
         break;
     }
 
