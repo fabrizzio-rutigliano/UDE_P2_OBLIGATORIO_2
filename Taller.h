@@ -2,6 +2,6 @@
 #define TALLER_H_INCLUDED
 
 // def tipos de datos
-typedef enum {FALSE, TRUE} nomTaller;
+typedef enum {PASTAS, PASTELERIA, MILANESAS, PIZZAS, ENSALADAS, CHIVITOS, HAMBURGUESAS, COCTELERIA} NomTaller;
 
 #endif // TALLER_H_INCLUDED
