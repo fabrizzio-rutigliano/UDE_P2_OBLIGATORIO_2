@@ -1,4 +1,4 @@
-#include "Arbol.h"
+#include "AlumnosTree.h"
 
 //Operacion que crea arbol vacio
 void Crear(Arbol &a)

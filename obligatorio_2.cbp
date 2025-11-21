@@ -32,14 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Alumnos.cpp">
+		<Unit filename="AlumnoStruct.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="Alumnos.h">
+		<Unit filename="AlumnoStruct.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="Arbol.cpp" />
-		<Unit filename="Arbol.h" />
+		<Unit filename="AlumnosTree.cpp" />
+		<Unit filename="AlumnosTree.h" />
 		<Unit filename="Archivos.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -48,8 +48,17 @@
 		</Unit>
 		<Unit filename="Boolean.cpp" />
 		<Unit filename="Boolean.h" />
+		<Unit filename="RegistrosList.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="RegistrosList.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="String.cpp" />
 		<Unit filename="String.h" />
+		<Unit filename="Taller.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
