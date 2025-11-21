@@ -20,7 +20,7 @@ int strlar (string s);
 void strcop (string &s1, string s2);
 
 /* lee el string s desde teclado */
-void scan (string &s);
+void strscan (string &s);
 
 /* concatena el contenido de s2 al final de s1 */
 void strcon (string &s1, string s2);
@@ -29,7 +29,7 @@ void strcon (string &s1, string s2);
 void strswp (string &s1, string &s2);
 
 /* imprime el string s por pantalla */
-void print (string s);
+void strprint (string s);
 
 /* determina si s1 es alfabéticamente menor que s2 */
 boolean strmen (string s1, string s2);

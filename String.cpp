@@ -35,7 +35,7 @@ void strcop (string &s1,string s2)
 }
 
 
-void scan (string &s)
+void strscan (string &s)
 {
     string aux = new char[MAX];
     int i=0;
@@ -89,7 +89,7 @@ void strswp (string &s1, string &s2)
     s1 = s2;
     s2 = aux;
 }
-void print (string s)
+void strprint (string s)
 {
     int i = 0;
     while(s[i]!= '\0')

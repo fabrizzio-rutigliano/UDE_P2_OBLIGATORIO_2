@@ -7,7 +7,7 @@ typedef struct
     long int ci;
     String nombre;
     String apellido;
-    Fecha nacimiento;
+    Fecha fNac;
     String direccion;
     long int telefono;
 
@@ -15,7 +15,7 @@ typedef struct
 
 
 //Devolver CI de alumno
-long int darCiAlumno (alumno alu);
+long int darCiAlumno(alumno alu);
 
 //Devolver telefono alumno
 long int darTelAlumno(alumno alu);
@@ -24,13 +24,13 @@ long int darTelAlumno(alumno alu);
 void darNomAlumno(alumno alu, String &s);
 
 //Devolver apellido alumno
-void darApeAlumno (alumno alu, String &s);
+void darApeAlumno(alumno alu, String &s);
 
 //Devolver fecha nacimiento alumno
-void darFechaAlumno (alumno alu, Fecha &f);
+Fecha darFechaAlumno(alumno alu);
 
 //Devolver direccion alumno
-void darDirAlumno (alumno alu, String &s);
+void darDirAlumno(alumno alu, String &s);
 
 //Alta usuario, verificar que la fecha de nacimiento es valida
 //Precondicion: el alumno no existe.

@@ -1,10 +1,10 @@
 #ifndef ARBOL_H_INCLUDED
 #define ARBOL_H_INCLUDED
-#include "Boolean.h"
+#include "AlumnoStruct.h"
 
 typedef struct nodoAlu
 {
-    int info;
+    alumno alu;
     nodoAlu * hizq;
     nodoAlu * hder;
 } nodoAlumno;
