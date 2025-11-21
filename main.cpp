@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-
+    int seleccion;
     //validar existencia archivo Alumnos, sino crearlo.
     if (!existeArchivo("Alumnos.txt"))
     {
@@ -16,10 +16,11 @@ int main()
     }
     else
         printf("\nya existe Alumnos");
-    //abrir archivo alumnos, cargar en memoria alumnosTree
+
+    //cargar en memoria alumnosTree
 
 
-    //cerrar archivo alumnos
+
 
 
 
@@ -33,20 +34,40 @@ int main()
     }
     else
         printf("\nya existe Registros");
-    //abrir archivo registro, cargar en memoria registroslist
+
+    //cargar en memoria registroslist
 
 
-    //cerrar archivo registros
+
 
 
     //Menu inicial con opciones AB, Listado y Consultas
 
+    desplegarMenuPrinciapal();
+    scanf(&seleccion);
+    switch(seleccion)
+    {
+        case 1:
+            //Menu AB
+            desplegarMenuAB();
 
-    //Menu de AB
+        break;
+        case 2:
+            //Menu de Listado
+            desplegarMenuListados();
 
-    //Menu de Listado
+        break;
+        case 3:
+            //Menu de Consultas
+            desplegarMenuConsultas();
 
-    //Menu de Consultas
+        break;
+    }
+
+
+
+
+
 
 
 

@@ -46,6 +46,12 @@
 		<Unit filename="Boolean.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="Menu.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Menu.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="RegistrosList.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
