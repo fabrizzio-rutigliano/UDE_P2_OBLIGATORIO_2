@@ -16,6 +16,7 @@ void CrearAlumnoTree(AlumnoTree &a);
 
 //Operacion que devuelve si es vacio
 Boolean EsVacio(AlumnoTree a);
+
 //operacion que devuelve la raiz del Arbol
 //Precondicion: arbol no vacio
 int DarRaizAlumnoTree(AlumnoTree a);
