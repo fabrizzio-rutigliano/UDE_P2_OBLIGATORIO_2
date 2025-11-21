@@ -1,13 +1,13 @@
 #include "AlumnosTree.h"
 
 //Operacion que crea arbol vacio
-void Crear(Arbol &a)
+void CrearAlumnoTree(AlumnoTree &a)
 {
     a=NULL;
 }
 
 //Operacion que devuelve si es vacio
-Boolean EsVacio(Arbol a)
+Boolean EsVacioAlumnoTree(AlumnoTree a)
 {
     Boolean esVacio = FALSE;
     if(a==NULL)
@@ -17,30 +17,30 @@ Boolean EsVacio(Arbol a)
 
 //operacion que devuelve la raiz del Arbol
 //Precondicion: arbol no vacio
-int DarRaiz(Arbol a)
+int DarRaizAlumnoTree(AlumnoTree a)
 {
     return a->info;
 }
 
 //operacion que devuelve el hijo izquierdo del Arbol
 //precondicion: arbol no vacio
-Arbol HijoIzq(Arbol a)
+AlumnoTree HijoIzqAlumnoTree(AlumnoTree a)
 {
     return a->hizq;
 }
 
 //operacion que devuelve el hijo derecho del arbol
 //precondicion: arbol no vacio
-Arbol HijoDer(Arbol a)
+AlumnoTree HijoDerAlumnoTree(AlumnoTree a)
 {
     return a->hder;
 }
 
 //operacion que agrega elemento a la raiz del Arbol
 //dados dos arboles, agregar un valor como raiz de los dos arboles
-Arbol Cons(int valor, Arbol izq, Arbol der)
+AlumnoTree ConsAlumnoTree(int valor, AlumnoTree izq, AlumnoTree der)
 {
-    Arbol aux = new nodo;
+    AlumnoTree aux = new nodoAlumno;
     aux->info = valor;
     aux->hizq = izq;
     aux->hder = der;
@@ -49,45 +49,45 @@ Arbol Cons(int valor, Arbol izq, Arbol der)
 
 //Recorre el árbol en preorden listando sus nodos por pantalla.
 //Precondicion: arbol no vacio ?
-void PreOrden (Arbol a)
+void PreOrdenAlumnoTree(AlumnoTree a)
 {
     if(a!=NULL)
     {
         printf("%d",a->info);
-        PreOrden(a->hizq);
-        PreOrden(a->hder);
+        PreOrdenAlumnoTree(a->hizq);
+        PreOrdenAlumnoTree(a->hder);
     }
 }
 
 //Recorre el árbol en orden listando sus nodos por pantalla.
-void Orden (Arbol a)
+void OrdenAlumnoTree(AlumnoTree a)
 {
     if(a!=NULL)
     {
-        PreOrden(a->hizq);
+        PreOrdenAlumnoTree(a->hizq);
         printf("%d",a->info);
-        PreOrden(a->hder);
+        PreOrdenAlumnoTree(a->hder);
     }
 }
 
 //Recorre el árbol en posorden listando sus nodos por pantalla.
-void PostOrden (Arbol a)
+void PostOrdenAlumnoTree(AlumnoTree a)
 {
     if(a!=NULL)
     {
-        PreOrden(a->hizq);
-        PreOrden(a->hder);
+        PreOrdenAlumnoTree(a->hizq);
+        PreOrdenAlumnoTree(a->hder);
         printf("%d",a->info);
     }
 }
 
 //Devuelve la cantidad de nodos que hay en el árbol.
-int ContarNodos (Arbol a)
+int ContarNodosAlumnoTree(AlumnoTree a)
 {
     if(a==NULL)
         return 0;
     else
-        return 1 + ContarNodos(a->hizq) + ContarNodos(a->hder);
+        return 1 + ContarNodosAlumnoTree(a->hizq) + ContarNodosAlumnoTree(a->hder);
 
 }
 

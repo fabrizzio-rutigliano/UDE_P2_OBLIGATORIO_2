@@ -2,47 +2,47 @@
 #define ARBOL_H_INCLUDED
 #include "Boolean.h"
 
-typedef struct nodoA
+typedef struct nodoAlu
 {
     int info;
-    nodoA * hizq;
-    nodoA * hder;
-} nodo;
+    nodoAlu * hizq;
+    nodoAlu * hder;
+} nodoAlumno;
 
-typedef nodo * Arbol;
+typedef nodoAlumno * AlumnoTree;
 
 //Operacion que crea arbol vacio
-void Crear(Arbol &a);
+void CrearAlumnoTree(AlumnoTree &a);
 
 //Operacion que devuelve si es vacio
-Boolean EsVacio(Arbol a);
+Boolean EsVacio(AlumnoTree a);
 //operacion que devuelve la raiz del Arbol
 //Precondicion: arbol no vacio
-int DarRaiz(Arbol a);
+int DarRaizAlumnoTree(AlumnoTree a);
 
 //operacion que devuelve el hijo izquierdo del Arbol
 //precondicion: arbol no vacio
-Arbol HijoIzq(Arbol a);
+AlumnoTree HijoIzqAlumnoTree(AlumnoTree a);
 
 //operacion que devuelve el hijo derecho del arbol
 //precondicion: arbol no vacio
-Arbol HijoDer(Arbol a);
+AlumnoTree HijoDerAlumnoTree(AlumnoTree a);
 
 //operacion que agrega elemento a la raiz del Arbol
 //dados dos arboles, agregar un valor como raiz de los dos arboles
-Arbol Cons(int valor, Arbol izq, Arbol der);
+AlumnoTree ConsAlumnoTree(int valor, AlumnoTree izq, AlumnoTree der);
 
 //Recorre el árbol en preorden listando sus nodos por pantalla.
-void PreOrden (Arbol a);
+void PreOrdenAlumnoTree(AlumnoTree a);
 
 //Recorre el árbol en orden listando sus nodos por pantalla.
-void Orden (Arbol a);
+void OrdenAlumnoTree(AlumnoTree a);
 
 //Recorre el árbol en posorden listando sus nodos por pantalla.
-void PostOrden (Arbol a);
+void PostOrdenAlumnoTree(AlumnoTree a);
 
 //Devuelve la cantidad de nodos que hay en el árbol.
-int ContarNodos (Arbol a);
+int ContarNodosAlumnoTree(AlumnoTree a);
 
 
 
