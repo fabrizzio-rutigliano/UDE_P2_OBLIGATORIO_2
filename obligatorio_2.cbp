@@ -50,6 +50,8 @@
 		<Unit filename="ArchivoRegistros.h" />
 		<Unit filename="Boolean.cpp" />
 		<Unit filename="Boolean.h" />
+		<Unit filename="Fecha.cpp" />
+		<Unit filename="Fecha.h" />
 		<Unit filename="RegistrosList.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -58,6 +60,9 @@
 		</Unit>
 		<Unit filename="String.cpp" />
 		<Unit filename="String.h" />
+		<Unit filename="Taller.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Taller.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
