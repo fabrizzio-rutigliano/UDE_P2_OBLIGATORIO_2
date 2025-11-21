@@ -1,6 +1,5 @@
 #ifndef BOOLEAN_H_INCLUDED
 #define BOOLEAN_H_INCLUDED
-
 #include<stdio.h>
 
 // def constantes simbolicas
