@@ -40,12 +40,14 @@
 		</Unit>
 		<Unit filename="AlumnosTree.cpp" />
 		<Unit filename="AlumnosTree.h" />
-		<Unit filename="Archivos.cpp">
+		<Unit filename="ArchivoAlumnos.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="Archivos.h">
+		<Unit filename="ArchivoAlumnos.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="ArchivoRegistros.cpp" />
+		<Unit filename="ArchivoRegistros.h" />
 		<Unit filename="Boolean.cpp" />
 		<Unit filename="Boolean.h" />
 		<Unit filename="RegistrosList.cpp">
