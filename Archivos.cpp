@@ -1,3 +1,4 @@
+/*
 #include "Archivos.h"
 
 // Agrega el nuevo entero al final del archivo
@@ -43,3 +44,4 @@ int KesimoArchivo(String nomArch, int k);
 
 // Despliega por pantalla los enteros almacenados en el archivo. Precondición: El archivo existe
 void desplegarArchivo(String nomArch);
+*/

@@ -1,4 +1,19 @@
-#include "Archivos.h"
+#include <iostream>
+#include "Taller.cpp"
+
+int main()
+{
+    //cout << "Hello world" << endl;
+    //return 0;
+
+    // Prueba de taller enumerado
+    nomTaller t;
+    cargarTaller(t);
+    desplegarTaller(t);
+
+}
+
+/*#include "Archivos.h"
 #include "AlumnosTree.h"
 #include "RegistrosList.h"
 
@@ -90,3 +105,4 @@ int main()
     //cerrar archivos
 
 }
+*/

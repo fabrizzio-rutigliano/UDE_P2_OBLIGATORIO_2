@@ -8,13 +8,13 @@ typedef char * String;
 //===================================================================================================================
 
 // Crea un string vacío
-void strCrear (String &s);
+void strCrear(String &s);
 
 // Libera la memoria usada por el string
-void strDestruir (String &s);
+void strDestruir(String &s);
 
 // Devuelve el largo del string s */
-int strLar (String s);
+int strLar(String s);
 
 // Copia el contenido del string s2 en s1
 void strCop(String &s1, String s2);

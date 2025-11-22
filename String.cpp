@@ -1,18 +1,18 @@
 #include "String.h"
 
-void strcrear (String & s)
+void strCrear(String &s)
 {
     s = new char[1];
     s[0] = '\0';
 }
 
-void strdestruir (String &s)
+void strDestruir(String &s)
 {
     delete [] s;
     s = NULL;
 }
 
-int strlar (String s)
+int strLar(String s)
 {
     int i = 0;
     while (s[i] != '\0')
@@ -20,10 +20,10 @@ int strlar (String s)
     return i;
 }
 
-void strcop (String &s1,String s2)
+void strCop(String &s1,String s2)
 {
     int i = 0;
-    int largo = strlar(s2) + 1;
+    int largo = strLar(s2) + 1;
     delete [] s1;
     s1 = new char[largo];
     while (s2[i] != '\0')
@@ -35,31 +35,31 @@ void strcop (String &s1,String s2)
 }
 
 
-void strscan (String &s)
+void strScan(String &s)
 {
     String aux = new char[MAX];
     int i=0;
     char c;
-    fflush (stdin);
-    scanf ("%c", &c);
+    fflush(stdin);
+    scanf("%c", &c);
     while (c!='\n' && i < MAX-1)
 {
     aux[i] = c;
         i++;
-        scanf ("%c", &c);
+        scanf("%c", &c);
     }
     aux[i] = '\0';
-             strcop (s,aux);
-             strdestruir (aux);
+             strCop(s,aux);
+             strDestruir(aux);
 }
 
 
-void strcon (String &s1,String s2)
+void strCon(String &s1,String s2)
 {
     String aux;
-    strcrear (aux);
-    strcop (aux, s1);
-    int largo = strlar (s1) + strlar (s2) + 1;
+    strCrear(aux);
+    strCop(aux, s1);
+    int largo = strLar (s1) + strLar (s2) + 1;
     if (largo > MAX)
         largo = MAX;
     delete [] s1;
@@ -78,18 +78,18 @@ void strcon (String &s1,String s2)
         j++;
     }
     s1[i] = '\0';
-    strdestruir (aux);
+    strDestruir(aux);
 }
 
 
-void strswp (String &s1, String &s2)
+void strSwp(String &s1, String &s2)
 {
     String aux;
     aux = s1;
     s1 = s2;
     s2 = aux;
 }
-void strprint (String s)
+void strPrint(String s)
 {
     int i = 0;
     while(s[i]!= '\0')
@@ -99,9 +99,7 @@ void strprint (String s)
     }
 }
 
-
-
-Boolean strmen (String s1, String s2)
+Boolean strMen(String s1, String s2)
 {
     int i = 0;
     Boolean encontre = FALSE;
@@ -120,7 +118,7 @@ Boolean strmen (String s1, String s2)
 }
 
 
-Boolean streq(String s1,String s2)
+Boolean strEq(String s1,String s2)
 {
     int i = 0;
     Boolean iguales = TRUE;

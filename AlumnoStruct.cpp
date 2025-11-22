@@ -1,4 +1,4 @@
-#include "AlumnoStruct.h"
+/*#include "AlumnoStruct.h"
 
 
 //Devolver CI de alumno
@@ -54,3 +54,4 @@ void cargarAlumno(alumno &alu)
     printf("\nIngrese el telefono: ");
     scanf("%ld", alu.telefono);
 }
+*/

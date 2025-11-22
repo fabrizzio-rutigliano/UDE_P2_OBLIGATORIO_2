@@ -3,11 +3,10 @@
 // Cargar
 void cargarFecha(Fecha &fecha)
 {
-
     printf("A continuacion se le solicitaran datos para cargar fecha dd/mm/yy:\n");
-    printf("Ingrese una dia: ");
+    printf("Ingrese un dia: ");
     scanf("%d", &fecha.dia);
-    printf("Ingrese una mes: ");
+    printf("Ingrese un mes: ");
     scanf("%d", &fecha.mes);
     printf("Ingrese un anio: ");
     scanf("%d", &fecha.anio);

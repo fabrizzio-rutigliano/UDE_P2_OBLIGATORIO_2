@@ -1,4 +1,4 @@
-#include "AlumnosTree.h"
+/*#include "AlumnosTree.h"
 
 //Operacion que crea arbol vacio
 void crearAlumnoTree(AlumnoTree &a)
@@ -94,3 +94,4 @@ int contarNodosAlumnoTree(AlumnoTree a)
 
 
 
+*/

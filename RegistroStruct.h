@@ -25,7 +25,7 @@ void cargarCedula(long int &ci);
 // Cargar cantidad de dias entero, posible aux.
 void cargarCantDias(int &d);
 
-// ---------- DESPLIEGAR --------
+// ---------- DESPLEGAR --------
 
 // Desplegar elementos de registro
 void desplegarRegistro(Registro reg);

@@ -50,3 +50,60 @@
 1763743330 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Archivos.h
 	"String.h"
 
+1763820616 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\boolean.cpp
+	"Boolean.h"
+
+1763811146 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\boolean.h
+	<stdio.h>
+
+1763820544 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\fecha.cpp
+	"Fecha.h"
+
+1763813408 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\fecha.h
+	"Boolean.h"
+
+1763822117 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostree.cpp
+
+1763824332 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\main.cpp
+	<iostream>
+	"Taller.cpp"
+	"AlumnosTree.h"
+	"RegistrosList.h"
+
+1763819788 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostree.h
+	"AlumnoStruct.h"
+	"RegistrosList.h"
+
+1763818137 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostruct.h
+	"String.h"
+	"Fecha.h"
+
+1763820812 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\string.h
+	"Boolean.h"
+
+1763817660 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registroslist.h
+	"RegistroStruct.h"
+
+1763821974 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostruct.h
+	"Taller.h"
+	"Fecha.h"
+
+1763811921 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\taller.h
+	<stdio.h>
+
+1763822286 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\archivos.cpp
+	"Archivos.h"
+
+1763810260 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\archivos.h
+	"AlumnosTree.h"
+	"RegistrosList.h"
+
+1763822337 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\string.cpp
+	"String.h"
+
+1763823906 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostruct.cpp
+	"RegistroStruct.h"
+
+1763824295 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\taller.cpp
+	"Taller.h"
+

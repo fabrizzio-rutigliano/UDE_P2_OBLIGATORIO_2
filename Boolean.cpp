@@ -1,28 +1,40 @@
 #include "Boolean.h"
 
-void cargar(Boolean &b){
+void cargarBool(Boolean &b){
     int valor;
-    do{
-        printf ("ingrese 0 si es falso y 1 si es verdadero: ");
-        scanf ("%d",& valor);
+    Boolean check = FALSE;
 
-        switch(valor){
-            case 0:
-                    b = FALSE;
-                break;
-            case 1:
-                    b = TRUE;
-                break;
-            default:
+    do
+    {
+        printf("\nIngrese 0 en caso de Falso, ingrese 1 en caso de Verdadero.");
+        scanf("%d", &valor);
+
+        switch(valor)
+        {
+        case 0:
+            b=FALSE;
+            check=TRUE;
+            break;
+        case 1:
+            b=TRUE;
+            check=TRUE;
+            break;
+        default:
+            printf("\n Valor ingresado invalido, intente de nuevo.");
             break;
         }
-
-    } while (valor != 0 && valor != 1);
+    }
+    while (check == FALSE);
 }
 
-void despliegue(Boolean b){
-     if (b)
-        printf ("verdadero");
-     else
-        printf ("falso");
+void desplegarBool(Boolean b){
+    switch(b)
+    {
+    case 1:
+        printf("Verdadero");
+        break;
+    case 0:
+        printf("Falso");
+        break;
+    }
 }
