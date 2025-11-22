@@ -1,10 +1,10 @@
 #ifndef REGISTROS_H_INCLUDED
 #define REGISTROS_H_INCLUDED
-#include "Boolean.h"
+#include "RegistroStruct.h"
 
 typedef struct nodoL
 {
-    int info;
+    registro info;
     nodoL * sig;
 } nodo;
 
@@ -109,4 +109,4 @@ por los valores [3, 7, 4] (en ese orden).
 Lista TomarPrimeros(Lista L, int n);
 
 
-#endif // REGISTROS_H_INCLUDED
+#endif // REGISTROS_H_INCLUDE

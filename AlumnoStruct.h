@@ -8,12 +8,11 @@ typedef struct
     long int ci;
     String nombre;
     String apellido;
-    Fecha fNac;
+    Fecha fecha_nacimiento;
     String direccion;
     long int telefono;
 
 }alumno;
-
 
 //Devolver CI de alumno
 long int darCiAlumno(alumno alu);

@@ -1,6 +1,9 @@
 # ---- Carpetas de VS Code ----
 .vscode/
 
+# ---- Archivos de datos ----
+*.txt
+
 # ---- Archivos de compilación (C/C++) ----
 *.o
 *.obj

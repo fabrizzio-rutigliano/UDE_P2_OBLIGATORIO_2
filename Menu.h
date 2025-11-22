@@ -2,7 +2,7 @@
 #define MENU_H_INCLUDED
 #include <stdio.h>
 
-void desplegarMenuPrinciapal();
+void desplegarMenuPrincipal();
 
 void desplegarMenuAB();
 

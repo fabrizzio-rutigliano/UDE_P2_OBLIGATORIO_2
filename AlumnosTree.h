@@ -45,6 +45,4 @@ void postOrdenAlumnoTree(AlumnoTree a);
 //Devuelve la cantidad de nodos que hay en el árbol.
 int contarNodosAlumnoTree(AlumnoTree a);
 
-
-
 #endif // ARBOL_H_INCLUDED

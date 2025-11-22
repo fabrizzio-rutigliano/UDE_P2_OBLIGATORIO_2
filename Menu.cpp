@@ -3,7 +3,7 @@
 
 
  //Menu inicial con opciones AB, Listado y Consultas
-void desplegarMenuPrinciapal()
+void desplegarMenuPrincipal()
 {
     printf("\nBienvenido al sistema de gestion de talleres...");
     printf("\n1 - Alta y Baja de alumnos");
