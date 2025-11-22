@@ -1,18 +1,22 @@
 #include <iostream>
-#include "RegistroStruct.h"
+//------includes utilizados por los modulos de testing, evaluar su eliminación en versión final.
+#include "RegistroStructTest.h"
+#include "TallerTest.h"
+#include "AlumnoStructTest.h"
 
 int main()
 {
-    //cout << "Hello world" << endl;
-    //return 0;
 
-    // Prueba de registro struct
-    Registro reg;
-    cargarRegistro(reg);
-    desplegarRegistro(reg);
-    //cargarTaller(t);
-    //desplegarTaller(t);
+    // Prueba taller
+    //testCargarDesplegarTaller();
 
+    // Prueba carga y despliegue registro
+    //testCargaDespliegeRegistro();
+
+    // Prueba carga y despliegue alumno
+    testCargaDespliegeAlumno();
+
+    return 0;
 }
 
 /*#include "Archivos.h"

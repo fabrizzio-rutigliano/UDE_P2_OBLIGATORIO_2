@@ -16,19 +16,17 @@ typedef struct
 
 // ---------- CARGAR ------------
 
-// Cargar nombre taller
-void cargarRegistro(Registro &reg);
-
-// Cargar cedula, posible aux.
+// Cargar cedula
+//Precondicion: la cedula pertenece a un alumno existente en el sistema
 void cargarCedula(long int &ci);
 
-// Cargar cantidad de dias entero, posible aux.
+// Cargar cantidad de dias entero
 void cargarCantDias(int &d);
 
-// ---------- DESPLEGAR --------
+// Cargar un registro
+void cargarRegistro(Registro &reg);
 
-// Desplegar elementos de registro
-void desplegarRegistro(Registro reg);
+// ---------- DESPLEGAR --------
 
 // Devuelve taller
 nomTaller darNombreTaller(Registro reg);
@@ -41,5 +39,8 @@ long int darCedula(Registro reg);
 
 // Devuelve cantidad de dias del taller
 int darCantDias(Registro reg);
+
+// Desplegar elementos de registro
+void desplegarRegistro(Registro reg);
 
 #endif // REGISTRO_H_INCLUDED

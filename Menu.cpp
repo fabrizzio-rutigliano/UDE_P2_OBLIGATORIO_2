@@ -1,7 +1,6 @@
-/*#include "Menu.h"
+#include "Menu.h"
 
-
-
+/*
  //Menu inicial con opciones AB, Listado y Consultas
 void desplegarMenuPrincipal()
 {
@@ -56,4 +55,4 @@ void desplegarMenuApellido()
 {
     printf("\nIngrese el apellido: ");
 }
-/*
+*/

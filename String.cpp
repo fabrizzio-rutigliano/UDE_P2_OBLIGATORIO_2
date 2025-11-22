@@ -8,7 +8,7 @@ void strCrear(String &s)
 
 void strDestruir(String &s)
 {
-    delete [] s;
+    delete[] s;
     s = NULL;
 }
 
@@ -20,11 +20,11 @@ int strLar(String s)
     return i;
 }
 
-void strCop(String &s1,String s2)
+void strCop(String &s1, String s2)
 {
     int i = 0;
     int largo = strLar(s2) + 1;
-    delete [] s1;
+    delete[] s1;
     s1 = new char[largo];
     while (s2[i] != '\0')
     {
@@ -34,35 +34,33 @@ void strCop(String &s1,String s2)
     s1[i] = '\0';
 }
 
-
 void strScan(String &s)
 {
     String aux = new char[MAX];
-    int i=0;
+    int i = 0;
     char c;
-    fflush(stdin);
-    scanf("%c", &c);
-    while (c!='\n' && i < MAX-1)
-{
-    aux[i] = c;
+    //fflush(stdin);
+    scanf(" %c", &c);
+    while (c != '\n' && i < MAX - 1)
+    {
+        aux[i] = c;
         i++;
         scanf("%c", &c);
     }
     aux[i] = '\0';
-             strCop(s,aux);
-             strDestruir(aux);
+    strCop(s, aux);
+    strDestruir(aux);
 }
 
-
-void strCon(String &s1,String s2)
+void strCon(String &s1, String s2)
 {
     String aux;
     strCrear(aux);
     strCop(aux, s1);
-    int largo = strLar (s1) + strLar (s2) + 1;
+    int largo = strLar(s1) + strLar(s2) + 1;
     if (largo > MAX)
         largo = MAX;
-    delete [] s1;
+    delete[] s1;
     s1 = new char[largo];
     int i = 0;
     while (aux[i] != '\0')
@@ -71,7 +69,7 @@ void strCon(String &s1,String s2)
         i++;
     }
     int j = 0;
-    while (s2[j] != '\0' && i < MAX-1)
+    while (s2[j] != '\0' && i < MAX - 1)
     {
         s1[i] = s2[j];
         i++;
@@ -80,7 +78,6 @@ void strCon(String &s1,String s2)
     s1[i] = '\0';
     strDestruir(aux);
 }
-
 
 void strSwp(String &s1, String &s2)
 {
@@ -92,9 +89,9 @@ void strSwp(String &s1, String &s2)
 void strPrint(String s)
 {
     int i = 0;
-    while(s[i]!= '\0')
+    while (s[i] != '\0')
     {
-        printf ("%c", s[i]);
+        printf("%c", s[i]);
         i++;
     }
 }
@@ -112,13 +109,12 @@ Boolean strMen(String s1, String s2)
             menor = TRUE;
         i++;
     }
-    if ((!encontre) && (s2[i]!='\0'))
+    if ((!encontre) && (s2[i] != '\0'))
         menor = TRUE;
     return menor;
 }
 
-
-Boolean strEq(String s1,String s2)
+Boolean strEq(String s1, String s2)
 {
     int i = 0;
     Boolean iguales = TRUE;
@@ -132,5 +128,3 @@ Boolean strEq(String s1,String s2)
         iguales = FALSE;
     return iguales;
 }
-
-

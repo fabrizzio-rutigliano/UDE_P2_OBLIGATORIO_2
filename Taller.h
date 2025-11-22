@@ -17,10 +17,10 @@ nomTaller;
 
 //===================================================================================================================
 
-// Mostrar valor de taller en pantalla
-void desplegarTaller(nomTaller t);
-
 // Cargar valor de taller desde teclado
 void cargarTaller(nomTaller &t);
+
+// Mostrar valor de taller en pantalla
+void desplegarTaller(nomTaller t);
 
 #endif // TALLER_H_INCLUDED

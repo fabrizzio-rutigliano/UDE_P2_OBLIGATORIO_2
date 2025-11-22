@@ -3,7 +3,6 @@
 // Cargar
 void cargarFecha(Fecha &fecha)
 {
-    printf("A continuacion se le solicitaran datos para cargar fecha dd/mm/yy:\n");
     printf("Ingrese un dia: ");
     scanf("%d", &fecha.dia);
     printf("Ingrese un mes: ");
@@ -62,7 +61,7 @@ Boolean esValidaFecha(Fecha fecha)
         else
             check = FALSE;
         break;
-    case 2:// validamos que el año sea biciesto
+    case 2:// validamos que el aï¿½o sea biciesto
         if (fecha.anio % 4 == 0)
         {
             if (fecha.dia >= 1 && fecha.dia <= 29)

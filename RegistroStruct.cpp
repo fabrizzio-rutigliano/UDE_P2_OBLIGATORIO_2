@@ -21,15 +21,17 @@ void cargarRegistro(Registro &reg)
     cargarTaller(aux);
     reg.taller = aux;
 
-    printf("Ingrese fecha de finalizacion:\n");
-    cargarFecha(reg.fecha_fin);
+    printf("Ingrese fecha de finalizacion en formato dd/mm/yy::\n");
+    do
+    {
+        cargarFecha(reg.fecha_fin);
+    } while (!esValidaFecha(reg.fecha_fin));
 
     cargarCedula(reg.cedula);
     cargarCantDias(reg.cant_dias);
 }
 
 // ---------- DESPLEGAR --------
-
 
 nomTaller darNombreTaller(Registro reg)
 {
@@ -53,15 +55,13 @@ int darCantDias(Registro reg)
 
 void desplegarRegistro(Registro reg)
 {
-    int dia = darDia(reg.fecha_fin);
-    int mes = darMes(reg.fecha_fin);
-    int anio = darAnio(reg.fecha_fin);
-
     nomTaller t = darNombreTaller(reg);
+    printf("---------------------------------\n");
+    printf("Registro correspondiente a alumno con cedula: %ld\n", darCedula(reg));
     printf("Taller: ");
     desplegarTaller(t);
 
-    printf("  |  Fecha fin: %d/%d/%d", dia, mes, anio);
-    printf("  |  Cedula: %ld", reg.cedula);
-    printf("  |  Cant. dias: %d\n", reg.cant_dias);
+    printf("\nFinalizado en fecha:");
+    mostrarFecha(reg.fecha_fin);
+    printf("\nCantidad dias de curso: %d\n", darCantDias(reg));
 }

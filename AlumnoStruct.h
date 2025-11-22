@@ -18,9 +18,12 @@ typedef struct
 
 // ---------- CARGAR ------------------------
 
-//Alta usuario, verificar que la fecha de nacimiento es valida
+//Cargar alumno
 //Precondicion: el alumno no existe.
 void cargarAlumno(Alumno &alu);
+
+// Crear alumno, crea los strings del alumno
+void crearAlumno(Alumno &alu);
 
 // Libera la memoria de los strings del alumno
 void destruirAlumno(Alumno &alu);
@@ -43,9 +46,9 @@ void darApellidoAlumno(Alumno alu, String &s);
 Fecha darFechaNacAlumno(Alumno alu);
 
 //Devolver direccion alumno
-void darDirAlumno(Alumno alu, String &s);
+void darDireccionAlumno(Alumno alu, String &s);
 
 //Devolver telefono alumno
-long int darTelAlumno(Alumno alu);
+long int darTelefonoAlumno(Alumno alu);
 
 #endif // ALUMNOS_H_INCLUDED

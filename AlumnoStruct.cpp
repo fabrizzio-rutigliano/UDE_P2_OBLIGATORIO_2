@@ -1,57 +1,99 @@
-/*#include "AlumnoStruct.h"
+#include "AlumnoStruct.h"
 
+//Precondicion: el alumno no existe.
+void cargarAlumno(Alumno &alu)
+{
+    crearAlumno(alu);
+    printf("\nIngrese el numero de cedula sin puntos ni guion: ");
+    scanf("%ld", &alu.ci);
+    fflush(stdin);
+
+    printf("\nIngrese el nombre: ");
+    strScan(alu.nombre);
+
+    printf("\nIngrese el apellido: ");
+    strScan(alu.apellido);
+
+    printf("\nIngrese la fecha de nacimiento (dd/mm/aaaa): ");
+    do
+    {
+        cargarFecha(alu.fecha_nacimiento);
+    }while (!esValidaFecha(alu.fecha_nacimiento));
+    fflush(stdin);
+    
+    printf("\nIngrese la direccion: ");
+    strScan(alu.direccion);
+
+    printf("\nIngrese el telefono: ");
+    scanf("%ld", &alu.telefono);
+    fflush(stdin);
+}
+
+// Crear alumno, crea los strings del alumno
+void crearAlumno(Alumno &alu)
+{
+    strCrear(alu.nombre);
+    strCrear(alu.apellido);
+    strCrear(alu.direccion);
+}
+
+// Libera la memoria de los strings del alumno
+void destruirAlumno(Alumno &alu)
+{
+    strDestruir(alu.nombre);
+    strDestruir(alu.apellido);
+    strDestruir(alu.direccion);
+}
+
+// Desplegar todos los datos del alumno por pantalla
+void desplegarAlumno(Alumno alu)
+{
+    String nombre,apellido,direccion;
+    darNombreAlumno(alu, nombre);
+    darApellidoAlumno(alu, apellido);
+    darDireccionAlumno(alu, direccion);
+    printf("---------------------------------\n");
+    printf("Nombre: %s\n", nombre);
+    printf("Apellido: %s\n", apellido);
+    printf("Cedula: %ld\n", darCedulaAlumno(alu));
+    printf("Fecha nacimiento:");
+    mostrarFecha(alu.fecha_nacimiento);
+    printf("\nDireccion: %s\n", direccion);
+    printf("Telefono: %ld\n", darTelefonoAlumno(alu));
+}
 
 //Devolver CI de alumno
-long int darCiAlumno(alumno alu)
+long int darCedulaAlumno(Alumno alu)
 {
     return alu.ci;
 }
 
-//Devolver telefono alumno
-long int darTelAlumno(alumno alu)
-{
-    return alu.telefono;
-}
-
 //Devolver nombre alumno
-void darNomAlumno(alumno alu, String &s)
+void darNombreAlumno(Alumno alu, String &s)
 {
-    strcop(s, alu.nombre);
+    strCop(s, alu.nombre);
 }
 
 //Devolver apellido alumno
-void darApeAlumno(alumno alu, String &s)
+void darApellidoAlumno(Alumno alu, String &s)
 {
-    strcop(s, alu.apellido);
+    strCop(s, alu.apellido);
 }
 
 //Devolver fecha nacimiento alumno
-Fecha darFechaAlumno(alumno alu)
+Fecha darFechaNacAlumno(Alumno alu)
 {
-    return alu.fNac;
+    return alu.fecha_nacimiento;
 }
 
 //Devolver direccion alumno
-void darDirAlumno(alumno alu, String &s)
+void darDireccionAlumno(Alumno alu, String &s)
 {
-    strcop(s, alu.direccion);
+    strCop(s, alu.direccion);
 }
 
-//Alta usuario, verificar que la fecha de nacimiento es valida
-//Precondicion: el alumno no existe.
-void cargarAlumno(alumno &alu)
+//Devolver telefono alumno
+long int darTelefonoAlumno(Alumno alu)
 {
-    printf("\nIngrese el numero de cedula sin puntos ni guion: ");
-    scanf("%ld", alu.ci);
-    printf("\nIngrese el nombre: ");
-    strscan(alu.nombre);
-    printf("\nIngrese el apellido: ");
-    strscan(alu.apellido);
-    printf("\nIngrese la fecha de nacimiento (dd/mm/aaaa): ");
-    cargarFecha(alu.fNac);
-    printf("\nIngrese la direccion: ");
-    strscan(alu.direccion);
-    printf("\nIngrese el telefono: ");
-    scanf("%ld", alu.telefono);
+    return alu.telefono;
 }
-*/
