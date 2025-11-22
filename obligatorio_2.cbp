@@ -52,6 +52,8 @@
 		<Unit filename="Menu.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="RegistroStruct.cpp" />
+		<Unit filename="RegistroStruct.h" />
 		<Unit filename="RegistrosList.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

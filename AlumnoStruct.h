@@ -12,32 +12,40 @@ typedef struct
     String direccion;
     long int telefono;
 
-}alumno;
+} Alumno;
 
-//Devolver CI de alumno
-long int darCiAlumno(alumno alu);
+// =================================================================================================================
 
-//Devolver telefono alumno
-long int darTelAlumno(alumno alu);
-
-//Devolver nombre alumno
-void darNomAlumno(alumno alu, String &s);
-
-//Devolver apellido alumno
-void darApeAlumno(alumno alu, String &s);
-
-//Devolver fecha nacimiento alumno
-Fecha darFechaAlumno(alumno alu);
-
-//Devolver direccion alumno
-void darDirAlumno(alumno alu, String &s);
+// ---------- CARGAR ------------------------
 
 //Alta usuario, verificar que la fecha de nacimiento es valida
 //Precondicion: el alumno no existe.
-void cargarAlumno(alumno &alu);
+void cargarAlumno(Alumno &alu);
 
+// Libera la memoria de los strings del alumno
+void destruirAlumno(Alumno &alu);
 
+// ---------- DESPLEGAR ---------------------
 
+// Desplegar todos los datos del alumno por pantalla
+void desplegarAlumno(Alumno alu);
 
+//Devolver CI de alumno
+long int darCedulaAlumno(Alumno alu);
+
+//Devolver nombre alumno
+void darNombreAlumno(Alumno alu, String &s);
+
+//Devolver apellido alumno
+void darApellidoAlumno(Alumno alu, String &s);
+
+//Devolver fecha nacimiento alumno
+Fecha darFechaNacAlumno(Alumno alu);
+
+//Devolver direccion alumno
+void darDirAlumno(Alumno alu, String &s);
+
+//Devolver telefono alumno
+long int darTelAlumno(Alumno alu);
 
 #endif // ALUMNOS_H_INCLUDED
