@@ -1,15 +1,17 @@
 #include <iostream>
-#include "Taller.cpp"
+#include "RegistroStruct.h"
 
 int main()
 {
     //cout << "Hello world" << endl;
     //return 0;
 
-    // Prueba de taller enumerado
-    nomTaller t;
-    cargarTaller(t);
-    desplegarTaller(t);
+    // Prueba de registro struct
+    Registro reg;
+    cargarRegistro(reg);
+    desplegarRegistro(reg);
+    //cargarTaller(t);
+    //desplegarTaller(t);
 
 }
 

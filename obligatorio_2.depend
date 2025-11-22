@@ -64,9 +64,9 @@
 
 1763822117 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostree.cpp
 
-1763824332 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\main.cpp
+1763830039 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\main.cpp
 	<iostream>
-	"Taller.cpp"
+	"RegistroStruct.h"
 	"AlumnosTree.h"
 	"RegistrosList.h"
 
@@ -101,9 +101,15 @@
 1763822337 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\string.cpp
 	"String.h"
 
-1763823906 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostruct.cpp
+1763830294 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostruct.cpp
 	"RegistroStruct.h"
 
 1763824295 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\taller.cpp
+	"Taller.h"
+
+1763825166 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostruct.cpp
+	"RegistroStruct.h"
+
+1763824295 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\taller.cpp
 	"Taller.h"
 
