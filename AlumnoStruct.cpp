@@ -8,23 +8,23 @@ void cargarAlumno(Alumno &alu)
     scanf("%ld", &alu.ci);
     fflush(stdin);
 
-    printf("\nIngrese el nombre: ");
+    printf("Ingrese el nombre: ");
     strScan(alu.nombre);
 
-    printf("\nIngrese el apellido: ");
+    printf("Ingrese el apellido: ");
     strScan(alu.apellido);
 
-    printf("\nIngrese la fecha de nacimiento (dd/mm/aaaa): ");
+    printf("Ingrese la fecha de nacimiento (dd/mm/aaaa): ");
     do
     {
         cargarFecha(alu.fecha_nacimiento);
     }while (!esValidaFecha(alu.fecha_nacimiento));
     fflush(stdin);
     
-    printf("\nIngrese la direccion: ");
+    printf("Ingrese la direccion: ");
     strScan(alu.direccion);
 
-    printf("\nIngrese el telefono: ");
+    printf("Ingrese el telefono: ");
     scanf("%ld", &alu.telefono);
     fflush(stdin);
 }
@@ -49,6 +49,9 @@ void destruirAlumno(Alumno &alu)
 void desplegarAlumno(Alumno alu)
 {
     String nombre,apellido,direccion;
+    strCrear(nombre);
+    strCrear(apellido);
+    strCrear(direccion);
     darNombreAlumno(alu, nombre);
     darApellidoAlumno(alu, apellido);
     darDireccionAlumno(alu, direccion);
