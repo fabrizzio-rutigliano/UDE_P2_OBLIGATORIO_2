@@ -20,7 +20,7 @@ typedef nodoABB * AlumnoTree;
 void crearAlumnoTree(AlumnoTree &a);
 
 // Inserta un alumno manteniendo orden por cédula.
-// Pre: en el árbol NO existe un alumno con la misma cédula.
+// Precondición: en el árbol NO existe un alumno con la misma cédula.
 void insertarAlumnoOrdenado(AlumnoTree &a, Alumno alu);
 
 // ---------- OPERACIONES RECORRIDA  -------------------------------
@@ -35,8 +35,8 @@ void postOrdenAlumnoTree(AlumnoTree a);
 
 // ---------- OPERACIONES ELIMINACION -------------------------------
 
-// Elimina del árbol el alumno con esa cédula.
-// Pre: el alumno con esa cédula existe en el árbol.
+// Elimina del árbol el alumno con de cédula 'ci'.
+// Precondición: el alumno con la cédula 'ci' existe en el árbol.
 void eliminarAlumno(AlumnoTree &a, long int ci);
 
 // Libera toda la memoria del árbol y lo deja vacío (NULL).
@@ -48,15 +48,15 @@ void destruirAlumnoTree(AlumnoTree &a);
 Boolean esVacioAlumnoTree(AlumnoTree a);
 
 // Devolver la raiz del Arbol
-// Pre: arbol no vacio
+// Precondición: el arbol no es vacio
 Alumno darRaizAlumnoTree(AlumnoTree a);
 
 // Devuelve el hijo izquierdo del Arbol
-// Pre: arbol no vacio
+// Precondición: el arbol no es vacio
 AlumnoTree hijoIzqAlumnoTree(AlumnoTree a);
 
 // Devuelve el hijo derecho del arbol
-// Pre: arbol no vacio
+// Precondición: el arbol no es vacio
 AlumnoTree hijoDerAlumnoTree(AlumnoTree a);
 
 //Devuelve la cantidad de nodos que hay en el árbol.
@@ -75,10 +75,10 @@ int contarAlumnosFechaNac(AlumnoTree a, Fecha f);
 void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may, int &ig);
 
 // Dar el alumno de mayor edad
-// Pre: el arbol no esta vacio
+// Precondición: el arbol no esta vacio
 Alumno obtenerAlumnoMayorEdad(AlumnoTree a);
 
 // Lista por pantalla todos los alumnos que NO tienen registros
-void listarAlumnosSinRegistros(AlumnoTree a, Registros r);
+void listarAlumnosSinRegistros(AlumnoTree a, Registro r);
 
 #endif // ARBOL_H_INCLUDED
