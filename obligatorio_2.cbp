@@ -38,6 +38,8 @@
 		<Unit filename="AlumnoStruct.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="AlumnoStructTest.cpp" />
+		<Unit filename="AlumnoStructTest.h" />
 		<Unit filename="AlumnosTree.cpp" />
 		<Unit filename="AlumnosTree.h" />
 		<Unit filename="Archivos.cpp" />
@@ -54,6 +56,8 @@
 		</Unit>
 		<Unit filename="RegistroStruct.cpp" />
 		<Unit filename="RegistroStruct.h" />
+		<Unit filename="RegistroStructTest.cpp" />
+		<Unit filename="RegistroStructTest.h" />
 		<Unit filename="RegistrosList.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -68,6 +72,8 @@
 		<Unit filename="Taller.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="TallerTest.cpp" />
+		<Unit filename="TallerTest.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
