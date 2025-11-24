@@ -21,7 +21,7 @@ void insertarAlumnoOrdenado(AlumnoTree &a, Alumno alu)
     }
     else
     {
-        if (alu.ci < a->alu.ci)
+        if (alu.ci < darCedulaAlumno(a->alu))
         {
             insertarAlumnoOrdenado(a->hizq, alu);
         }
@@ -125,7 +125,7 @@ void eliminarAlumno(AlumnoTree &a, long int ci){
             while (p->hizq != NULL)
                 p = p->hizq;
 
-            long int ciSucesor = p->alu.ci;
+            long int ciSucesor = darCedulaAlumno(p->alu);
 
             // Copiar el valor del mínimo del hijo derecho en el nodo actual
             a->alu = p->alu;
@@ -198,9 +198,9 @@ int contarNodosAlumnoTree(AlumnoTree a)
 // Precondicion: el arbol contiene la Cedula
 AlumnoTree buscarNodoAlumnoPorCI(AlumnoTree a, long int ci){
 
-    if (ci == a->alu.ci)
+    if (ci == a->alu.ci) //creo que hay que usar la funcion darCedulaAlumno
         return a;
-    else if (ci < a->alu.ci)
+    else if (ci < darCedulaAlumno(a->alu))
         return buscarNodoAlumnoPorCI(a->hizq, ci);
     else
         return buscarNodoAlumnoPorCI(a->hder, ci);
@@ -215,14 +215,42 @@ int contarAlumnosFechaNac(AlumnoTree a, Fecha f)
     return (sonIgualesFechas(darFechaNacAlumno(a->alu), f) == TRUE)
            + contarAlumnosFechaNac(a->hizq, f)
            + contarAlumnosFechaNac(a->hder, f);
+
+    /*if(sonIgualesFechas(darFechaNacAlumno(a->alu), f))
+        return 1 + contarAlumnosFechaNac(a->hizq, f) + contarAlumnosFechaNac(a->hder, f);
+    else
+        return contarAlumnosFechaNac(a->hizq, f) + contarAlumnosFechaNac(a->hder, f);*/
 }
 
 // Dado un apellido, cuenta:
 // men: cuántos tienen apellido alfabéticamente menor
 // may: cuántos tienen apellido alfabéticamente mayor
 // ig:  cuántos tienen exactamente ese apellido
-void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may, int &ig){
-// falta desarrollar
+//precondicion: pasar variables int en 0;
+void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may, int &ig)// cambiar a iterativo
+{
+    if (a!=NULL)
+    {
+        darApellidoAlumno(a->alu, apeAux);
+        if (strEq(apeAux,apellido))
+        {
+            ig++;
+            contarAlumnosPorApellido(a->hizq, apellido, apeAux, men, may, ig);
+            contarAlumnosPorApellido(a->hder, apellido, apeAux, men, may, ig);
+        }
+        else if (strMen(apeAux,apellido))
+        {
+            men++;
+            contarAlumnosPorApellido(a->hizq, apellido, apeAux, men, may, ig);
+            contarAlumnosPorApellido(a->hder, apellido, apeAux, men, may, ig);
+        }
+        else if (strMen(apellido,apeAux))
+        {
+            may++;
+            contarAlumnosPorApellido(a->hizq, apellido, apeAux, men, may, ig);
+            contarAlumnosPorApellido(a->hder, apellido, apeAux, men, may, ig);
+        }
+    }
 }
 
 // Dar el alumno de mayor edad.
