@@ -1,5 +1,7 @@
 #include "AlumnosTree.h"
 
+// ---------- OPERACIONES CREACION/INSERCION ------------------------
+
 // Crear arbol vacío.
 void crearAlumnoTree(AlumnoTree &a)
 {
@@ -30,6 +32,129 @@ void insertarAlumnoOrdenado(AlumnoTree &a, Alumno alu)
     }
 }
 
+// Operacion que agrega elemento a la raiz del Arbol
+// dados dos arboles, agregar un valor como raiz de los dos arboles
+AlumnoTree consAlumnoTree(Alumno alu, AlumnoTree izq, AlumnoTree der)
+{
+    AlumnoTree aux = new nodoABB;
+    aux->alu = alu;
+    aux->hizq = izq;
+    aux->hder = der;
+    return aux;
+}
+
+// ---------- OPERACIONES RECORRIDA  -------------------------------
+
+// Recorre el árbol en preorden listando sus nodos por pantalla.
+void preOrdenAlumnoTree(AlumnoTree a)
+{
+    if (a != NULL)
+    {
+        desplegarAlumno(a->alu);
+        preOrdenAlumnoTree(a->hizq);
+        preOrdenAlumnoTree(a->hder);
+    }
+}
+
+// Recorre el árbol en orden listando sus nodos por pantalla.
+void ordenAlumnoTree(AlumnoTree a)
+{
+    if (a != NULL)
+    {
+        ordenAlumnoTree(a->hizq);
+        desplegarAlumno(a->alu);
+        ordenAlumnoTree(a->hder);
+    }
+}
+
+// Recorre el árbol en posorden listando sus nodos por pantalla.
+void postOrdenAlumnoTree(AlumnoTree a)
+{
+    if (a != NULL)
+    {
+        postOrdenAlumnoTree(a->hizq);
+        postOrdenAlumnoTree(a->hder);
+        desplegarAlumno(a->alu);
+    }
+}
+// ---------- OPERACIONES ELIMINACION -------------------------------
+
+// Elimina del árbol el alumno con cédula.
+// Precondición: el alumno con la cédula 'ci' existe en el árbol.
+void eliminarAlumno(AlumnoTree &a, long int ci){
+
+    // ----- PASO 1: BUSCAR EL VALOR EN EL ABB -----
+    if (ci < a->alu.ci)
+    {
+        eliminarAlumno(a->hizq, ci);
+    }
+    else if (ci > a->alu.ci)
+    {
+        eliminarAlumno(a->hder, ci);
+    }
+    else
+    {
+        // ----- LLEGAMOS AL NODO A ELIMINAR -----
+
+        // PASO 2 y 3: una vez encontrado verificar si ambos hijos vacíos
+        if (a->hizq == NULL && a->hder == NULL)
+        {
+            delete a;
+            a = NULL;
+        }
+        // PASO 4: hijo derecho vacío → reemplazar por hijo izquierdo
+        else if (a->hder == NULL)
+        {
+            AlumnoTree aux = a;
+            a = a->hizq;
+            delete aux;
+        }
+        // PASO 5: hijo izquierdo vacío → reemplazar por hijo derecho
+        else if (a->hizq == NULL)
+        {
+            AlumnoTree aux = a;
+            a = a->hder;
+            delete aux;
+        }
+        // PASO 6: tiene dos hijos,  copiar en su lugar el valor mínimo de su hijo
+        // derecho y posteriormente eliminar el valor mínimo del hijo derecho
+        else
+        {
+            // mínimo del subárbol derecho = sucesor en orden
+            AlumnoTree p = a->hder;
+            while (p->hizq != NULL)
+                p = p->hizq;
+
+            long int ciSucesor = p->alu.ci;
+
+            // Copiar el valor del mínimo del hijo derecho en el nodo actual
+            a->alu = p->alu;
+
+            // Eliminar el mínimo del hijo derecho
+            eliminarAlumno(a->hder, ciSucesor);
+        }
+    }
+}
+
+
+// Libera toda la memoria del árbol y lo deja vacío (NULL).
+void destruirAlumnoTree(AlumnoTree &a)
+{
+    if (a != NULL)
+    {
+        destruirAlumnoTree(a->hizq);
+        destruirAlumnoTree(a->hder);
+
+        // Libero la memoria del alumno (strings, etc.)
+        destruirAlumno(a->alu);
+
+        delete a;
+        a = NULL;
+    }
+}
+
+// ---------- OPERACIONES CONSULTAR/DESPLEGAR -----------------------
+
 // Operacion que devuelve si es vacio
 Boolean esVacioAlumnoTree(AlumnoTree a)
 {
@@ -39,7 +164,7 @@ Boolean esVacioAlumnoTree(AlumnoTree a)
     return esVacio;
 }
 
-// operacion que devuelve la raiz del Arbol
+// Operacion que devuelve la raiz del Arbol
 // Precondicion: arbol no vacio
 Alumno darRaizAlumnoTree(AlumnoTree a)
 {
@@ -60,51 +185,6 @@ AlumnoTree hijoDerAlumnoTree(AlumnoTree &a)
     return a->hder;
 }
 
-// operacion que agrega elemento a la raiz del Arbol
-// dados dos arboles, agregar un valor como raiz de los dos arboles
-AlumnoTree consAlumnoTree(Alumno al, AlumnoTree izq, AlumnoTree der)
-{
-    AlumnoTree aux = new nodoABB;
-    aux->alu = al;
-    aux->hizq = izq;
-    aux->hder = der;
-    return aux;
-}
-
-// Recorre el árbol en preorden listando sus nodos por pantalla.
-// Precondicion: arbol no vacio ?
-void preOrdenAlumnoTree(AlumnoTree a)
-{
-    if (a != NULL)
-    {
-        printf("%d", a->alu);
-        preOrdenAlumnoTree(a->hizq);
-        preOrdenAlumnoTree(a->hder);
-    }
-}
-
-// Recorre el árbol en orden listando sus nodos por pantalla.
-void ordenAlumnoTree(AlumnoTree a)
-{
-    if (a != NULL)
-    {
-        preOrdenAlumnoTree(a->hizq);
-        printf("%d", a->alu);
-        preOrdenAlumnoTree(a->hder);
-    }
-}
-
-// Recorre el árbol en posorden listando sus nodos por pantalla.
-void postOrdenAlumnoTree(AlumnoTree a)
-{
-    if (a != NULL)
-    {
-        preOrdenAlumnoTree(a->hizq);
-        preOrdenAlumnoTree(a->hder);
-        printf("%d", a->alu);
-    }
-}
-
 // Devuelve la cantidad de nodos que hay en el árbol.
 int contarNodosAlumnoTree(AlumnoTree a)
 {
@@ -113,3 +193,71 @@ int contarNodosAlumnoTree(AlumnoTree a)
     else
         return 1 + contarNodosAlumnoTree(a->hizq) + contarNodosAlumnoTree(a->hder);
 }
+
+// Devuelve el subárbol cuyo nodo raíz tiene la cédula.
+// Precondicion: el arbol contiene la Cedula
+AlumnoTree buscarNodoAlumnoPorCI(AlumnoTree a, long int ci){
+
+    if (ci == a->alu.ci)
+        return a;
+    else if (ci < a->alu.ci)
+        return buscarNodoAlumnoPorCI(a->hizq, ci);
+    else
+        return buscarNodoAlumnoPorCI(a->hder, ci);
+}
+
+// Contar alumnos que nacieron en una fecha dada
+int contarAlumnosFechaNac(AlumnoTree a, Fecha f)
+{
+    if (a == NULL)
+        return 0;
+
+    return (sonIgualesFechas(darFechaNacAlumno(a->alu), f) == TRUE)
+           + contarAlumnosFechaNac(a->hizq, f)
+           + contarAlumnosFechaNac(a->hder, f);
+}
+
+// Dado un apellido, cuenta:
+// men: cuántos tienen apellido alfabéticamente menor
+// may: cuántos tienen apellido alfabéticamente mayor
+// ig:  cuántos tienen exactamente ese apellido
+void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may, int &ig){
+// falta desarrollar
+}
+
+// Dar el alumno de mayor edad.
+// Precondición: el arbol no esta vacio
+Alumno obtenerAlumnoMayorEdad(AlumnoTree a){
+    //Buscamos obtener la fecha "mas menor/antigua de nacimiento".
+
+    Alumno mayor = a->alu; // Caso base.
+
+    if (a->hizq != NULL)
+    {
+        Alumno aluIzq = obtenerAlumnoMayorEdad(a->hizq);
+        // Si la fecha de nacimiento actual es mayor (más reciente) que la de mejorIzq,
+        // entonces mejorIzq es más viejo (fecha más antigua), lo reemplazo.
+        if (esMayorFechas(darFechaNacAlumno(mayor), darFechaNacAlumno(aluIzq)) == TRUE)
+            mayor = aluIzq;
+    }
+
+    if (a->hder != NULL)
+    {
+        Alumno aluDer = obtenerAlumnoMayorEdad(a->hder);
+        if (esMayorFechas(darFechaNacAlumno(mayor), darFechaNacAlumno(aluDer)) == TRUE)
+            mayor = aluDer;
+    }
+
+    return mayor;
+
+}
+
+// Lista por pantalla todos los alumnos que NO tienen registros
+void listarAlumnosSinRegistros(AlumnoTree a, Lista registros){
+// falta desarrollar
+}
+
+
+
+
+

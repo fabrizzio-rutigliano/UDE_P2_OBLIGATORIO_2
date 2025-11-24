@@ -34,7 +34,8 @@ void insBackLista(Lista &L, Registro reg)
 // Pre: lista NO vacía */
 void eliminarPrimeroLista(Lista &L)
 {
-    aux = L;
+
+    Lista aux = L;
     L=L->sig;
     delete aux;
 }
@@ -139,13 +140,13 @@ void listarRegistrosDeAlumno(Lista L, long int ci)
 // Pre: la fecha es válida.
 void listarRegistrosPosterioresA(Lista L, Fecha f)
 {
-    while(!esMayorFechas(darFechaFin((L->info),f)) && L->sig!=NULL)
+    while((!esMayorFechas(darFechaFin(L->info),f)) && (L->sig!=NULL))
     {
         L=L->sig;
     }
     while(L!=NULL)
     {
-        desplegarRegistro(L);
+        desplegarRegistro(L->info);
         L=L->sig;
     }
 }
@@ -154,12 +155,12 @@ void listarRegistrosPosterioresA(Lista L, Fecha f)
 // Pre: la fecha es válida.
 int contarRegistrosEnFecha(Lista L, Fecha f)
 {
-    int catidad;
-    while(!sonIgualesFechas(darFechaFin((L->info),f)) && L->sig!=NULL)
+    int cantidad;
+    while((!sonIgualesFechas(darFechaFin(L->info),f)) && (L->sig!=NULL))
     {
         L=L->sig;
     }
-    while(sonIgualesFechas(darFechaFin((L->info),f)) && L->sig!=NULL)
+    while((sonIgualesFechas(darFechaFin(L->info),f)) && (L->sig!=NULL))
         cantidad++;
     return cantidad;
 }
@@ -168,7 +169,8 @@ int contarRegistrosEnFecha(Lista L, Fecha f)
 // Pre: la lista NO está vacía.
 void tallerMasPopular(Lista L, nomTaller &taller, int &cantidad)
 {
-    int cantidad=0, pastas=0, pasbas=0, pasava=0, panaderia=0, vegana=0, mediterranea=0, parrilla=0, reposteria=0, oriental=0;
+    cantidad=0;
+    int pastas=0, pasbas=0, pasava=0, panaderia=0, vegana=0, mediterranea=0, parrilla=0, reposteria=0, oriental=0;
     while(L!=NULL)
     {
         switch (darNombreTaller(L->info))
@@ -189,7 +191,7 @@ void tallerMasPopular(Lista L, nomTaller &taller, int &cantidad)
             vegana++;
             break;
         case MEDITERRANEA:
-            mediterranea++
+            mediterranea++;
             break;
         case PARRILLA:
             parrilla++;
@@ -205,7 +207,7 @@ void tallerMasPopular(Lista L, nomTaller &taller, int &cantidad)
         if(cantidad<pastas)
         {
             cantidad=pastas;
-            taller=PASTAS
+            taller=PASTAS;
         }
         if(cantidad<pasbas)
         {
@@ -245,7 +247,7 @@ void tallerMasPopular(Lista L, nomTaller &taller, int &cantidad)
         if(cantidad<oriental)
         {
             cantidad=oriental;
-            taller=ORIENTAL
+            taller=ORIENTAL;
         }
     }
 }

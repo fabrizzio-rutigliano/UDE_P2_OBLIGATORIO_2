@@ -1,5 +1,7 @@
 #include "AlumnoStruct.h"
 
+// ---------- CARGAR ---------------------------------------------
+
 //Precondicion: el alumno no existe.
 void cargarAlumno(Alumno &alu)
 {
@@ -20,7 +22,7 @@ void cargarAlumno(Alumno &alu)
         cargarFecha(alu.fecha_nacimiento);
     }while (!esValidaFecha(alu.fecha_nacimiento));
     fflush(stdin);
-    
+
     printf("Ingrese la direccion: ");
     strScan(alu.direccion);
 
@@ -44,6 +46,8 @@ void destruirAlumno(Alumno &alu)
     strDestruir(alu.apellido);
     strDestruir(alu.direccion);
 }
+
+// ---------- DESPLEGAR ---------------------------------------------
 
 // Desplegar todos los datos del alumno por pantalla
 void desplegarAlumno(Alumno alu)

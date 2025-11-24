@@ -25,7 +25,7 @@ int darAnio(Fecha fecha);
 // Retorna verdadero si la fecha es válida (día, mes y año coherentes, incluyendo años bisiestos)
 Boolean esValidaFecha(Fecha fecha);
 
-// Retorna verdadero si ambas fechas representan el mismo día, mes y año
+// Retorna verdadero si a > b
 // Pre: ambas fechas son válidas.
 Boolean esMayorFechas(Fecha a, Fecha b);
 
