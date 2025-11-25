@@ -41,6 +41,9 @@ void destruirLista(Lista &L);
 // Devuelve verdadero si la lista está vacía.
 Boolean esListaVacia(Lista L);
 
+// Devuelve TRUE si el alumno existe en la lista
+Boolean existeAlumnoRegistro(Lista L, long int ci);
+
 // Devuelve la cantidad de elementos de la lista.
 int largoLista(Lista L);
 
