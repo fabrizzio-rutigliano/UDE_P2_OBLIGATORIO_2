@@ -1,6 +1,6 @@
 #include "Menu.h"
 
-/*
+
  //Menu inicial con opciones AB, Listado y Consultas
 void desplegarMenuPrincipal()
 {
@@ -34,6 +34,7 @@ void desplegarMenuConsultas()
     printf("\n2 - Mostrar apellidos menores, mayores e iguales");//submenu pide apellido
     printf("\n3 - Mostrar registros de finalizacion en una fecha"); //submenu que solicita fecha
     printf("\n3 - Mostrar taller mas popular"); //mostrar nombre y cantidad de registros, si hay mas de uno, mostrar uno solo
+    printf("\n3 - Mostrar alumno con mayor edad"); //mostrar ci, nombre,apellido y fecha de nacimiento, si hay mas de uno, mostrar uno solo
 }
 
 
@@ -43,11 +44,11 @@ void desplegarMenuSolicitaCi()
     printf("\nIngrese la CI: ");
 }
 
-
+//Precondicion: fecha valida
 //submenu que pide fecha
 void desplegarMenuFinalizadosFecha()
 {
-    printf("\nIngrese la fecha: ");
+    printf("\nIngrese la fecha\n------------------------\n\n ");
 }
 
 //submenu que pide apellido
@@ -55,4 +56,3 @@ void desplegarMenuApellido()
 {
     printf("\nIngrese el apellido: ");
 }
-*/

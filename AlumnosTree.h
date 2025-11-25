@@ -66,6 +66,9 @@ AlumnoTree hijoDerAlumnoTree(AlumnoTree a);
 //Devuelve la cantidad de nodos que hay en el árbol.
 int contarNodosAlumnoTree(AlumnoTree a);
 
+//Verifica existencia de alumno en arbol, devolviendo Boolean
+Boolean existeAlumnoTree(AlumnoTree a, Alumno alu);
+
 // Devuelve el subárbol cuyo nodo raíz tiene la cédula.
 // Precondicion: el arbol contiene la Cedula
 AlumnoTree buscarNodoAlumnoPorCI(AlumnoTree a, long int ci);

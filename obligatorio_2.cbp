@@ -32,12 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="AlumnoStruct.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="AlumnoStruct.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="AlumnoStruct.cpp" />
+		<Unit filename="AlumnoStruct.h" />
 		<Unit filename="AlumnoStructTest.cpp" />
 		<Unit filename="AlumnoStructTest.h" />
 		<Unit filename="AlumnosTree.cpp" />
@@ -48,30 +44,20 @@
 		<Unit filename="Boolean.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
-		<Unit filename="Menu.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="Menu.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
 		<Unit filename="RegistroStruct.cpp" />
 		<Unit filename="RegistroStruct.h" />
 		<Unit filename="RegistroStructTest.cpp" />
 		<Unit filename="RegistroStructTest.h" />
-		<Unit filename="RegistrosList.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="RegistrosList.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="RegistrosList.cpp" />
+		<Unit filename="RegistrosList.h" />
+		<Unit filename="RegistrosListTest.cpp" />
+		<Unit filename="RegistrosListTest.h" />
 		<Unit filename="String.cpp" />
 		<Unit filename="String.h" />
-		<Unit filename="Taller.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="Taller.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="Taller.cpp" />
+		<Unit filename="Taller.h" />
 		<Unit filename="TallerTest.cpp" />
 		<Unit filename="TallerTest.h" />
 		<Unit filename="main.cpp" />

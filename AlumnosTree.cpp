@@ -194,11 +194,26 @@ int contarNodosAlumnoTree(AlumnoTree a)
         return 1 + contarNodosAlumnoTree(a->hizq) + contarNodosAlumnoTree(a->hder);
 }
 
+//Verifica existencia de alumno en arbol, devolviendo Boolean
+Boolean existeAlumnoTree(AlumnoTree a, Alumno alu)
+{
+    if (darCedulaAlumno(alu) == darCedulaAlumno(darRaizAlumnoTree(a)))
+        return TRUE;
+    else if (darCedulaAlumno(alu) < darCedulaAlumno(darRaizAlumnoTree(a)))
+    {
+        return FALSE;
+        existeAlumnoTree(a->hizq, alu);
+    }
+    else
+        return FALSE;
+        existeAlumnoTree(a->hder, alu);
+}
+
 // Devuelve el subárbol cuyo nodo raíz tiene la cédula.
 // Precondicion: el arbol contiene la Cedula
 AlumnoTree buscarNodoAlumnoPorCI(AlumnoTree a, long int ci){
 
-    if (ci == a->alu.ci) //creo que hay que usar la funcion darCedulaAlumno
+    if (ci == darCedulaAlumno(a->alu))
         return a;
     else if (ci < darCedulaAlumno(a->alu))
         return buscarNodoAlumnoPorCI(a->hizq, ci);
@@ -227,7 +242,7 @@ int contarAlumnosFechaNac(AlumnoTree a, Fecha f)
 // may: cuántos tienen apellido alfabéticamente mayor
 // ig:  cuántos tienen exactamente ese apellido
 //precondicion: pasar variables int en 0;
-void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may, int &ig)// cambiar a iterativo
+void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may, int &ig)
 {
     if (a!=NULL)
     {
@@ -237,22 +252,21 @@ void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may,
         if (strEq(apeAux,apellido))
         {
             ig++;
-            contarAlumnosPorApellido(a->hizq, apellido, men, may, ig);
-            contarAlumnosPorApellido(a->hder, apellido, men, may, ig);
+
         }
         else if (strMen(apeAux,apellido))
         {
             men++;
-            contarAlumnosPorApellido(a->hizq, apellido, men, may, ig);
-            contarAlumnosPorApellido(a->hder, apellido, men, may, ig);
+
         }
-        else if (strMen(apellido,apeAux))
+        else
         {
             may++;
-            contarAlumnosPorApellido(a->hizq, apellido, men, may, ig);
-            contarAlumnosPorApellido(a->hder, apellido, men, may, ig);
+
         }
         strDestruir(apeAux);
+        contarAlumnosPorApellido(a->hizq, apellido, men, may, ig);
+        contarAlumnosPorApellido(a->hder, apellido, men, may, ig);
     }
 
 }
@@ -271,20 +285,42 @@ Alumno obtenerAlumnoMayorEdad(AlumnoTree a){
         Alumno aluIzq = obtenerAlumnoMayorEdad(a->hizq);
         // Si la fecha de nacimiento actual es mayor (más reciente) que la de mejorIzq,
         // entonces mejorIzq es más viejo (fecha más antigua), lo reemplazo.
-        if (esMayorFechas(darFechaNacAlumno(mayor), darFechaNacAlumno(aluIzq)) == TRUE)
+        if (esMayorFechas(darFechaNacAlumno(mayor), darFechaNacAlumno(aluIzq)))
             mayor = aluIzq;
     }
 
     if (a->hder != NULL)
     {
         Alumno aluDer = obtenerAlumnoMayorEdad(a->hder);
-        if (esMayorFechas(darFechaNacAlumno(mayor), darFechaNacAlumno(aluDer)) == TRUE)
+        if (esMayorFechas(darFechaNacAlumno(mayor), darFechaNacAlumno(aluDer)))
             mayor = aluDer;
     }
 
     return mayor;
 
 }
+
+/*
+void mayorPorNacimientoRec(ABB a, ABB &maxNodo)
+{
+    if(a!=NULL)
+    {
+        if (esMasViejo(darFecha(a->info), darFecha(maxNodo->info))
+            maxNodo = a; // recorrer sin variables temporales locales adicionales
+        mayorPorNacimientoRec(a->hizq, maxNodo);
+        mayorPorNacimientoRec(a->hder, maxNodo);
+    }
+
+}
+
+void DesplegarMayor(Arbol a)
+{
+    Arbol maxNodo = a;
+    mayorPorNacimientoRec(a, maxNodo);
+    DesplegarDatosAlumno(maxNodo->info);
+}
+
+*/
 
 // Lista por pantalla todos los alumnos que NO tienen registros
 void listarAlumnosSinRegistros(AlumnoTree a, Lista registros)

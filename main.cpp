@@ -1,5 +1,6 @@
 #include <iostream>
 //------includes utilizados por los modulos de testing, evaluar su eliminación en versión final.
+/*
 #include "RegistroStructTest.h"
 #include "TallerTest.h"
 #include "AlumnoStructTest.h"
@@ -25,17 +26,27 @@ int main()
 
     return 0;
 }
+*/
 
-/*#include "Archivos.h"
+
+#include "Archivos.h"
 #include "AlumnosTree.h"
 #include "RegistrosList.h"
+#include "Menu.h"
 
-using namespace std;
+//using namespace std;
 
 int main()
 {
-    int seleccion;
+
+    int seleccion, seleccionSubMenu;
+    AlumnoTree aTree;
+    crearAlumnoTree(aTree);
+    Lista regList;
+    crearLista(regList);
+    Alumno alu;
     //validar existencia archivo Alumnos, sino crearlo.
+    /*
     if (!existeArchivo("Alumnos.txt"))
     {
         crearArchivo("Alumnos.txt");
@@ -64,34 +75,45 @@ int main()
         printf("\nya existe Registros");
 
     //cargar en memoria registroslist
-
+*/
 
 
 
 
     //Menu inicial con opciones AB, Listado y Consultas
 
-    desplegarMenuPrinciapal();
-    scanf(&seleccion);
+    desplegarMenuPrincipal();
+    scanf("%d", &seleccion);
     switch(seleccion)
     {
         case 1:
-            int seleccionSubMenu;
             //Menu AB
             desplegarMenuAB();
-            scanf(&seleccionSubMenu);
+            scanf("%d", &seleccionSubMenu);
+            switch(seleccionSubMenu)
+            {
+                case 1:
+
+                    cargarAlumno(alu);
+                    if(!existeAlumnoTree(aTree, alu))
+                        insertarAlumnoOrdenado(aTree, alu);
+                    destruirAlumno(alu);
+                case 2:
+
+                    cargarAlumno(alu);
+                    insertarAlumnoOrdenado(aTree, alu);
+                    destruirAlumno(alu);
+            }
         break;
         case 2:
-            int seleccionSubMenu;
             //Menu de Listado
             desplegarMenuListados();
-            scanf(&seleccionSubMenu);
+            scanf("%d", &seleccionSubMenu);
         break;
         case 3:
-            int seleccionSubMenu;
             //Menu de Consultas
             desplegarMenuConsultas();
-            scanf(&seleccionSubMenu);
+            scanf("%d", &seleccionSubMenu);
         break;
     }
 
@@ -118,4 +140,4 @@ int main()
     //cerrar archivos
 
 }
-*/
+
