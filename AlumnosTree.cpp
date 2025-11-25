@@ -227,7 +227,7 @@ int contarAlumnosFechaNac(AlumnoTree a, Fecha f)
 // may: cuántos tienen apellido alfabéticamente mayor
 // ig:  cuántos tienen exactamente ese apellido
 //precondicion: pasar variables int en 0;
-void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may, int &ig)// cambiar a iterativo
+/*void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may, int &ig)// cambiar a iterativo
 {
     if (a!=NULL)
     {
@@ -251,7 +251,7 @@ void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may,
             contarAlumnosPorApellido(a->hder, apellido, apeAux, men, may, ig);
         }
     }
-}
+}*/
 
 // Dar el alumno de mayor edad.
 // Precondición: el arbol no esta vacio

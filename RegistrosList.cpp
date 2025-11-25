@@ -3,18 +3,17 @@
 // ---------- OPERACIONES CREACION/INSERCION ------------------------
 
 // Crear lista.
-void Crear (Lista &L)
+void crearLista(Lista &L)
 {
     L = NULL;
 }
-
 
 // Agrega un nodo nuevo al principio de la lista.
 void insFrontLista(Lista &L, Registro reg)
 {
     Lista aux = new NodoL;
-    aux -> info = reg;
-    aux -> sig = L;
+    aux->info = reg;
+    aux->sig = L;
     L = aux;
 }
 
@@ -24,9 +23,12 @@ void insBackLista(Lista &L, Registro reg)
     Lista aux = new NodoL;
     aux->info = reg;
     aux->sig = NULL;
+    if (esListaVacia(L))
+    {
+        L = aux;
+    }
     L->sig = aux;
 }
-
 
 // ---------- OPERACIONES ELIMINACION --------------------------------
 
@@ -36,20 +38,20 @@ void eliminarPrimeroLista(Lista &L)
 {
 
     Lista aux = L;
-    L=L->sig;
+    L = L->sig;
     delete aux;
 }
 
 // Eliminar registros con una cedula dada
 void eliminarOcurrenciaLista(Lista &L, long int ci)
 {
-    if(L!=NULL)
+    if (L != NULL)
     {
-        if(darCedula(L->info) == ci)
+        if (darCedula(L->info) == ci)
         {
-            NodoL * aux;
+            NodoL *aux;
             aux = L;
-            L=L->sig;
+            L = L->sig;
             delete aux;
             eliminarOcurrenciaLista(L, ci);
         }
@@ -64,16 +66,14 @@ void eliminarOcurrenciaLista(Lista &L, long int ci)
 // Elimina todos los nodos de la lista y la deja vacía (NULL)
 void destruirLista(Lista &L)
 {
-    NodoL * aux;
-    while (L!=NULL)
+    NodoL *aux;
+    while (L != NULL)
     {
-        aux=L;
-        L=L->sig;
-        delete(aux);
+        aux = L;
+        L = L->sig;
+        delete (aux);
     }
 }
-
-
 
 // ---------- OPERACIONES CONSULTAR/DESPLEGAR ------------------------
 
@@ -89,11 +89,11 @@ Boolean esListaVacia(Lista L)
 // Devuelve la cantidad de elementos de la lista.
 int largoLista(Lista L)
 {
-    int largo=0;
-    while (L!=NULL)
+    int largo = 0;
+    while (L != NULL)
     {
         largo++;
-        L=L->sig;
+        L = L->sig;
     }
     return largo;
 }
@@ -101,10 +101,10 @@ int largoLista(Lista L)
 // Desplegar elementos de la lista
 void desplegarLista(Lista L)
 {
-    while(L!=NULL)
+    while (L != NULL)
     {
         desplegarRegistro(L->info);
-        L=L->sig;
+        L = L->sig;
     }
 }
 
@@ -119,20 +119,24 @@ Registro primerRegistro(Lista L)
 // Pre: lista NO vacía
 Registro ultimoRegistro(Lista L)
 {
-    if(L->sig==NULL)
+    if (L->sig == NULL)
         return L->info;
     else
-        ultimoRegistro(L->sig);
+        return ultimoRegistro(L->sig);
 }
 
 // Listar todos los registros de un alumno (en orden cronológico).
 // Pre: el alumno con esa cédula existe.
 void listarRegistrosDeAlumno(Lista L, long int ci)
 {
-    while(L!=NULL)
+    while (L != NULL)
     {
-        desplegarRegistro(L->info);
-        L=L->sig;
+        Registro reg = L->info;
+        if (reg.cedula == ci)
+        {
+            desplegarRegistro(L->info);
+        }
+        L = L->sig;
     }
 }
 
@@ -140,14 +144,17 @@ void listarRegistrosDeAlumno(Lista L, long int ci)
 // Pre: la fecha es válida.
 void listarRegistrosPosterioresA(Lista L, Fecha f)
 {
-    while((!esMayorFechas(darFechaFin(L->info),f)) && (L->sig!=NULL))
+    while ((!esMayorFechas(darFechaFin(L->info), f)) && (L->sig != NULL))
     {
-        L=L->sig;
+        L = L->sig;
     }
-    while(L!=NULL)
+    if (esMayorFechas(darFechaFin(L->info), f))
     {
-        desplegarRegistro(L->info);
-        L=L->sig;
+        while (L != NULL)
+        {
+            desplegarRegistro(L->info);
+            L = L->sig;
+        }
     }
 }
 
@@ -155,13 +162,17 @@ void listarRegistrosPosterioresA(Lista L, Fecha f)
 // Pre: la fecha es válida.
 int contarRegistrosEnFecha(Lista L, Fecha f)
 {
-    int cantidad;
-    while((!sonIgualesFechas(darFechaFin(L->info),f)) && (L->sig!=NULL))
+    int cantidad = 0;
+    while (L != NULL && (!sonIgualesFechas(darFechaFin(L->info), f)))
     {
-        L=L->sig;
+        L = L->sig;
     }
-    while((sonIgualesFechas(darFechaFin(L->info),f)) && (L->sig!=NULL))
+    while (L != NULL && (sonIgualesFechas(darFechaFin(L->info), f)))
+    {
         cantidad++;
+        L = L->sig;
+    }
+
     return cantidad;
 }
 
@@ -169,9 +180,9 @@ int contarRegistrosEnFecha(Lista L, Fecha f)
 // Pre: la lista NO está vacía.
 void tallerMasPopular(Lista L, nomTaller &taller, int &cantidad)
 {
-    cantidad=0;
-    int pastas=0, pasbas=0, pasava=0, panaderia=0, vegana=0, mediterranea=0, parrilla=0, reposteria=0, oriental=0;
-    while(L!=NULL)
+    cantidad = 0;
+    int pastas = 0, pasbas = 0, pasava = 0, panaderia = 0, vegana = 0, mediterranea = 0, parrilla = 0, reposteria = 0, oriental = 0;
+    while (L != NULL)
     {
         switch (darNombreTaller(L->info))
         {
@@ -203,52 +214,51 @@ void tallerMasPopular(Lista L, nomTaller &taller, int &cantidad)
             oriental++;
             break;
         }
-        L=L->sig;
-        if(cantidad<pastas)
+        L = L->sig;
+        if (cantidad < pastas)
         {
-            cantidad=pastas;
-            taller=PASTAS;
+            cantidad = pastas;
+            taller = PASTAS;
         }
-        if(cantidad<pasbas)
+        if (cantidad < pasbas)
         {
-            cantidad=pasbas;
-            taller=PASTELERIA_BASICA;
+            cantidad = pasbas;
+            taller = PASTELERIA_BASICA;
         }
-        if(cantidad<pasava)
+        if (cantidad < pasava)
         {
-            cantidad=pasava;
-            taller=PASTELERIA_AVANZADA;
+            cantidad = pasava;
+            taller = PASTELERIA_AVANZADA;
         }
-        if(cantidad<panaderia)
+        if (cantidad < panaderia)
         {
-            cantidad=panaderia;
-            taller=PANADERIA;
+            cantidad = panaderia;
+            taller = PANADERIA;
         }
-        if(cantidad<vegana)
+        if (cantidad < vegana)
         {
-            cantidad=vegana;
-            taller=VEGANA;
+            cantidad = vegana;
+            taller = VEGANA;
         }
-        if(cantidad<mediterranea)
+        if (cantidad < mediterranea)
         {
-            cantidad=mediterranea;
-            taller=MEDITERRANEA;
+            cantidad = mediterranea;
+            taller = MEDITERRANEA;
         }
-        if(cantidad<parrilla)
+        if (cantidad < parrilla)
         {
-            cantidad=parrilla;
-            taller=PARRILLA;
+            cantidad = parrilla;
+            taller = PARRILLA;
         }
-        if(cantidad<reposteria)
+        if (cantidad < reposteria)
         {
-            cantidad=reposteria;
-            taller=REPOSTERIA;
+            cantidad = reposteria;
+            taller = REPOSTERIA;
         }
-        if(cantidad<oriental)
+        if (cantidad < oriental)
         {
-            cantidad=oriental;
-            taller=ORIENTAL;
+            cantidad = oriental;
+            taller = ORIENTAL;
         }
     }
 }
-

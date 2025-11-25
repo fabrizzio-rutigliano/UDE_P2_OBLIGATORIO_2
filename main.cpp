@@ -3,6 +3,7 @@
 #include "RegistroStructTest.h"
 #include "TallerTest.h"
 #include "AlumnoStructTest.h"
+#include "RegistrosListTest.h"
 
 int main()
 {
@@ -14,7 +15,13 @@ int main()
     //testCargaDespliegeRegistro();
 
     // Prueba carga y despliegue alumno
-    testCargaDespliegeAlumno();
+    //testCargaDespliegeAlumno();
+
+    // Pruebas sobre RegistrosList
+    //testListarRegistrosDeAlumno();
+    //testListarRegistrosPosterioresA();
+    //testContarRegistrosEnFecha();
+    testTallerMasPopular();
 
     return 0;
 }
