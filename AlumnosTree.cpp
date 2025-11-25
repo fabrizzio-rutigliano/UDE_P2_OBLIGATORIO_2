@@ -231,27 +231,33 @@ void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may,
 {
     if (a!=NULL)
     {
+        String apeAux;
+        strCrear(apeAux);
         darApellidoAlumno(a->alu, apeAux);
         if (strEq(apeAux,apellido))
         {
             ig++;
-            contarAlumnosPorApellido(a->hizq, apellido, apeAux, men, may, ig);
-            contarAlumnosPorApellido(a->hder, apellido, apeAux, men, may, ig);
+            contarAlumnosPorApellido(a->hizq, apellido, men, may, ig);
+            contarAlumnosPorApellido(a->hder, apellido, men, may, ig);
         }
         else if (strMen(apeAux,apellido))
         {
             men++;
-            contarAlumnosPorApellido(a->hizq, apellido, apeAux, men, may, ig);
-            contarAlumnosPorApellido(a->hder, apellido, apeAux, men, may, ig);
+            contarAlumnosPorApellido(a->hizq, apellido, men, may, ig);
+            contarAlumnosPorApellido(a->hder, apellido, men, may, ig);
         }
         else if (strMen(apellido,apeAux))
         {
             may++;
-            contarAlumnosPorApellido(a->hizq, apellido, apeAux, men, may, ig);
-            contarAlumnosPorApellido(a->hder, apellido, apeAux, men, may, ig);
+            contarAlumnosPorApellido(a->hizq, apellido, men, may, ig);
+            contarAlumnosPorApellido(a->hder, apellido, men, may, ig);
         }
+        strDestruir(apeAux);
     }
+
 }
+
+
 
 // Dar el alumno de mayor edad.
 // Precondición: el arbol no esta vacio
@@ -281,8 +287,15 @@ Alumno obtenerAlumnoMayorEdad(AlumnoTree a){
 }
 
 // Lista por pantalla todos los alumnos que NO tienen registros
-void listarAlumnosSinRegistros(AlumnoTree a, Lista registros){
-// falta desarrollar
+void listarAlumnosSinRegistros(AlumnoTree a, Lista registros)
+{
+    if (a != NULL)
+    {
+        listarAlumnosSinRegistros(a->hizq, registros);
+        if(!existeAlumnoRegistro(registros, darCedulaAlumno(a->alu)))
+            desplegarAlumno(a->alu);
+        listarAlumnosSinRegistros(a->hder, registros);
+    }
 }
 
 

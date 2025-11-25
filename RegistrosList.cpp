@@ -86,6 +86,18 @@ Boolean esListaVacia(Lista L)
     return es;
 }
 
+// Devuelve TRUE si el alumno existe en la lista
+Boolean existeAlumnoRegistro(Lista L, long int ci)
+{
+    Boolean es = FALSE;
+    while(es==FALSE && L!=NULL)
+    {
+        if(darCedula(L->info)==ci)
+            es=TRUE;
+        L=L->sig;
+    }
+}
+
 // Devuelve la cantidad de elementos de la lista.
 int largoLista(Lista L)
 {
