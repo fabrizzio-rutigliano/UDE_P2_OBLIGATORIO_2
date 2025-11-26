@@ -18,7 +18,7 @@ void desplegarMenuAB()
     printf("\n1 - Alta alumno");
     printf("\n2 - Alta de registro de finalizacion de taller");
     printf("\n3 - Baja de alumno");//Borrarlo de AlumnosTree y RegistrosList
-    printf("\n0 - Salir");
+    printf("\n0 - Volver al menu principal");
     printf("\nIngrese opcion: ");
 }
 
@@ -29,7 +29,7 @@ void desplegarMenuListados()
     printf("\n2 - Listar alumnos que no han completado ningun taller");//orden CI menor a mayor, datos del alumno todos en misma linea
     printf("\n3 - Listar talleres finalizados por un alumno"); //submenu que solicita CI, ordenados en forma cronológica, datos de cada registro en misma linea
     printf("\n3 - Listar Talleres finalizados despues de una fecha"); //submenu que pide fecha, ordena cronologicamente, datos de cada registro en misma linea
-    printf("\n0 - Salir");
+    printf("\n0 - Volver al menu principal");
     printf("\nIngrese opcion: ");
 }
 
@@ -39,9 +39,9 @@ void desplegarMenuConsultas()
     printf("\n1 - Mostrar cantidad de alumnos nacidos en una fecha");//submenu pide fecha
     printf("\n2 - Mostrar apellidos menores, mayores e iguales");//submenu pide apellido
     printf("\n3 - Mostrar registros de finalizacion en una fecha"); //submenu que solicita fecha
-    printf("\n3 - Mostrar taller mas popular"); //mostrar nombre y cantidad de registros, si hay mas de uno, mostrar uno solo
-    printf("\n3 - Mostrar alumno con mayor edad"); //mostrar ci, nombre,apellido y fecha de nacimiento, si hay mas de uno, mostrar uno solo
-    printf("\n0 - Salir");
+    printf("\n4 - Mostrar taller mas popular"); //mostrar nombre y cantidad de registros, si hay mas de uno, mostrar uno solo
+    printf("\n5 - Mostrar alumno con mayor edad"); //mostrar ci, nombre,apellido y fecha de nacimiento, si hay mas de uno, mostrar uno solo
+    printf("\n0 - Volver al menu principal");
     printf("\nIngrese opcion: ");
 }
 
@@ -63,4 +63,18 @@ void desplegarMenuFinalizadosFecha()
 void desplegarMenuApellido()
 {
     printf("\nIngrese el apellido: ");
+}
+
+//Muestra un valor entero en pantalla
+void desplegarInt(int a)
+{
+    printf("\n%d\n",a);
+}
+
+//Muestra los valores  menores, mayores e iguales para la consulta por apellidos
+void desplegarMayMenIg(int men, int may, int ig)
+{
+    printf("\nMenores: %d",men);
+    printf("\nMayores: %d",may);
+    printf("\nIguales: %d\n",ig);
 }

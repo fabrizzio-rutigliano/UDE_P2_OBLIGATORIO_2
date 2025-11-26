@@ -25,4 +25,10 @@ void desplegarMenuFinalizadosFecha();
 //submenu que pide apellido
 void desplegarMenuApellido();
 
+//Muestra un valor entero en pantalla
+void desplegarInt(int a);
+
+//Muestra los valores  menores, mayores e iguales para la consulta por apellidos
+void desplegarMayMenIg(int men, int may, int ig);
+
 #endif // MENU_H_INCLUDED

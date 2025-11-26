@@ -39,7 +39,7 @@ int main()
 int main()
 {
 
-    int seleccion, seleccionSubMenu;
+    int seleccion, seleccionSubMenu, men, may, ig;
     AlumnoTree aTree;
     crearAlumnoTree(aTree);
     Lista regList;
@@ -48,6 +48,7 @@ int main()
     Registro reg;
     long int ci;
     Fecha fe;
+    String ape;
     //validar existencia archivo Alumnos, sino crearlo.
     /*
     if (!existeArchivo("Alumnos.txt"))
@@ -121,71 +122,71 @@ int main()
                            default:
                                break;
                     }
-                    break;
                 }while(seleccionSubMenu!=0);
             break;
 
 
-        case 2:
-            do
-            {
-                //Menu de Listado
-                desplegarMenuListados();
-                scanf("%d", &seleccionSubMenu);
-                switch(seleccionSubMenu)
+            case 2:
+                do
                 {
-                    case 1:
-                        ordenAlumnoTree(aTree);
-                        break;
-                    case 2:
-                        listarAlumnosSinRegistros(aTree, regList);
-                        break;
-                    case 3:
-                        cargarCedula(ci);
-                        listarRegistrosDeAlumno(regList, ci);
-                        break;
-                    case 4:
-                        cargarFecha(fe);
-                        listarRegistrosPosterioresA(regList, fe);
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            }while(seleccionSubMenu!=0);
+                    //Menu de Listado
+                    desplegarMenuListados();
+                    scanf("%d", &seleccionSubMenu);
+                    switch(seleccionSubMenu)
+                    {
+                        case 1:
+                            ordenAlumnoTree(aTree);
+                            break;
+                        case 2:
+                            listarAlumnosSinRegistros(aTree, regList);
+                            break;
+                        case 3:
+                            cargarCedula(ci);
+                            listarRegistrosDeAlumno(regList, ci);
+                            break;
+                        case 4:
+                            cargarFecha(fe);
+                            listarRegistrosPosterioresA(regList, fe);
+                            break;
+                        default:
+                            break;
+                    }
+                }while(seleccionSubMenu!=0);
             break;
-        case 3:
-            do
-            {
-                //Menu de Consultas
-                desplegarMenuConsultas();
-                scanf("%d", &seleccionSubMenu);
-                switch(seleccionSubMenu)
+            case 3:
+                do
                 {
-                    case 1:
+                    //Menu de Consultas
+                    desplegarMenuConsultas();
+                    scanf("%d", &seleccionSubMenu);
+                    switch(seleccionSubMenu)
+                    {
+                        case 1:
+                            cargarFecha(fe);
+                            desplegarInt(contarAlumnosFechaNac(aTree,fe));
+                        break;
+                        case 2:
+                            desplegarMenuApellido();
+                            strCrear(ape);
+                            strScan(ape);
+                            contarAlumnosPorApellido(aTree, ape, men, may, ig);
+                            desplegarMayMenIg(men, may, ig);
+                        break;
+                        case 3:
+                            cargarFecha(fe);
+                            desplegarInt(contarRegistrosEnFecha(regList,fe));
+                        break;
+                        case 4:
+
 
                         break;
-                    case 2:
+                        case 5:
 
                         break;
-                    case 3:
+                    }
 
-
-                        break;
-                    case 4:
-
-
-                        break;
-                    case 0:
-                        break;
-
-                }
-                break;
-            }while(seleccionSubMenu!=0);
-        break;
-        case 0:
+                }while(seleccionSubMenu!=0);
             break;
-
         }
 
 
