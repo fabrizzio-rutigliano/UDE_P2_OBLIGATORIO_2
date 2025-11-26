@@ -85,74 +85,111 @@ int main()
 
     //Menu inicial con opciones AB, Listado y Consultas
 
-    desplegarMenuPrincipal();
-    scanf("%d", &seleccion);
-    while(seleccion!=0)
+
+    do
     {
+        desplegarMenuPrincipal();
+        scanf("%d", &seleccion);
         switch(seleccion)
         {
-        case 1:
-            //Menu AB
-            desplegarMenuAB();
-            scanf("%d", &seleccionSubMenu);
-            switch(seleccionSubMenu)
-            {
             case 1:
-
-                cargarAlumno(alu);
-                if(!existeAlumnoTree(aTree, alu))
-                    insertarAlumnoOrdenado(aTree, alu);
-                destruirAlumno(alu);
-                break;
-
-            case 2:
-
-                cargarRegistro(reg);
-                if(esMayorFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))) || sonIgualesFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))))
-                    insBackLista(regList, reg);
-                break;
-            case 3:
-
-                cargarCedula(ci);
-                if(existeAlumnoTree(aTree, buscarNodoAlumnoPorCI(aTree, ci)->info))
-                    eliminarAlumno(aTree, ci);
-                if(existeAlumnoRegistro(regList, ci))
-                    eliminarOcurrenciaLista(regList, ci);
-                break;
-            }
+                do
+                {
+                    //Menu AB
+                    desplegarMenuAB();
+                    scanf("%d", &seleccionSubMenu);
+                    switch(seleccionSubMenu)
+                    {
+                           case 1:
+                               cargarAlumno(alu);
+                               if(!existeAlumnoTree(aTree, alu))
+                                   insertarAlumnoOrdenado(aTree, alu);
+                               destruirAlumno(alu);
+                               break;
+                           case 2:
+                               cargarRegistro(reg);
+                               if(esMayorFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))) || sonIgualesFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))))
+                                   insBackLista(regList, reg);
+                               break;
+                           case 3:
+                               cargarCedula(ci);
+                               if(existeAlumnoTree(aTree, buscarNodoAlumnoPorCI(aTree, ci)->info))
+                                   eliminarAlumno(aTree, ci);
+                               if(existeAlumnoRegistro(regList, ci))
+                                   eliminarOcurrenciaLista(regList, ci);
+                               break;
+                           default:
+                               break;
+                    }
+                    break;
+                }while(seleccionSubMenu!=0);
             break;
+
 
         case 2:
-            //Menu de Listado
-            desplegarMenuListados();
-            scanf("%d", &seleccionSubMenu);
-            switch(seleccionSubMenu)
+            do
             {
-            case 1:
-                ordenAlumnoTree(aTree);
+                //Menu de Listado
+                desplegarMenuListados();
+                scanf("%d", &seleccionSubMenu);
+                switch(seleccionSubMenu)
+                {
+                    case 1:
+                        ordenAlumnoTree(aTree);
+                        break;
+                    case 2:
+                        listarAlumnosSinRegistros(aTree, regList);
+                        break;
+                    case 3:
+                        cargarCedula(ci);
+                        listarRegistrosDeAlumno(regList, ci);
+                        break;
+                    case 4:
+                        cargarFecha(fe);
+                        listarRegistrosPosterioresA(regList, fe);
+                        break;
+                    default:
+                        break;
+                }
                 break;
-            case 2:
-                listarAlumnosSinRegistros(aTree, regList);
-                break;
-            case 3:
-                cargarCedula(ci);
-                listarRegistrosDeAlumno(regList, ci);
-                break;
-            case 4:
-                cargarFecha(fe);
-                listarRegistrosPosterioresA(regList, fe);
-                break;
-            }
+            }while(seleccionSubMenu!=0);
             break;
         case 3:
-            //Menu de Consultas
-            desplegarMenuConsultas();
-            scanf("%d", &seleccionSubMenu);
+            do
+            {
+                //Menu de Consultas
+                desplegarMenuConsultas();
+                scanf("%d", &seleccionSubMenu);
+                switch(seleccionSubMenu)
+                {
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+
+                        break;
+                    case 4:
+
+
+                        break;
+                    case 0:
+                        break;
+
+                }
+                break;
+            }while(seleccionSubMenu!=0);
+        break;
+        case 0:
             break;
+
         }
 
 
-    }
+    }while(seleccion!=0);
 
 
 

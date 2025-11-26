@@ -11,7 +11,7 @@
 1764021632 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Fecha.h
 	"Boolean.h"
 
-1764118622 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/main.cpp
+1764169564 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/main.cpp
 	<iostream>
 	"RegistroStructTest.h"
 	"TallerTest.h"
@@ -22,10 +22,10 @@
 	"RegistrosList.h"
 	"Menu.h"
 
-1764114110 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnosTree.cpp
+1764160661 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnosTree.cpp
 	"AlumnosTree.h"
 
-1764113284 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnosTree.h
+1764160661 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnosTree.h
 	"AlumnoStruct.h"
 	"RegistrosList.h"
 
@@ -51,10 +51,10 @@
 1764031471 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/RegistrosList.h
 	"RegistroStruct.h"
 
-1764107126 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Archivos.cpp
+1764160661 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Archivos.cpp
 	"Archivos.h"
 
-1764107126 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Archivos.h
+1764160661 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Archivos.h
 	"AlumnosTree.h"
 	"RegistrosList.h"
 
@@ -200,6 +200,6 @@
 1764108567 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Menu.h
 	<stdio.h>
 
-1764108470 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Menu.cpp
+1764165306 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Menu.cpp
 	"Menu.h"
 

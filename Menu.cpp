@@ -9,6 +9,7 @@ void desplegarMenuPrincipal()
     printf("\n2 - Listados");
     printf("\n3 - Consultas");
     printf("\n0 - Salir");
+    printf("\nIngrese opcion: ");
 }
 
 void desplegarMenuAB()
@@ -17,6 +18,8 @@ void desplegarMenuAB()
     printf("\n1 - Alta alumno");
     printf("\n2 - Alta de registro de finalizacion de taller");
     printf("\n3 - Baja de alumno");//Borrarlo de AlumnosTree y RegistrosList
+    printf("\n0 - Salir");
+    printf("\nIngrese opcion: ");
 }
 
 void desplegarMenuListados()
@@ -26,6 +29,8 @@ void desplegarMenuListados()
     printf("\n2 - Listar alumnos que no han completado ningun taller");//orden CI menor a mayor, datos del alumno todos en misma linea
     printf("\n3 - Listar talleres finalizados por un alumno"); //submenu que solicita CI, ordenados en forma cronológica, datos de cada registro en misma linea
     printf("\n3 - Listar Talleres finalizados despues de una fecha"); //submenu que pide fecha, ordena cronologicamente, datos de cada registro en misma linea
+    printf("\n0 - Salir");
+    printf("\nIngrese opcion: ");
 }
 
 void desplegarMenuConsultas()
@@ -36,6 +41,8 @@ void desplegarMenuConsultas()
     printf("\n3 - Mostrar registros de finalizacion en una fecha"); //submenu que solicita fecha
     printf("\n3 - Mostrar taller mas popular"); //mostrar nombre y cantidad de registros, si hay mas de uno, mostrar uno solo
     printf("\n3 - Mostrar alumno con mayor edad"); //mostrar ci, nombre,apellido y fecha de nacimiento, si hay mas de uno, mostrar uno solo
+    printf("\n0 - Salir");
+    printf("\nIngrese opcion: ");
 }
 
 
