@@ -48,7 +48,8 @@ int main()
     Registro reg;
     long int ci;
     Fecha fe;
-    String ape;
+    String straux;
+    nomTaller tall;
     //validar existencia archivo Alumnos, sino crearlo.
     /*
     if (!existeArchivo("Alumnos.txt"))
@@ -167,9 +168,9 @@ int main()
                         break;
                         case 2:
                             desplegarMenuApellido();
-                            strCrear(ape);
-                            strScan(ape);
-                            contarAlumnosPorApellido(aTree, ape, men, may, ig);
+                            strCrear(straux);
+                            strScan(straux);
+                            contarAlumnosPorApellido(aTree, straux, men, may, ig);
                             desplegarMayMenIg(men, may, ig);
                         break;
                         case 3:
@@ -177,7 +178,9 @@ int main()
                             desplegarInt(contarRegistrosEnFecha(regList,fe));
                         break;
                         case 4:
-
+                            tallerMasPopular(regList, tall, ig);
+                            desplegarTaller(tall);
+                            desplegarInt(ig);
 
                         break;
                         case 5:
