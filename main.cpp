@@ -184,7 +184,7 @@ int main()
 
                         break;
                         case 5:
-
+                            desplegarAlumno(obtenerAlumnoMayorEdad(aTree));
                         break;
                     }
 
