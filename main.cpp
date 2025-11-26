@@ -45,6 +45,8 @@ int main()
     Lista regList;
     crearLista(regList);
     Alumno alu;
+    Registro reg;
+    long int ci;
     //validar existencia archivo Alumnos, sino crearlo.
     /*
     if (!existeArchivo("Alumnos.txt"))
@@ -98,17 +100,37 @@ int main()
                     if(!existeAlumnoTree(aTree, alu))
                         insertarAlumnoOrdenado(aTree, alu);
                     destruirAlumno(alu);
+                    break;
+
                 case 2:
 
-                    cargarAlumno(alu);
-                    insertarAlumnoOrdenado(aTree, alu);
-                    destruirAlumno(alu);
+                    cargarRegistro(reg);
+                    if(esMayorFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))) || sonIgualesFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))))
+                        insBackLista(regList, reg);
+                    break;
+                case 3:
+
+                    cargarCedula(ci);
+                    if(existeAlumnoTree(aTree, buscarNodoAlumnoPorCI(aTree, ci)->alu))
+                        eliminarAlumno(aTree, ci);
+                    if(existeAlumnoRegistro(regList, ci))
+                        eliminarOcurrenciaLista(regList, ci);
+                    break;
             }
         break;
+
         case 2:
             //Menu de Listado
             desplegarMenuListados();
             scanf("%d", &seleccionSubMenu);
+            switch(seleccionSubMenu)
+            {
+                case 1:
+                    ordenAlumnoTree(aTree);
+                    break;
+                case 2:
+                    listarAlumnosSinRegistros(aTree, regList);
+            }
         break;
         case 3:
             //Menu de Consultas

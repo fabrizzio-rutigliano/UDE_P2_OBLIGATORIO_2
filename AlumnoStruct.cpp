@@ -59,14 +59,13 @@ void desplegarAlumno(Alumno alu)
     darNombreAlumno(alu, nombre);
     darApellidoAlumno(alu, apellido);
     darDireccionAlumno(alu, direccion);
-    printf("---------------------------------\n");
-    printf("Nombre: %s\n", nombre);
-    printf("Apellido: %s\n", apellido);
-    printf("Cedula: %ld\n", darCedulaAlumno(alu));
-    printf("Fecha nacimiento:");
+    printf("\n");
+    printf("%s", nombre);
+    printf("%s", apellido);
+    printf("%ld", darCedulaAlumno(alu));
     mostrarFecha(alu.fecha_nacimiento);
-    printf("\nDireccion: %s\n", direccion);
-    printf("Telefono: %ld\n", darTelefonoAlumno(alu));
+    printf("%s", direccion);
+    printf("%ld", darTelefonoAlumno(alu));
 }
 
 //Devolver CI de alumno
