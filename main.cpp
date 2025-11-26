@@ -78,7 +78,7 @@ int main()
         printf("\nya existe Registros");
 
     //cargar en memoria registroslist
-*/
+    */
 
 
 
@@ -87,38 +87,40 @@ int main()
 
     desplegarMenuPrincipal();
     scanf("%d", &seleccion);
-    switch(seleccion)
+    while(seleccion!=0)
     {
+        switch(seleccion)
+        {
         case 1:
             //Menu AB
             desplegarMenuAB();
             scanf("%d", &seleccionSubMenu);
             switch(seleccionSubMenu)
             {
-                case 1:
+            case 1:
 
-                    cargarAlumno(alu);
-                    if(!existeAlumnoTree(aTree, alu))
-                        insertarAlumnoOrdenado(aTree, alu);
-                    destruirAlumno(alu);
-                    break;
+                cargarAlumno(alu);
+                if(!existeAlumnoTree(aTree, alu))
+                    insertarAlumnoOrdenado(aTree, alu);
+                destruirAlumno(alu);
+                break;
 
-                case 2:
+            case 2:
 
-                    cargarRegistro(reg);
-                    if(esMayorFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))) || sonIgualesFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))))
-                        insBackLista(regList, reg);
-                    break;
-                case 3:
+                cargarRegistro(reg);
+                if(esMayorFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))) || sonIgualesFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))))
+                    insBackLista(regList, reg);
+                break;
+            case 3:
 
-                    cargarCedula(ci);
-                    if(existeAlumnoTree(aTree, buscarNodoAlumnoPorCI(aTree, ci)->alu))
-                        eliminarAlumno(aTree, ci);
-                    if(existeAlumnoRegistro(regList, ci))
-                        eliminarOcurrenciaLista(regList, ci);
-                    break;
+                cargarCedula(ci);
+                if(existeAlumnoTree(aTree, buscarNodoAlumnoPorCI(aTree, ci)->alu))
+                    eliminarAlumno(aTree, ci);
+                if(existeAlumnoRegistro(regList, ci))
+                    eliminarOcurrenciaLista(regList, ci);
+                break;
             }
-        break;
+            break;
 
         case 2:
             //Menu de Listado
@@ -126,27 +128,30 @@ int main()
             scanf("%d", &seleccionSubMenu);
             switch(seleccionSubMenu)
             {
-                case 1:
-                    ordenAlumnoTree(aTree);
-                    break;
-                case 2:
-                    listarAlumnosSinRegistros(aTree, regList);
-                    break;
-                case 3:
-                    cargarCedula(ci);
-                    listarRegistrosDeAlumno(regList, ci);
-                    break;
-                case 4:
-                    cargarFecha(fe);
-                    listarRegistrosPosterioresA(regList, fe);
-                    break;
+            case 1:
+                ordenAlumnoTree(aTree);
+                break;
+            case 2:
+                listarAlumnosSinRegistros(aTree, regList);
+                break;
+            case 3:
+                cargarCedula(ci);
+                listarRegistrosDeAlumno(regList, ci);
+                break;
+            case 4:
+                cargarFecha(fe);
+                listarRegistrosPosterioresA(regList, fe);
+                break;
             }
-        break;
+            break;
         case 3:
             //Menu de Consultas
             desplegarMenuConsultas();
             scanf("%d", &seleccionSubMenu);
-        break;
+            break;
+        }
+
+
     }
 
 
@@ -165,11 +170,8 @@ int main()
 
 
 
-
-
-
-    //abrir y sobreescribir archivos con todos los datos
-    //cerrar archivos
+        //abrir y sobreescribir archivos con todos los datos
+        //cerrar archivos
 
 }
 
