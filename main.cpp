@@ -47,6 +47,7 @@ int main()
     Alumno alu;
     Registro reg;
     long int ci;
+    Fecha fe;
     //validar existencia archivo Alumnos, sino crearlo.
     /*
     if (!existeArchivo("Alumnos.txt"))
@@ -134,6 +135,10 @@ int main()
                 case 3:
                     cargarCedula(ci);
                     listarRegistrosDeAlumno(regList, ci);
+                    break;
+                case 4:
+                    cargarFecha(fe);
+                    listarRegistrosPosterioresA(regList, fe);
                     break;
             }
         break;
