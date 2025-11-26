@@ -56,12 +56,10 @@ int darCantDias(Registro reg)
 void desplegarRegistro(Registro reg)
 {
     nomTaller t = darNombreTaller(reg);
-    printf("---------------------------------\n");
-    printf("Registro correspondiente a alumno con cedula: %ld\n", darCedula(reg));
-    printf("Taller: ");
+    printf("\n");
+    printf("| %ld | ", darCedula(reg));
     desplegarTaller(t);
-
-    printf("\nFinalizado en fecha:");
+    printf(" | ");
     mostrarFecha(reg.fecha_fin);
-    printf("\nCantidad dias de curso: %d\n", darCantDias(reg));
+    printf(" | %d | ", darCantDias(reg));
 }

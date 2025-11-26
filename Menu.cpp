@@ -8,6 +8,7 @@ void desplegarMenuPrincipal()
     printf("\n1 - Alta y Baja de alumnos");
     printf("\n2 - Listados");
     printf("\n3 - Consultas");
+    printf("\n0 - Salir");
 }
 
 void desplegarMenuAB()
