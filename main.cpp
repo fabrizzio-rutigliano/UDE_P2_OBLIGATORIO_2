@@ -130,6 +130,7 @@ int main()
                     break;
                 case 2:
                     listarAlumnosSinRegistros(aTree, regList);
+                    break;
             }
         break;
         case 3:
