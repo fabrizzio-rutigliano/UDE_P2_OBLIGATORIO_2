@@ -16,7 +16,7 @@ void testContarRegistrosEnFecha();
 //Test obtener nombre taller más popular
 void testTallerMasPopular();
 
-//Test cargar registros
+//Test cargar y desplegar registros
 void testCargaRegistros(Lista &lista);
 
 #endif // REGISTROLISTTEST_H_INCLUDED

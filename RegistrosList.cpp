@@ -96,6 +96,7 @@ Boolean existeAlumnoRegistro(Lista L, long int ci)
             es=TRUE;
         L=L->sig;
     }
+    return es;
 }
 
 // Devuelve la cantidad de elementos de la lista.

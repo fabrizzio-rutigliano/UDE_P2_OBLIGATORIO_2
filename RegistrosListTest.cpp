@@ -54,7 +54,7 @@ void testTallerMasPopular(){
     printf("El taller mas popular es %d, con cantidad de registros %d", t, cantidad);
 }
 
-// Test cargar registros
+//Test cargar y desplegar registros
 void testCargaRegistros(Lista &lista)
 {
     int i;

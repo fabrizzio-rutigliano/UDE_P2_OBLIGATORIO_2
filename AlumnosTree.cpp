@@ -195,6 +195,7 @@ int contarNodosAlumnoTree(AlumnoTree a)
 }
 
 //Verifica existencia de alumno en arbol, devolviendo Boolean
+//TODO VALIDAR
 Boolean existeAlumnoTree(AlumnoTree a, Alumno alu)
 {
     if (darCedulaAlumno(alu) == darCedulaAlumno(darRaizAlumnoTree(a)))
@@ -257,6 +258,7 @@ void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may,
         else if (strMen(apeAux,apellido))
         {
             men++;
+
         }
         else
         {
@@ -330,3 +332,8 @@ void listarAlumnosSinRegistros(AlumnoTree a, Lista registros)
         listarAlumnosSinRegistros(a->hder, registros);
     }
 }
+
+
+
+
+
