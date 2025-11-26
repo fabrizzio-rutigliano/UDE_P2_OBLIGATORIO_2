@@ -6,17 +6,17 @@
 /*
 // ---------- CREAR --------------
 // Agrega el nuevo entero al final del archivo
-void crearArchivo(String nomArch);
+void crearArchivo(string nomArch);
 
 // ---------- CONSULTAR ------------
 // Determina si existe o no un archivo con el nombre recibido por parámetro
-Boolean existeArchivo(String nomArch);
+Boolean existeArchivo(string nomArch);
 
 // Determina si el archivo está vacío o no. Precondición: El archivo existe
-Boolean esVacioArchivo(String nomArch);
+Boolean esVacioArchivo(string nomArch);
 
 // Determina si el entero recibido está en el archivo. Precondición: El archivo existe
-Boolean perteneceArchivo(String nomArch, int entero);
+Boolean perteneceArchivo(string nomArch, int entero);
 
 // ---------- AB STRING ------------
 // Escribe en el archivo los caracteres del string s (incluido '\0')
@@ -28,25 +28,42 @@ void Bajar_String (String s, FILE * f);
 // Precondición: El archivo viene abierto para lectura.
 void Levantar_String (String &s, FILE * f);
 
-// ---------- AB STRUCT ------------
+// ---------- ARCHIVO STRUCT FECHA --------------
 
-// Escribe en el archivo los datos de la persona P.
+// Escribe en el archivo los datos de fecha.
 // Precondición: El archivo viene abierto para escritura.
-void Bajar_Persona (Persona P, FILE * f );
+void Bajar_Fecha(Fecha fec, FILE * f );
 
-// Lee desde el archivo los datos de la persona P.
+// Lee desde el archivo los datos de la fecha.
 // Precondición: El archivo viene abierto para lectura.
-void Levantar_Persona (Persona &P, FILE * f );
+void Levantar_Fecha(Fecha &fec, FILE * f );
+
+// ---------- ARCHIVO STRUCT ALUMNO --------------
+
+// Escribe en el archivo los datos del alumno alu.
+// Precondición: El archivo viene abierto para escritura.
+void Bajar_Alumno(Alumno alu, FILE * f );
+
+// Lee desde el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para lectura.
+void Levantar_Alumno(Alumno &alu, FILE * f );
+
+// ---------- ARCHIVO STRUCT REGISTRO ------------
+
+// Escribe en el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para escritura.
+void Bajar_Registro (Registro reg, FILE * f);
+
+// Lee desde el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para lectura.
+void Levantar_Registro(Registro &reg, FILE * f );
 
 // ---------- AB LISTA ------------
 
-// Abre el archivo para escritura y escribe los datos de todas las
-// personas que están almacenadas en la lista
-void Bajar_Lista (Lista L, String nomArch);
+// Abre el archivo para escritura y escribe los datos de registros
+void Bajar_Lista(Lista L, string nomArch);
 
-// Abre el archivo para lectura y carga en la lista los datos de
-// todas las personas que están almacenadas en el archivo (llamando
-// al procedimiento InsBack).
+// Abre el archivo para lectura y carga en la lista todos los registros
 void Levantar_Lista (Lista &L, String nomArch);
 
 // ---------- AB ABB ------------

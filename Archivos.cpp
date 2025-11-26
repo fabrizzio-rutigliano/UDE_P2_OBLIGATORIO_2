@@ -1,16 +1,29 @@
 #include "Archivos.h"
+
 /*
-// ---------- CREAR --------------
+// ---------- CREAR/ABRIR--------------
+
 // Crear archivo
-void crearArchivo(String nomArch)
+void crearArchivo(string nomArch)
 {
     FILE * f;
-    f = fopen (nomArch, "wb");
+    f = fopen(nomArch, "wb");
     fclose(f);
 }
+
+
+/* Abrir archivo con tipos de lectura
+FILE * fopen (string filename, string mode)
+"rb" Abre el archivo solo para lectura. Precondición: El archivo debe existir.
+"wb" Crea un archivo solo para escritura. Si un archivo con ese nombre
+ya existe, será sobreescrito.
+"ab" Append; abre un archivo solo para escritura de nuevos datos
+
+
+
 // ---------- CONSULTAR ------------
 // Determina si existe o no un archivo con el nombre recibido por parámetro
-Boolean existeArchivo(String nomArch)
+Boolean existeArchivo(string nomArch)
 {
     Boolean existe = FALSE;
     FILE * f;
@@ -26,7 +39,7 @@ Boolean existeArchivo(String nomArch)
 
 
 // Determina si el archivo está vacío o no. Precondición: El archivo existe
-Boolean esVacioArchivo(String nomArch){
+Boolean esVacioArchivo(string nomArch){
     Boolean archivoVacio = FALSE;
     FILE * f = fopen (nomArch, "rb");
     fseek (f, 0, SEEK_END);
@@ -38,7 +51,7 @@ Boolean esVacioArchivo(String nomArch){
 
 
 // Determina si el entero recibido está en el archivo. Precondición: El archivo existe
-Boolean perteneceArchivo(String nomArch, int entero){
+Boolean perteneceArchivo(string nomArch, int entero){
     Boolean esta = FALSE;
     FILE * f = fopen (nomArch, "rb");
     int buffer;
@@ -54,11 +67,11 @@ Boolean perteneceArchivo(String nomArch, int entero){
     return esta;
 }
 
-// ---------- AB STRING ------------
+// ---------- ARCHIVO STRING --------------------------------------
 // Escribe en el archivo los caracteres del string s (incluido '\0')
 // Precondición: El archivo viene abierto para escritura.
 
-void Bajar_String (String s, FILE * f){S
+void Bajar_String (String s, FILE * f){
     int i=0;
     while (s[i] != '\0')
     {
@@ -83,63 +96,111 @@ void Levantar_String (String &s, FILE * f){
     }
     if (feof(f))
         aux[i] = '\0';
-    strcop (s, aux);
+    strCop (s, aux);
     delete [] aux;
 }
 
 // ---------- AB STRUCT ------------
 
-// Escribe en el archivo los datos de la persona P.
+// ---------- ARCHIVO STRUCT FECHA --------------
+
+// Escribe en el archivo los datos de fecha.
 // Precondición: El archivo viene abierto para escritura.
-void Bajar_Persona (Persona P, FILE * f ){
-    Bajar_String(P.nombre, f);
-    fwrite (&P.edad, sizeof(int), 1, f);
-    fwrite (&P.cedula, sizeof(long int), 1, f);
+void Bajar_Fecha(Fecha fec, FILE * f ){
+    fwrite(&fec.dia, sizeof(int), 1, f);
+    fwrite(&fec.mes, sizeof(int), 1, f);
+    fwrite(&fec.anio, sizeof(int), 1, f);
 }
 
-// Lee desde el archivo los datos de la persona P.
+// Lee desde el archivo los datos de la fecha.
 // Precondición: El archivo viene abierto para lectura.
-void Levantar_Persona (Persona &P, FILE * f ){
-    strcrear (P.nombre);
-    Levantar_String (P.nombre, f);
-    fread (&P.edad, sizeof(int), 1, f);
-    fread (&P.cedula, sizeof(long int), 1, f);
+void Levantar_Fecha(Fecha &fec, FILE * f ){
+    fread(&fec.dia, sizeof(int), 1, f);
+    fread(&fec.mes, sizeof(int), 1, f);
+    fread(&fec.anio, sizeof(int), 1, f);
 }
 
-// ---------- AB LISTA ------------
+// ---------- ARCHIVO STRUCT ALUMNO --------------
 
-// Abre el archivo para escritura y escribe los datos de todas las
-// personas que están almacenadas en la lista
-void Bajar_Lista (Lista L, String nomArch){
+// Escribe en el archivo los datos del alumno alu.
+// Precondición: El archivo viene abierto para escritura.
+void Bajar_Alumno(Alumno alu, FILE * f ){
+    fwrite(&alu.ci, sizeof(long int), 1, f);
+    Bajar_String(alu.nombre, f);
+    Bajar_String(alu.apellido, f);
+    Bajar_Fecha(alu.fecha_nacimiento, f);
+    Bajar_String(alu.direccion, f);
+    fwrite(&alu.telefono, sizeof(long int), 1, f);
+}
+
+// Lee desde el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para lectura.
+void Levantar_Alumno(Alumno &alu, FILE * f ){
+    //Cedula
+    fread(&alu.ci, sizeof(long int), 1, f);
+    //Nombre
+    strCrear(alu.nombre);
+    Levantar_String(alu.nombre, f);
+    //Apellido
+    strCrear(alu.apellido);
+    Levantar_String(alu.apellido, f);
+    //Fecha
+    Levantar_Fecha(alu.fecha_nacimiento, f);
+    //Direccion
+    strCrear(alu.direccion);
+    Levantar_String(alu.direccion, f);
+    //Telefono
+    fread(&alu.telefono, f);
+}
+
+// ---------- ARCHIVO STRUCT REGISTRO ------------
+// Escribe en el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para escritura.
+void Bajar_Registro (Registro reg, FILE * f){
+    fwrite(&reg.taller, sizeof(int), 1, f);
+    Bajar_Fecha(reg.fecha_fin, f);
+    fwrite(&reg.cedula, sizeof(long int), 1, f);
+    fwrite(&reg.cant_dias, sizeof(int), 1, f);
+}
+
+// Lee desde el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para lectura.
+void Levantar_Registro(Registro &reg, FILE * f ){
+    fread(&reg.taller, sizeof(int), 1, f);
+    Levantar_Fecha(reg.fecha_fin, f);
+    fread(&reg.cedula, sizeof(long int), 1, f);
+    fread(&reg.cant_dias, sizeof(int), 1, f);
+}
+
+// ---------- AB LISTA REGISTRO ------------
+// Abre el archivo para escritura y escribe los datos de registros
+void Bajar_Lista(Lista L, string nomArch){
     FILE * f = fopen (nomArch, "wb");
     while (L != NULL)
     {
-        Bajar_Persona (L -> info, f);
+        Bajar_Registro(L -> info, f);
         L = L -> sig;
     }
     fclose (f);
 }
 
-// Abre el archivo para lectura y carga en la lista los datos de
-// todas las personas que están almacenadas en el archivo (llamando
-// al procedimiento InsBack).
+// Abre el archivo para lectura y carga en la lista todos los registros
 void Levantar_Lista (Lista &L, String nomArch){
 
     FILE * f = fopen (nomArch, "rb");
-    Persona buffer;
-    Crear (L);
-    Levantar_Persona (buffer, f);
+    Registro buffer;
+    crearLista(L);
+    Levantar_Registro(buffer, f);
     while (!feof(f))
     {
-        InsBack (L, buffer);
-        Levantar_Persona (buffer, f);
+        insBackLista(L, buffer);
+        Levantar_Registro(buffer, f);
     }
     fclose (f);
-
 }
 
 // ---------- AB ABB ------------
-
+/*
 // Escribe en el archivo los datos de todos los enteros del árbol
 // en forma recursiva. // Precondición: El archivo viene abierto para escritura.
 void Bajar_ABB_Aux (ABB a, FILE * f){
