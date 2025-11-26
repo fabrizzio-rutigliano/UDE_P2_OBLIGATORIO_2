@@ -15,13 +15,13 @@ void insertarAlumnoOrdenado(AlumnoTree &a, Alumno alu)
     if (esVacioAlumnoTree(a))
     {
         a = new nodoABB;
-        a->alu = alu;
+        a->info = alu;
         a->hizq = NULL;
         a->hder = NULL;
     }
     else
     {
-        if (alu.ci < darCedulaAlumno(a->alu))
+        if (alu.ci < darCedulaAlumno(a->info))
         {
             insertarAlumnoOrdenado(a->hizq, alu);
         }
@@ -37,7 +37,7 @@ void insertarAlumnoOrdenado(AlumnoTree &a, Alumno alu)
 AlumnoTree consAlumnoTree(Alumno alu, AlumnoTree izq, AlumnoTree der)
 {
     AlumnoTree aux = new nodoABB;
-    aux->alu = alu;
+    aux->info = alu;
     aux->hizq = izq;
     aux->hder = der;
     return aux;
@@ -50,7 +50,7 @@ void preOrdenAlumnoTree(AlumnoTree a)
 {
     if (a != NULL)
     {
-        desplegarAlumno(a->alu);
+        desplegarAlumno(a->info);
         preOrdenAlumnoTree(a->hizq);
         preOrdenAlumnoTree(a->hder);
     }
@@ -62,7 +62,7 @@ void ordenAlumnoTree(AlumnoTree a)
     if (a != NULL)
     {
         ordenAlumnoTree(a->hizq);
-        desplegarAlumno(a->alu);
+        desplegarAlumno(a->info);
         ordenAlumnoTree(a->hder);
     }
 }
@@ -74,7 +74,7 @@ void postOrdenAlumnoTree(AlumnoTree a)
     {
         postOrdenAlumnoTree(a->hizq);
         postOrdenAlumnoTree(a->hder);
-        desplegarAlumno(a->alu);
+        desplegarAlumno(a->info);
     }
 }
 // ---------- OPERACIONES ELIMINACION -------------------------------
@@ -84,11 +84,11 @@ void postOrdenAlumnoTree(AlumnoTree a)
 void eliminarAlumno(AlumnoTree &a, long int ci){
 
     // ----- PASO 1: BUSCAR EL VALOR EN EL ABB -----
-    if (ci < a->alu.ci)
+    if (ci < a->info.ci)
     {
         eliminarAlumno(a->hizq, ci);
     }
-    else if (ci > a->alu.ci)
+    else if (ci > a->info.ci)
     {
         eliminarAlumno(a->hder, ci);
     }
@@ -125,10 +125,10 @@ void eliminarAlumno(AlumnoTree &a, long int ci){
             while (p->hizq != NULL)
                 p = p->hizq;
 
-            long int ciSucesor = darCedulaAlumno(p->alu);
+            long int ciSucesor = darCedulaAlumno(p->info);
 
             // Copiar el valor del mínimo del hijo derecho en el nodo actual
-            a->alu = p->alu;
+            a->info = p->info;
 
             // Eliminar el mínimo del hijo derecho
             eliminarAlumno(a->hder, ciSucesor);
@@ -146,7 +146,7 @@ void destruirAlumnoTree(AlumnoTree &a)
         destruirAlumnoTree(a->hder);
 
         // Libero la memoria del alumno (strings, etc.)
-        destruirAlumno(a->alu);
+        destruirAlumno(a->info);
 
         delete a;
         a = NULL;
@@ -168,7 +168,7 @@ Boolean esVacioAlumnoTree(AlumnoTree a)
 // Precondicion: arbol no vacio
 Alumno darRaizAlumnoTree(AlumnoTree a)
 {
-    return a->alu;
+    return a->info;
 }
 
 // operacion que devuelve el hijo izquierdo del Arbol
@@ -213,9 +213,9 @@ Boolean existeAlumnoTree(AlumnoTree a, Alumno alu)
 // Precondicion: el arbol contiene la Cedula
 AlumnoTree buscarNodoAlumnoPorCI(AlumnoTree a, long int ci){
 
-    if (ci == darCedulaAlumno(a->alu))
+    if (ci == darCedulaAlumno(a->info))
         return a;
-    else if (ci < darCedulaAlumno(a->alu))
+    else if (ci < darCedulaAlumno(a->info))
         return buscarNodoAlumnoPorCI(a->hizq, ci);
     else
         return buscarNodoAlumnoPorCI(a->hder, ci);
@@ -227,7 +227,7 @@ int contarAlumnosFechaNac(AlumnoTree a, Fecha f)
     if (a == NULL)
         return 0;
 
-    return (sonIgualesFechas(darFechaNacAlumno(a->alu), f) == TRUE)
+    return (sonIgualesFechas(darFechaNacAlumno(a->info), f) == TRUE)
            + contarAlumnosFechaNac(a->hizq, f)
            + contarAlumnosFechaNac(a->hder, f);
 
@@ -248,7 +248,7 @@ void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may,
     {
         String apeAux;
         strCrear(apeAux);
-        darApellidoAlumno(a->alu, apeAux);
+        darApellidoAlumno(a->info, apeAux);
         if (strEq(apeAux,apellido))
         {
             ig++;
@@ -257,7 +257,6 @@ void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may,
         else if (strMen(apeAux,apellido))
         {
             men++;
-
         }
         else
         {
@@ -271,14 +270,12 @@ void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may,
 
 }
 
-
-
 // Dar el alumno de mayor edad.
 // Precondición: el arbol no esta vacio
 Alumno obtenerAlumnoMayorEdad(AlumnoTree a){
     //Buscamos obtener la fecha "mas menor/antigua de nacimiento".
 
-    Alumno mayor = a->alu; // Caso base.
+    Alumno mayor = a->info; // Caso base.
 
     if (a->hizq != NULL)
     {
@@ -328,13 +325,8 @@ void listarAlumnosSinRegistros(AlumnoTree a, Lista registros)
     if (a != NULL)
     {
         listarAlumnosSinRegistros(a->hizq, registros);
-        if(!existeAlumnoRegistro(registros, darCedulaAlumno(a->alu)))
-            desplegarAlumno(a->alu);
+        if(!existeAlumnoRegistro(registros, darCedulaAlumno(a->info)))
+            desplegarAlumno(a->info);
         listarAlumnosSinRegistros(a->hder, registros);
     }
 }
-
-
-
-
-

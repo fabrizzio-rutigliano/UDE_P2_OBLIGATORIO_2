@@ -5,7 +5,7 @@
 
 typedef struct nodoABB
 {
-    Alumno alu;
+    Alumno info;
     nodoABB * hizq;
     nodoABB * hder;
 } nodoABB;
