@@ -131,6 +131,10 @@ int main()
                 case 2:
                     listarAlumnosSinRegistros(aTree, regList);
                     break;
+                case 3:
+                    cargarCedula(ci);
+                    listarRegistrosDeAlumno(regList, ci);
+                    break;
             }
         break;
         case 3:
