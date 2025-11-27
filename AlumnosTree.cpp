@@ -195,7 +195,6 @@ int contarNodosAlumnoTree(AlumnoTree a)
 }
 
 //Verifica existencia de alumno en arbol, devolviendo Boolean
-//TODO VALIDAR
 Boolean existeAlumnoTree(AlumnoTree a, Alumno alu)
 {
     if(!esVacioAlumnoTree(a))

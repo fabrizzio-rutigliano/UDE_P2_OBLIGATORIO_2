@@ -38,7 +38,7 @@ void testExisteAlumnoTree()
     crearAlumnoTree(alTree);
     testCargarDesplegarAlumnos(alTree);
 
-    existe = existeAlumnoTree(alTree, alTree->hizq->info);
+    existe = existeAlumnoTree(alTree, alTree->info);
     printf("RESULTADO TEST\n");
     printf("Existe alumno? %d", existe);
 }

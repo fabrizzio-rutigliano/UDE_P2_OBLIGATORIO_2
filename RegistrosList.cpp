@@ -21,13 +21,22 @@ void insFrontLista(Lista &L, Registro reg)
 void insBackLista(Lista &L, Registro reg)
 {
     Lista aux = new NodoL;
+    Lista it;
     aux->info = reg;
     aux->sig = NULL;
     if (esListaVacia(L))
     {
         L = aux;
     }
-    L->sig = aux;
+    else
+    {
+        it = L;
+        while (it->sig != NULL)
+        {
+            it = it->sig;
+        }
+        it->sig = aux;
+    }
 }
 
 // ---------- OPERACIONES ELIMINACION --------------------------------
@@ -90,11 +99,11 @@ Boolean esListaVacia(Lista L)
 Boolean existeAlumnoRegistro(Lista L, long int ci)
 {
     Boolean es = FALSE;
-    while(es==FALSE && L!=NULL)
+    while (es == FALSE && L != NULL)
     {
-        if(darCedula(L->info)==ci)
-            es=TRUE;
-        L=L->sig;
+        if (darCedula(L->info) == ci)
+            es = TRUE;
+        L = L->sig;
     }
     return es;
 }
@@ -278,20 +287,22 @@ void tallerMasPopular(Lista L, nomTaller &taller, int &cantidad)
 
 // ---------- AB LISTA REGISTRO ------------
 // Abre el archivo para escritura y escribe los datos de registros
-void Bajar_Lista(Lista L, String nomArch){
-    FILE * f = fopen (nomArch, "wb");
+void Bajar_Lista(Lista L, String nomArch)
+{
+    FILE *f = fopen(nomArch, "wb");
     while (L != NULL)
     {
-        Bajar_Registro(L -> info, f);
-        L = L -> sig;
+        Bajar_Registro(L->info, f);
+        L = L->sig;
     }
-    fclose (f);
+    fclose(f);
 }
 
 // Abre el archivo para lectura y carga en la lista todos los registros
-void Levantar_Lista (Lista &L, String nomArch){
+void Levantar_Lista(Lista &L, String nomArch)
+{
 
-    FILE * f = fopen (nomArch, "rb");
+    FILE *f = fopen(nomArch, "rb");
     Registro buffer;
     crearLista(L);
     Levantar_Registro(buffer, f);
@@ -300,5 +311,5 @@ void Levantar_Lista (Lista &L, String nomArch){
         insBackLista(L, buffer);
         Levantar_Registro(buffer, f);
     }
-    fclose (f);
+    fclose(f);
 }
