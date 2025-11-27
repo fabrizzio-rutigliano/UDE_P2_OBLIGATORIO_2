@@ -5,6 +5,7 @@
 #include "TallerTest.h"
 #include "AlumnoStructTest.h"
 #include "RegistrosListTest.h"
+#include "AlumnosTreeTest.h"
 
 int main()
 {
@@ -23,6 +24,16 @@ int main()
     //testListarRegistrosPosterioresA();
     //testContarRegistrosEnFecha();
     testTallerMasPopular();
+
+    //AlumnoTree alTree;
+    //crearAlumnoTree(alTree);
+    //testCargarDesplegarAlumnos(alTree);
+    //testEliminarAlumno();
+    //testExisteAlumnoTree(); no funciona
+    //testContarAlumnosFechaNac();
+    //testContarAlumnosPorApellido();
+    //testObtenerAlumnoMayorEdad();
+    //testListarAlumnosSinRegistros(); no funciona
 
     return 0;
 }

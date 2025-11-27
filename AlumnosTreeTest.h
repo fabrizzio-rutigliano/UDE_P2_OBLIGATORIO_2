@@ -2,8 +2,10 @@
 #define ALUMNOTREETEST_H_INCLUDED
 #include "AlumnosTree.h"
 
+const int NUM_ALU = 3;
+
 //Test carga y despliege de alumnos
-void testCargarDesplegarAlumnos();
+void testCargarDesplegarAlumnos(AlumnoTree &alTree);
 
 //Test eliminar alumno
 void testEliminarAlumno();

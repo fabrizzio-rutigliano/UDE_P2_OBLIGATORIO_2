@@ -206,8 +206,10 @@ Boolean existeAlumnoTree(AlumnoTree a, Alumno alu)
         existeAlumnoTree(a->hizq, alu);
     }
     else
+    {
         return FALSE;
         existeAlumnoTree(a->hder, alu);
+    }
 }
 
 // Devuelve el subárbol cuyo nodo raíz tiene la cédula.
