@@ -60,11 +60,14 @@ void desplegarAlumno(Alumno alu)
     darApellidoAlumno(alu, apellido);
     darDireccionAlumno(alu, direccion);
     printf("\n");
-    printf("| %s ", nombre);
-    printf("| %s ", apellido);
+    printf("| ");
+    strPrint(nombre);
+    printf(" | ");
+    strPrint(apellido);
     printf("| %ld | ", darCedulaAlumno(alu));
     mostrarFecha(alu.fecha_nacimiento);
-    printf("| %s ", direccion);
+    printf("| ");
+    strPrint(direccion);
     printf("| %ld ", darTelefonoAlumno(alu));
 }
 

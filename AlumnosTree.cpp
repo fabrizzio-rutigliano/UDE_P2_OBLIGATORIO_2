@@ -198,18 +198,23 @@ int contarNodosAlumnoTree(AlumnoTree a)
 //TODO VALIDAR
 Boolean existeAlumnoTree(AlumnoTree a, Alumno alu)
 {
-    if (darCedulaAlumno(alu) == darCedulaAlumno(darRaizAlumnoTree(a)))
-        return TRUE;
-    else if (darCedulaAlumno(alu) < darCedulaAlumno(darRaizAlumnoTree(a)))
+    if(!esVacioAlumnoTree(a))
     {
-        return FALSE;
-        existeAlumnoTree(a->hizq, alu);
+        if (darCedulaAlumno(alu) == darCedulaAlumno(darRaizAlumnoTree(a)))
+            return TRUE;
+        else if (darCedulaAlumno(alu) < darCedulaAlumno(darRaizAlumnoTree(a)))
+        {
+            return FALSE;
+            existeAlumnoTree(a->hizq, alu);
+        }
+        else
+        {
+            return FALSE;
+            existeAlumnoTree(a->hder, alu);
+        }
     }
     else
-    {
         return FALSE;
-        existeAlumnoTree(a->hder, alu);
-    }
 }
 
 // Devuelve el subárbol cuyo nodo raíz tiene la cédula.

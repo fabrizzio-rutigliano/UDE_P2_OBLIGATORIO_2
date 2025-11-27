@@ -1,6 +1,6 @@
 #include <iostream>
 //------includes utilizados por los modulos de testing, evaluar su eliminación en versión final.
-/*
+
 #include "RegistroStructTest.h"
 #include "TallerTest.h"
 #include "AlumnoStructTest.h"
@@ -17,13 +17,13 @@ int main()
     //testCargaDespliegeRegistro();
 
     // Prueba carga y despliegue alumno
-    //testCargaDespliegeAlumno();
+    testCargaDespliegeAlumno();
 
     // Pruebas sobre RegistrosList
     //testListarRegistrosDeAlumno();
     //testListarRegistrosPosterioresA();
     //testContarRegistrosEnFecha();
-    testTallerMasPopular();
+    //testTallerMasPopular();
 
     //AlumnoTree alTree;
     //crearAlumnoTree(alTree);
@@ -37,16 +37,17 @@ int main()
 
     return 0;
 }
-*/
 
 
+/*
 #include "Archivos.h"
 #include "AlumnosTree.h"
 #include "RegistrosList.h"
 #include "Menu.h"
 
 //using namespace std;
-
+*/
+/*
 int main()
 {
 
@@ -94,7 +95,7 @@ int main()
     */
 
 
-
+/*
 
     //Menu inicial con opciones AB, Listado y Consultas
 
@@ -226,4 +227,4 @@ int main()
         //cerrar archivos
 
 }
-
+*/

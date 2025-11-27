@@ -14,7 +14,7 @@ void cargarFecha(Fecha &fecha)
 // Desplegar
 void mostrarFecha(Fecha fecha)
 {
-    printf("La fecha ingresada es %d/%d/%d.", fecha.dia, fecha.mes, fecha.anio);
+    printf("%d/%d/%d", fecha.dia, fecha.mes, fecha.anio);
 }
 
 // Selectoras

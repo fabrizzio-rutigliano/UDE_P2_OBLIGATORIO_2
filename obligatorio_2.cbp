@@ -38,6 +38,8 @@
 		<Unit filename="AlumnoStructTest.h" />
 		<Unit filename="AlumnosTree.cpp" />
 		<Unit filename="AlumnosTree.h" />
+		<Unit filename="AlumnosTreeTest.cpp" />
+		<Unit filename="AlumnosTreeTest.h" />
 		<Unit filename="Archivos.cpp" />
 		<Unit filename="Archivos.h" />
 		<Unit filename="Boolean.cpp" />
