@@ -49,7 +49,11 @@ int main()
 
 int main()
 {
-
+    String fAlu, fReg;
+    strCrear(fAlu);
+    strCrear(fReg);
+    fAlu="Alumnos.txt";
+    fReg="Registro.txt";
     int seleccion, seleccionSubMenu, men, may, ig;
     AlumnoTree aTree;
     crearAlumnoTree(aTree);
@@ -62,17 +66,20 @@ int main()
     String straux;
     nomTaller tall;
     //validar existencia archivo Alumnos, sino crearlo.
-    /*
+
     if (!existeArchivo("Alumnos.txt"))
     {
         crearArchivo("Alumnos.txt");
-        printf("\nse crea archivo Alumnos");
+        printf("\nSe crea archivo Alumnos");
+        //cargar en memoria alumnosTree
 
     }
     else
+    {
         printf("\nya existe Alumnos");
+        Levantar_AlumnoTree(aTree, fAlu);
+    }
 
-    //cargar en memoria alumnosTree
 
 
 
@@ -88,10 +95,13 @@ int main()
 
     }
     else
+    {
         printf("\nya existe Registros");
+        Levantar_Lista(regList, fReg);
+    }
 
     //cargar en memoria registroslist
-    */
+
 
 
 
@@ -210,6 +220,9 @@ int main()
 
 
 
+//abrir y sobreescribir archivos con todos los datos
+Bajar_AlumnoTree(aTree, fAlu);
+Bajar_Lista(regList, fReg);
 
 
 
@@ -222,8 +235,6 @@ int main()
 
 
 
-        //abrir y sobreescribir archivos con todos los datos
-        //cerrar archivos
 
 }
 

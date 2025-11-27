@@ -43,4 +43,15 @@ int darCantDias(Registro reg);
 // Desplegar elementos de registro
 void desplegarRegistro(Registro reg);
 
+// ---------- ARCHIVO STRUCT REGISTRO ------------
+
+// Escribe en el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para escritura.
+void Bajar_Registro (Registro reg, FILE * f);
+
+// Lee desde el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para lectura.
+void Levantar_Registro(Registro &reg, FILE * f );
+
+
 #endif // REGISTRO_H_INCLUDED

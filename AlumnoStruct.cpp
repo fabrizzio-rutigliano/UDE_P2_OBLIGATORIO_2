@@ -118,3 +118,36 @@ void copAlu(Alumno &al1, Alumno al2)
     al1.telefono=al2.telefono;
     copFecha(al1.fecha_nacimiento,al2.fecha_nacimiento);
 }
+
+// ---------- ARCHIVO STRUCT ALUMNO --------------
+
+// Escribe en el archivo los datos del alumno alu.
+// Precondición: El archivo viene abierto para escritura.
+void Bajar_Alumno(Alumno alu, FILE * f ){
+    fwrite(&alu.ci, sizeof(long int), 1, f);
+    Bajar_String(alu.nombre, f);
+    Bajar_String(alu.apellido, f);
+    Bajar_Fecha(alu.fecha_nacimiento, f);
+    Bajar_String(alu.direccion, f);
+    fwrite(&alu.telefono, sizeof(long int), 1, f);
+}
+
+// Lee desde el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para lectura.
+void Levantar_Alumno(Alumno &alu, FILE * f ){
+    //Cedula
+    fread(&alu.ci, sizeof(long int), 1, f);
+    //Nombre
+    strCrear(alu.nombre);
+    Levantar_String(alu.nombre, f);
+    //Apellido
+    strCrear(alu.apellido);
+    Levantar_String(alu.apellido, f);
+    //Fecha
+    Levantar_Fecha(alu.fecha_nacimiento, f);
+    //Direccion
+    strCrear(alu.direccion);
+    Levantar_String(alu.direccion, f);
+    //Telefono
+    fread(&alu.telefono,sizeof(long int), 1, f);
+}

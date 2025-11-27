@@ -275,3 +275,30 @@ void tallerMasPopular(Lista L, nomTaller &taller, int &cantidad)
         }
     }
 }
+
+// ---------- AB LISTA REGISTRO ------------
+// Abre el archivo para escritura y escribe los datos de registros
+void Bajar_Lista(Lista L, String nomArch){
+    FILE * f = fopen (nomArch, "wb");
+    while (L != NULL)
+    {
+        Bajar_Registro(L -> info, f);
+        L = L -> sig;
+    }
+    fclose (f);
+}
+
+// Abre el archivo para lectura y carga en la lista todos los registros
+void Levantar_Lista (Lista &L, String nomArch){
+
+    FILE * f = fopen (nomArch, "rb");
+    Registro buffer;
+    crearLista(L);
+    Levantar_Registro(buffer, f);
+    while (!feof(f))
+    {
+        insBackLista(L, buffer);
+        Levantar_Registro(buffer, f);
+    }
+    fclose (f);
+}

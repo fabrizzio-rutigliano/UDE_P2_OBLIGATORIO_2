@@ -127,3 +127,36 @@ Boolean strEq(String s1, String s2)
         iguales = FALSE;
     return iguales;
 }
+
+// ---------- ARCHIVO String --------------------------------------
+// Escribe en el archivo los caracteres del String s (incluido '\0')
+// Precondición: El archivo viene abierto para escritura.
+
+void Bajar_String (String s, FILE * f){
+    int i=0;
+    while (s[i] != '\0')
+    {
+        fwrite (&s[i], sizeof(char), 1, f);
+        i++;
+    }
+    // escribo el '\0'
+    fwrite (&s[i], sizeof(char), 1, f);
+}
+
+// Lee desde el archivo los caracteres del String s.
+// Precondición: El archivo viene abierto para lectura.
+void Levantar_String (String &s, FILE * f){
+    int i=0;
+    String aux;
+    aux = new char[MAX];
+    fread (&aux[i], sizeof(char), 1, f);
+    while (!feof(f) && (aux[i] != '\0'))
+    {
+        i++;
+        fread (&aux[i], sizeof(char), 1, f);
+    }
+    if (feof(f))
+        aux[i] = '\0';
+    strCop (s, aux);
+    delete [] aux;
+}

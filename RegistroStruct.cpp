@@ -63,3 +63,22 @@ void desplegarRegistro(Registro reg)
     mostrarFecha(reg.fecha_fin);
     printf(" | %d | ", darCantDias(reg));
 }
+
+// ---------- ARCHIVO STRUCT REGISTRO ------------
+// Escribe en el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para escritura.
+void Bajar_Registro (Registro reg, FILE * f){
+    fwrite(&reg.taller, sizeof(int), 1, f);
+    Bajar_Fecha(reg.fecha_fin, f);
+    fwrite(&reg.cedula, sizeof(long int), 1, f);
+    fwrite(&reg.cant_dias, sizeof(int), 1, f);
+}
+
+// Lee desde el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para lectura.
+void Levantar_Registro(Registro &reg, FILE * f ){
+    fread(&reg.taller, sizeof(int), 1, f);
+    Levantar_Fecha(reg.fecha_fin, f);
+    fread(&reg.cedula, sizeof(long int), 1, f);
+    fread(&reg.cant_dias, sizeof(int), 1, f);
+}

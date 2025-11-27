@@ -37,4 +37,14 @@ Boolean strMen(String s1, String s2);
 // Determina si los strings s1 y s2 son iguales
 Boolean strEq(String s1, String s2);
 
+// ---------- AB STRING ------------
+// Escribe en el archivo los caracteres del string s (incluido '\0')
+// Precondición: El archivo viene abierto para escritura.
+
+void Bajar_String (String s, FILE * f);
+
+// Lee desde el archivo los caracteres del string s.
+// Precondición: El archivo viene abierto para lectura.
+void Levantar_String (String &s, FILE * f);
+
 #endif // STRING_H_INCLUDED

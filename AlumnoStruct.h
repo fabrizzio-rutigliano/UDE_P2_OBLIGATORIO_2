@@ -54,4 +54,15 @@ long int darTelefonoAlumno(Alumno alu);
 //Copiar un Alumno en otro
 void copAlu(Alumno &al1, Alumno al2);
 
+// ---------- ARCHIVO STRUCT ALUMNO --------------
+
+// Escribe en el archivo los datos del alumno alu.
+// Precondición: El archivo viene abierto para escritura.
+void Bajar_Alumno(Alumno alu, FILE * f );
+
+// Lee desde el archivo los datos del registro reg.
+// Precondición: El archivo viene abierto para lectura.
+void Levantar_Alumno(Alumno &alu, FILE * f );
+
+
 #endif // ALUMNOS_H_INCLUDED

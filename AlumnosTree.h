@@ -89,4 +89,19 @@ Alumno obtenerAlumnoMayorEdad(AlumnoTree a);
 // Lista por pantalla todos los alumnos que NO tienen registros
 void listarAlumnosSinRegistros(AlumnoTree a, Lista registros);
 
+// ---------- AB ABB ------------
+
+// Escribe en el archivo los datos de todos los enteros del árbol
+// en forma recursiva. // Precondición: El archivo viene abierto para escritura.
+void Bajar_AlumnoTree_Aux(AlumnoTree a, FILE * f);
+
+// Abre el archivo para escritura y escribe los datos de todos los
+// enteros del árbol (llamando al procedimiento anterior)
+void Bajar_AlumnoTree(AlumnoTree a, String nomArch);
+
+// Abre el archivo para lectura e inserta en el árbol todos los
+// enteros están en el archivo (llamando al procedimiento Insert).
+// Precondición: El archivo existe.
+void Levantar_AlumnoTree(AlumnoTree &a, String nomArch);
+
 #endif // ARBOL_H_INCLUDED

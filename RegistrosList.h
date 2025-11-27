@@ -1,6 +1,7 @@
 #ifndef REGISTROS_H_INCLUDED
 #define REGISTROS_H_INCLUDED
 #include "RegistroStruct.h"
+#include "String.h"
 
 typedef struct nodoL
 {
@@ -73,5 +74,13 @@ int contarRegistrosEnFecha(Lista L, Fecha f);
 // Obtener el taller más popular y su cantidad.
 // Pre: la lista NO está vacía.
 void tallerMasPopular(Lista L, nomTaller &taller, int &cantidad);
+
+// ---------- AB LISTA ------------
+
+// Abre el archivo para escritura y escribe los datos de registros
+void Bajar_Lista(Lista L, String nomArch);
+
+// Abre el archivo para lectura y carga en la lista todos los registros
+void Levantar_Lista (Lista &L, String nomArch);
 
 #endif // REGISTROS_H_INCLUDED
