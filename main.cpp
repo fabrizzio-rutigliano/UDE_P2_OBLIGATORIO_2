@@ -49,7 +49,7 @@ int main()
 
 int main()
 {
-    String fAlu, fReg;
+    String fAlu, fReg, straux;
     strCrear(fAlu);
     strCrear(fReg);
     fAlu="Alumnos.txt";
@@ -63,7 +63,6 @@ int main()
     Registro reg;
     long int ci;
     Fecha fe;
-    String straux;
     nomTaller tall;
     //validar existencia archivo Alumnos, sino crearlo.
 
@@ -220,12 +219,15 @@ int main()
 
 
 
-//abrir y sobreescribir archivos con todos los datos
-Bajar_AlumnoTree(aTree, fAlu);
-Bajar_Lista(regList, fReg);
+    //abrir y sobreescribir archivos con todos los datos
+    Bajar_AlumnoTree(aTree, fAlu);
+    Bajar_Lista(regList, fReg);
 
-
-
+    //destruir elementos creados
+    //strDestruir(fAlu);
+    strDestruir(fReg);
+    destruirAlumnoTree(aTree);
+    destruirLista(regList);
 
 
 
