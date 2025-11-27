@@ -33,4 +33,7 @@ Boolean esMayorFechas(Fecha a, Fecha b);
 // Pre: ambas fechas son válidas.
 Boolean sonIgualesFechas(Fecha a, Fecha b);
 
+// Copia una fecha en otra fecha
+void copFecha(Fecha &fec1, Fecha fec2);
+
 #endif // FECHA_H_INCLUDED

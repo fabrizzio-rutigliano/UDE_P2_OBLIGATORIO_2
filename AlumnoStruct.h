@@ -51,4 +51,7 @@ void darDireccionAlumno(Alumno alu, String &s);
 //Devolver telefono alumno
 long int darTelefonoAlumno(Alumno alu);
 
+//Copiar un Alumno en otro
+void copAlu(Alumno &al1, Alumno al2);
+
 #endif // ALUMNOS_H_INCLUDED

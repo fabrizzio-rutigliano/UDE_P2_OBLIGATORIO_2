@@ -5,13 +5,13 @@
 1764203534 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Boolean.h
 	<stdio.h>
 
-1764204140 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Fecha.cpp
+1764206494 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Fecha.cpp
 	"Fecha.h"
 
-1764203534 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Fecha.h
+1764206407 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Fecha.h
 	"Boolean.h"
 
-1764203534 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/main.cpp
+1764204764 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/main.cpp
 	<iostream>
 	"RegistroStructTest.h"
 	"TallerTest.h"
@@ -23,14 +23,14 @@
 	"RegistrosList.h"
 	"Menu.h"
 
-1764203810 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnosTree.cpp
+1764205868 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnosTree.cpp
 	"AlumnosTree.h"
 
 1764203534 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnosTree.h
 	"AlumnoStruct.h"
 	"RegistrosList.h"
 
-1764203534 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnoStruct.h
+1764205868 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnoStruct.h
 	"String.h"
 	"Fecha.h"
 
@@ -153,7 +153,7 @@
 1764203534 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/TallerTest.cpp
 	"TallerTest.h"
 
-1764204203 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnoStruct.cpp
+1764206620 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnoStruct.cpp
 	"AlumnoStruct.h"
 
 1764203534 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Taller.cpp

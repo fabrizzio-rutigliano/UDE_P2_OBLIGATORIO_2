@@ -109,4 +109,11 @@ Boolean sonIgualesFechas(Fecha a, Fecha b)
     return FALSE;
 }
 
+// Copia una fecha en otra fecha
+void copFecha(Fecha &fec1, Fecha fec2)
+{
+    fec1.dia = darDia(fec2);
+    fec1.mes = darMes(fec2);
+    fec1.anio = darAnio(fec2);
+}
 

@@ -15,7 +15,7 @@ void insertarAlumnoOrdenado(AlumnoTree &a, Alumno alu)
     if (esVacioAlumnoTree(a))
     {
         a = new nodoABB;
-        a->info = alu;
+        copAlu(a->info, alu);
         a->hizq = NULL;
         a->hder = NULL;
     }

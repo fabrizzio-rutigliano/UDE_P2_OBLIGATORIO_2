@@ -106,3 +106,15 @@ long int darTelefonoAlumno(Alumno alu)
 {
     return alu.telefono;
 }
+
+//Copiar un Alumno en otro
+void copAlu(Alumno &al1, Alumno al2)
+{
+    crearAlumno(al1);
+    darNombreAlumno(al2, al1.nombre);
+    darApellidoAlumno(al2, al1.apellido);
+    darDireccionAlumno(al2, al1.direccion);
+    al1.ci=al2.ci;
+    al1.telefono=al2.telefono;
+    copFecha(al1.fecha_nacimiento,al2.fecha_nacimiento);
+}
