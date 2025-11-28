@@ -125,7 +125,7 @@ int main()
                                break;
                            case 3:
                                cargarCedula(ci);
-                               if(existeAlumnoTree(aTree, buscarNodoAlumnoPorCI(aTree, ci)->info))
+                               if(existeAlumnoTreeCi(aTree, ci))
                                    eliminarAlumno(aTree, ci);
                                if(existeAlumnoRegistro(regList, ci))
                                    eliminarOcurrenciaLista(regList, ci);
