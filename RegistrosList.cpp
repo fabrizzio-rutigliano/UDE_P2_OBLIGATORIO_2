@@ -166,16 +166,19 @@ void listarRegistrosDeAlumno(Lista L, long int ci)
 // Pre: la fecha es válida.
 void listarRegistrosPosterioresA(Lista L, Fecha f)
 {
-    while ((!esMayorFechas(darFechaFin(L->info), f)) && (L->sig != NULL))
+    if(L!=NULL)
     {
-        L = L->sig;
-    }
-    if (esMayorFechas(darFechaFin(L->info), f))
-    {
-        while (L != NULL)
+        while ((!esMayorFechas(darFechaFin(L->info), f)) && (L->sig != NULL))
         {
-            desplegarRegistro(L->info);
             L = L->sig;
+        }
+        if (esMayorFechas(darFechaFin(L->info), f))
+        {
+            while (L != NULL)
+            {
+                desplegarRegistro(L->info);
+                L = L->sig;
+            }
         }
     }
 }
