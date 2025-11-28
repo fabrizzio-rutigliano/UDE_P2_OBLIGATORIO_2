@@ -11,7 +11,7 @@
 1764208273 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Fecha.h
 	"Boolean.h"
 
-1764289570 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/main.cpp
+1764368275 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/main.cpp
 	<iostream>
 	"RegistroStructTest.h"
 	"TallerTest.h"
@@ -20,7 +20,6 @@
 	"AlumnosTreeTest.h"
 	"Archivos.h"
 	"AlumnosTree.h"
-	"RegistrosList.h"
 	"Menu.h"
 
 1764289368 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/AlumnosTree.cpp
