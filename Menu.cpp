@@ -28,7 +28,7 @@ void desplegarMenuListados()
     printf("\n1 - Listar todos los alumnos registrados"); //orden CI menor a mayor
     printf("\n2 - Listar alumnos que no han completado ningun taller");//orden CI menor a mayor, datos del alumno todos en misma linea
     printf("\n3 - Listar talleres finalizados por un alumno"); //submenu que solicita CI, ordenados en forma cronológica, datos de cada registro en misma linea
-    printf("\n3 - Listar Talleres finalizados despues de una fecha"); //submenu que pide fecha, ordena cronologicamente, datos de cada registro en misma linea
+    printf("\n4 - Listar Talleres finalizados despues de una fecha"); //submenu que pide fecha, ordena cronologicamente, datos de cada registro en misma linea
     printf("\n0 - Volver al menu principal");
     printf("\nIngrese opcion: ");
 }
@@ -77,4 +77,10 @@ void desplegarMayMenIg(int men, int may, int ig)
     printf("\nMenores: %d",men);
     printf("\nMayores: %d",may);
     printf("\nIguales: %d\n",ig);
+}
+
+//error de carga en lista
+void noExisteAlumno()
+{
+    printf("\nNo existe el alumno \n");
 }

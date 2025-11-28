@@ -216,6 +216,24 @@ Boolean existeAlumnoTree(AlumnoTree a, Alumno alu)
         return FALSE;
 }
 
+//esite algun alumno con la CI
+Boolean existeAlumnoTreeCi(AlumnoTree a, long int ci)
+{
+    Boolean encontre=FALSE;
+    while(a!=NULL && !encontre)
+    {
+        if(darCedulaAlumno(a->info)==ci)
+            encontre=TRUE;
+        else if (darCedulaAlumno(a->info)>ci)
+            a=a->hizq;
+        else
+            a=a->hder;
+    }
+    return encontre;
+}
+
+
+
 // Devuelve el subárbol cuyo nodo raíz tiene la cédula.
 // Precondicion: el arbol contiene la Cedula
 AlumnoTree buscarNodoAlumnoPorCI(AlumnoTree a, long int ci){

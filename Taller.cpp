@@ -63,31 +63,31 @@ void desplegarTaller(nomTaller t)
     switch (t)
     {
     case PASTAS:
-        printf("\nPASTAS ");
+        printf("PASTAS ");
         break;
     case PASTELERIA_BASICA:
-        printf("\nPASTELERIA BASICA ");
+        printf("PASTELERIA BASICA ");
         break;
     case PASTELERIA_AVANZADA:
-        printf("\nPASTELERIA AVANZADA ");
+        printf("PASTELERIA AVANZADA ");
         break;
     case PANADERIA:
-        printf("\nPANADERIA ");
+        printf("PANADERIA ");
         break;
     case VEGANA:
-        printf("\nVEGANA ");
+        printf("VEGANA ");
         break;
     case MEDITERRANEA:
-        printf("\nMEDITERRANEA ");
+        printf("MEDITERRANEA ");
         break;
     case PARRILLA:
-        printf("\nPARRILLA ");
+        printf("PARRILLA ");
         break;
     case REPOSTERIA:
-        printf("\nREPOSTERIA ");
+        printf("REPOSTERIA ");
         break;
     case ORIENTAL:
-        printf("\nORIENTAL ");
+        printf("ORIENTAL ");
         break;
     }
 }

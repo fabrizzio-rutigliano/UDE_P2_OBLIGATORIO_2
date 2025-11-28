@@ -29,12 +29,11 @@ int main()
     //crearAlumnoTree(alTree);
     //testCargarDesplegarAlumnos(alTree);
     //testEliminarAlumno();
-    //testExisteAlumnoTree(); no funciona
+    //testExisteAlumnoTree();
     //testContarAlumnosFechaNac();
     //testContarAlumnosPorApellido();
     //testObtenerAlumnoMayorEdad();
-    //testListarAlumnosSinRegistros(); no funciona
-
+    //testListarAlumnosSinRegistros();
     return 0;
 }
 */
@@ -52,8 +51,8 @@ int main()
     String fAlu, fReg, straux;
     strCrear(fAlu);
     strCrear(fReg);
-    fAlu="Alumnos.txt";
-    fReg="Registro.txt";
+    strCop(fAlu,"Alumnos.txt");
+    strCop(fReg,"Registro.txt");
     int seleccion, seleccionSubMenu, men, may, ig;
     AlumnoTree aTree;
     crearAlumnoTree(aTree);
@@ -66,14 +65,7 @@ int main()
     nomTaller tall;
     //validar existencia archivo Alumnos, sino crearlo.
 
-    if (!existeArchivo("Alumnos.txt"))
-    {
-        crearArchivo("Alumnos.txt");
-        printf("\nSe crea archivo Alumnos");
-        //cargar en memoria alumnosTree
-
-    }
-    else
+    if (existeArchivo("Alumnos.txt"))
     {
         printf("\nya existe Alumnos");
         Levantar_AlumnoTree(aTree, fAlu);
@@ -81,23 +73,14 @@ int main()
 
 
 
-
-
-
-
-
     //validar existencia archivo registros, sino crearlo.
-    if (!existeArchivo("Registros.txt"))
-    {
-        crearArchivo("Registros.txt");
-        printf("\nse crea archivo Registros");
-
-    }
-    else
+    if (existeArchivo("Registros.txt"))
     {
         printf("\nya existe Registros");
         Levantar_Lista(regList, fReg);
+
     }
+
 
     //cargar en memoria registroslist
 
@@ -130,8 +113,15 @@ int main()
                                break;
                            case 2:
                                cargarRegistro(reg);
-                               if(esMayorFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))) || sonIgualesFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))))
-                                   insBackLista(regList, reg);
+                               if(existeAlumnoTreeCi(aTree,ci))
+                               {
+                                   if(esListaVacia(regList))
+                                        insBackLista(regList, reg);
+                                   else if(esMayorFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))) || sonIgualesFechas(darFechaFin(reg),darFechaFin(ultimoRegistro(regList))))
+                                       insBackLista(regList, reg);
+                                }
+                                else
+                                    noExisteAlumno();
                                break;
                            case 3:
                                cargarCedula(ci);
@@ -224,7 +214,7 @@ int main()
     Bajar_Lista(regList, fReg);
 
     //destruir elementos creados
-    //strDestruir(fAlu);
+    strDestruir(fAlu);
     strDestruir(fReg);
     destruirAlumnoTree(aTree);
     destruirLista(regList);

@@ -55,9 +55,10 @@ int darCantDias(Registro reg)
 
 void desplegarRegistro(Registro reg)
 {
-    nomTaller t = darNombreTaller(reg);
+
     printf("\n");
     printf("| %ld | ", darCedula(reg));
+    nomTaller t = darNombreTaller(reg);
     desplegarTaller(t);
     printf(" | ");
     mostrarFecha(reg.fecha_fin);

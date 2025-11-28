@@ -31,4 +31,7 @@ void desplegarInt(int a);
 //Muestra los valores  menores, mayores e iguales para la consulta por apellidos
 void desplegarMayMenIg(int men, int may, int ig);
 
+//error de carga en lista
+void noExisteAlumno();
+
 #endif // MENU_H_INCLUDED
