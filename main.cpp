@@ -180,6 +180,9 @@ int main()
                             desplegarMenuApellido();
                             strCrear(straux);
                             strScan(straux);
+                            men = 0;
+                            may = 0;
+                            ig = 0;
                             contarAlumnosPorApellido(aTree, straux, men, may, ig);
                             desplegarMayMenIg(men, may, ig);
                         break;
