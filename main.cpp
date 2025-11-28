@@ -40,7 +40,6 @@ int main()
 
 #include "Archivos.h"
 #include "AlumnosTree.h"
-#include "RegistrosList.h"
 #include "Menu.h"
 
 //using namespace std;
