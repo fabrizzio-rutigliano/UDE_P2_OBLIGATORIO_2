@@ -113,7 +113,7 @@ int main()
                                break;
                            case 2:
                                cargarRegistro(reg);
-                               if(existeAlumnoTreeCi(aTree,ci))
+                               if(existeAlumnoTreeCi(aTree,reg.cedula))
                                {
                                    if(esListaVacia(regList))
                                         insBackLista(regList, reg);
