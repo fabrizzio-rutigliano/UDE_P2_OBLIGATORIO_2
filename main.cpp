@@ -157,7 +157,9 @@ int main()
                             listarRegistrosDeAlumno(regList, ci);
                             break;
                         case 4:
-                            cargarFecha(fe);
+                            do{
+                                cargarFecha(fe);
+                            }while(!esValidaFecha(fe));
                             listarRegistrosPosterioresA(regList, fe);
                             break;
                         default:
@@ -174,7 +176,9 @@ int main()
                     switch(seleccionSubMenu)
                     {
                         case 1:
-                            cargarFecha(fe);
+                            do{
+                                cargarFecha(fe);
+                            }while(!esValidaFecha(fe));
                             desplegarInt(contarAlumnosFechaNac(aTree,fe));
                         break;
                         case 2:
@@ -188,7 +192,9 @@ int main()
                             desplegarMayMenIg(men, may, ig);
                         break;
                         case 3:
-                            cargarFecha(fe);
+                            do{
+                                cargarFecha(fe);
+                            }while(!esValidaFecha(fe));
                             desplegarInt(contarRegistrosEnFecha(regList,fe));
                         break;
                         case 4:
