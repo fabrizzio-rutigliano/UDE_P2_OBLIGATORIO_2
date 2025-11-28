@@ -63,8 +63,9 @@ int main()
     long int ci;
     Fecha fe;
     nomTaller tall;
-    //validar existencia archivo Alumnos, sino crearlo.
 
+    //validar existencia archivo Alumnos,
+    //cargar en memoria alumnos tree
     if (existeArchivo(fAlu))
     {
         printf("\nya existe Alumnos");
@@ -73,7 +74,8 @@ int main()
 
 
 
-    //validar existencia archivo registros, sino crearlo.
+    //validar existencia archivo registros
+    //cargar en memoria registroslist
     if (existeArchivo(fReg))
     {
         printf("\nya existe Registros");
@@ -82,7 +84,7 @@ int main()
     }
 
 
-    //cargar en memoria registroslist
+
 
 
 
