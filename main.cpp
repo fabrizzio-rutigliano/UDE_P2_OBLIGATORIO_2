@@ -198,7 +198,7 @@ int main()
 
                         break;
                         case 5:
-                            desplegarAlumno(obtenerAlumnoMayorEdad(aTree));
+                            desplegarAlumno(obtenerAlumnoMayorEdad(aTree));//devolver solo valores indicados en letra
                         break;
                     }
 
