@@ -52,7 +52,7 @@ int main()
     strCrear(fAlu);
     strCrear(fReg);
     strCop(fAlu,"Alumnos.txt");
-    strCop(fReg,"Registro.txt");
+    strCop(fReg,"Registros.txt");
     int seleccion, seleccionSubMenu, men, may, ig;
     AlumnoTree aTree;
     crearAlumnoTree(aTree);
@@ -65,7 +65,7 @@ int main()
     nomTaller tall;
     //validar existencia archivo Alumnos, sino crearlo.
 
-    if (existeArchivo("Alumnos.txt"))
+    if (existeArchivo(fAlu))
     {
         printf("\nya existe Alumnos");
         Levantar_AlumnoTree(aTree, fAlu);
@@ -74,7 +74,7 @@ int main()
 
 
     //validar existencia archivo registros, sino crearlo.
-    if (existeArchivo("Registros.txt"))
+    if (existeArchivo(fReg))
     {
         printf("\nya existe Registros");
         Levantar_Lista(regList, fReg);
