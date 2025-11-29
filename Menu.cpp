@@ -1,7 +1,6 @@
 #include "Menu.h"
 
-
- //Menu inicial con opciones AB, Listado y Consultas
+// Menu inicial con opciones AB, Listado y Consultas
 void desplegarMenuPrincipal()
 {
     printf("\nBienvenido al sistema de gestion de talleres...");
@@ -17,7 +16,7 @@ void desplegarMenuAB()
     printf("\nMenu de Altas y Bajas...");
     printf("\n1 - Alta alumno");
     printf("\n2 - Alta de registro de finalizacion de taller");
-    printf("\n3 - Baja de alumno");//Borrarlo de AlumnosTree y RegistrosList
+    printf("\n3 - Baja de alumno"); // Borrarlo de AlumnosTree y RegistrosList
     printf("\n0 - Volver al menu principal");
     printf("\nIngrese opcion: ");
 }
@@ -25,10 +24,10 @@ void desplegarMenuAB()
 void desplegarMenuListados()
 {
     printf("\nMenu de Listados...");
-    printf("\n1 - Listar todos los alumnos registrados"); //orden CI menor a mayor
-    printf("\n2 - Listar alumnos que no han completado ningun taller");//orden CI menor a mayor, datos del alumno todos en misma linea
-    printf("\n3 - Listar talleres finalizados por un alumno"); //submenu que solicita CI, ordenados en forma cronológica, datos de cada registro en misma linea
-    printf("\n4 - Listar Talleres finalizados despues de una fecha"); //submenu que pide fecha, ordena cronologicamente, datos de cada registro en misma linea
+    printf("\n1 - Listar todos los alumnos registrados");               // orden CI menor a mayor
+    printf("\n2 - Listar alumnos que no han completado ningun taller"); // orden CI menor a mayor, datos del alumno todos en misma linea
+    printf("\n3 - Listar talleres finalizados por un alumno");          // submenu que solicita CI, ordenados en forma cronológica, datos de cada registro en misma linea
+    printf("\n4 - Listar Talleres finalizados despues de una fecha");   // submenu que pide fecha, ordena cronologicamente, datos de cada registro en misma linea
     printf("\n0 - Volver al menu principal");
     printf("\nIngrese opcion: ");
 }
@@ -36,51 +35,68 @@ void desplegarMenuListados()
 void desplegarMenuConsultas()
 {
     printf("\nMenu de Consultas...");
-    printf("\n1 - Mostrar cantidad de alumnos nacidos en una fecha");//submenu pide fecha
-    printf("\n2 - Mostrar apellidos menores, mayores e iguales");//submenu pide apellido
-    printf("\n3 - Mostrar registros de finalizacion en una fecha"); //submenu que solicita fecha
-    printf("\n4 - Mostrar taller mas popular"); //mostrar nombre y cantidad de registros, si hay mas de uno, mostrar uno solo
-    printf("\n5 - Mostrar alumno con mayor edad"); //mostrar ci, nombre,apellido y fecha de nacimiento, si hay mas de uno, mostrar uno solo
+    printf("\n1 - Mostrar cantidad de alumnos nacidos en una fecha"); // submenu pide fecha
+    printf("\n2 - Mostrar apellidos menores, mayores e iguales");     // submenu pide apellido
+    printf("\n3 - Mostrar registros de finalizacion en una fecha");   // submenu que solicita fecha
+    printf("\n4 - Mostrar taller mas popular");                       // mostrar nombre y cantidad de registros, si hay mas de uno, mostrar uno solo
+    printf("\n5 - Mostrar alumno con mayor edad");                    // mostrar ci, nombre,apellido y fecha de nacimiento, si hay mas de uno, mostrar uno solo
     printf("\n0 - Volver al menu principal");
     printf("\nIngrese opcion: ");
 }
 
-
-//submenu que solicita CI
+// submenu que solicita CI
 void desplegarMenuSolicitaCi()
 {
     printf("\nIngrese la CI: ");
 }
 
-//Precondicion: fecha valida
-//submenu que pide fecha
+// Precondicion: fecha valida
+// submenu que pide fecha
 void desplegarMenuFinalizadosFecha()
 {
     printf("\nIngrese la fecha\n------------------------\n\n ");
 }
 
-//submenu que pide apellido
+// submenu que pide apellido
 void desplegarMenuApellido()
 {
     printf("\nIngrese el apellido: ");
 }
 
-//Muestra un valor entero en pantalla
+// Muestra un valor entero en pantalla
 void desplegarInt(int a)
 {
-    printf("\n%d\n",a);
+    printf("\n%d\n", a);
 }
 
-//Muestra los valores  menores, mayores e iguales para la consulta por apellidos
+// Muestra los valores  menores, mayores e iguales para la consulta por apellidos
 void desplegarMayMenIg(int men, int may, int ig)
 {
-    printf("\nMenores: %d",men);
-    printf("\nMayores: %d",may);
-    printf("\nIguales: %d\n",ig);
+    printf("\nMenores: %d", men);
+    printf("\nMayores: %d", may);
+    printf("\nIguales: %d\n", ig);
 }
 
-//error de carga en lista
-void noExisteAlumno()
+// Muestra no existencia de alumno con cedula ci
+void desplegarNoExisteAlumno(long int ci)
 {
-    printf("\nNo existe el alumno \n");
+    printf("\nNo existe en el sistema un alumno con la cedula %ld\n", ci);
+}
+
+// Muestra la cantidad de alumnos nacidos nacidos
+void desplegarCantAlumnosNacidosEnFecha(int cant)
+{
+    printf("\nCantidad de alumnos nacidos en la fecha seleccionada es %d\n", cant);
+}
+
+// Muestra la cantidad de registros finalizados
+void desplegarCantRegistrosFinalizados(int cant)
+{
+    printf("\nCantidad de registros finalizados en la fecha seleccionada es %d\n", cant);
+}
+
+// Muestra la no existencia de taller popular
+void desplegarNoExistenciaTallerPopular()
+{
+    printf("\nNo existe ningun taller popular\n");
 }

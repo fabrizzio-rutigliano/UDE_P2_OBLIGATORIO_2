@@ -163,7 +163,7 @@ void listarRegistrosDeAlumno(Lista L, long int ci)
             L = L->sig;
         }
     }else{
-        printf("\nEl alumno con cedula %d no tiene registros ingresados", ci);
+        printf("\nEl alumno con cedula %ld no tiene registros ingresados", ci);
     }
 }
 
@@ -185,6 +185,9 @@ void listarRegistrosPosterioresA(Lista L, Fecha f)
                 L = L->sig;
             }
         }
+    }else{
+        printf("\nNo existen registros para la fecha ");
+        mostrarFecha(f);
     }
 }
 

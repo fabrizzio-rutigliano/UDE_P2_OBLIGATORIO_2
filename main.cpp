@@ -51,7 +51,7 @@ int main()
     strCrear(fReg);
     strCop(fAlu, "Alumnos.txt");
     strCop(fReg, "Registros.txt");
-    int seleccion, seleccionSubMenu, men, may, ig;
+    int seleccion, seleccionSubMenu, men, may, ig, numTaller;
     AlumnoTree aTree;
     crearAlumnoTree(aTree);
     Lista regList;
@@ -110,7 +110,7 @@ int main()
                             insBackLista(regList, reg);
                     }
                     else
-                        noExisteAlumno();
+                        desplegarNoExisteAlumno(darCedula(reg));
                     break;
                 case 3:
                     cargarCedula(ci);
@@ -141,10 +141,13 @@ int main()
                     break;
                 case 3:
                     cargarCedula(ci);
-                    if(existeAlumnoTreeCi(aTree, ci)){
+                    if (existeAlumnoTreeCi(aTree, ci))
+                    {
                         listarRegistrosDeAlumno(regList, ci);
-                    }else{
-                        printf("\nNo existe en el sistema un alumno con la cedula %d", ci);
+                    }
+                    else
+                    {
+                        desplegarNoExisteAlumno(ci);
                     }
                     break;
                 case 4:
@@ -172,7 +175,7 @@ int main()
                     {
                         cargarFecha(fe);
                     } while (!esValidaFecha(fe));
-                    desplegarInt(contarAlumnosFechaNac(aTree, fe));
+                    desplegarCantAlumnosNacidosEnFecha(contarAlumnosFechaNac(aTree, fe));
                     break;
                 case 2:
                     desplegarMenuApellido();
@@ -189,13 +192,20 @@ int main()
                     {
                         cargarFecha(fe);
                     } while (!esValidaFecha(fe));
-                    desplegarInt(contarRegistrosEnFecha(regList, fe));
+                    desplegarCantRegistrosFinalizados(contarRegistrosEnFecha(regList, fe));
                     break;
                 case 4:
-                    tallerMasPopular(regList, tall, ig);
-                    desplegarTaller(tall);
-                    desplegarInt(ig);
-
+                    numTaller = 0;
+                    tallerMasPopular(regList, tall, numTaller);
+                    if (numTaller == 0)
+                    {
+                        desplegarNoExistenciaTallerPopular();
+                    }
+                    else
+                    {
+                        desplegarTaller(tall);
+                        desplegarInt(numTaller);
+                    }
                     break;
                 case 5:
                     desplegarAlumnoReducido(obtenerAlumnoMayorEdad(aTree));

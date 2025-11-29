@@ -31,7 +31,16 @@ void desplegarInt(int a);
 //Muestra los valores  menores, mayores e iguales para la consulta por apellidos
 void desplegarMayMenIg(int men, int may, int ig);
 
-//error de carga en lista
-void noExisteAlumno();
+//Muestra no existencia de alumno con cedula ci
+void desplegarNoExisteAlumno(long int ci);
+
+//Muestra la cantidad de alumnos nacidos nacidos
+void desplegarCantAlumnosNacidosEnFecha(int cant);
+
+//Muestra la cantidad de registros finalizados
+void desplegarCantRegistrosFinalizados(int cant);
+
+//Muestra la no existencia de taller popular
+void desplegarNoExistenciaTallerPopular();
 
 #endif // MENU_H_INCLUDED
