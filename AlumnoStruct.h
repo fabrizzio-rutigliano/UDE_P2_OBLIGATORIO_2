@@ -33,6 +33,9 @@ void destruirAlumno(Alumno &alu);
 // Desplegar todos los datos del alumno por pantalla
 void desplegarAlumno(Alumno alu);
 
+// Desplegar datos de cedula, nomre y apellido alumno
+void desplegarAlumnoReducido(Alumno alu);
+
 //Devolver CI de alumno
 long int darCedulaAlumno(Alumno alu);
 

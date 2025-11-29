@@ -81,7 +81,8 @@ void postOrdenAlumnoTree(AlumnoTree a)
 
 // Elimina del árbol el alumno con cédula.
 // Precondición: el alumno con la cédula 'ci' existe en el árbol.
-void eliminarAlumno(AlumnoTree &a, long int ci){
+void eliminarAlumno(AlumnoTree &a, long int ci)
+{
 
     // ----- PASO 1: BUSCAR EL VALOR EN EL ABB -----
     if (ci < a->info.ci)
@@ -135,7 +136,6 @@ void eliminarAlumno(AlumnoTree &a, long int ci){
         }
     }
 }
-
 
 // Libera toda la memoria del árbol y lo deja vacío (NULL).
 void destruirAlumnoTree(AlumnoTree &a)
@@ -194,10 +194,10 @@ int contarNodosAlumnoTree(AlumnoTree a)
         return 1 + contarNodosAlumnoTree(a->hizq) + contarNodosAlumnoTree(a->hder);
 }
 
-//Verifica existencia de alumno en arbol, devolviendo Boolean
+// Verifica existencia de alumno en arbol, devolviendo Boolean
 Boolean existeAlumnoTree(AlumnoTree a, Alumno alu)
 {
-    if(!esVacioAlumnoTree(a))
+    if (!esVacioAlumnoTree(a))
     {
         if (darCedulaAlumno(alu) == darCedulaAlumno(darRaizAlumnoTree(a)))
             return TRUE;
@@ -216,27 +216,26 @@ Boolean existeAlumnoTree(AlumnoTree a, Alumno alu)
         return FALSE;
 }
 
-//esite algun alumno con la CI
+// existe algun alumno con la CI
 Boolean existeAlumnoTreeCi(AlumnoTree a, long int ci)
 {
-    Boolean encontre=FALSE;
-    while(a!=NULL && !encontre)
+    Boolean encontre = FALSE;
+    while (a != NULL && !encontre)
     {
-        if(darCedulaAlumno(a->info)==ci)
-            encontre=TRUE;
-        else if (darCedulaAlumno(a->info)>ci)
-            a=a->hizq;
+        if (darCedulaAlumno(a->info) == ci)
+            encontre = TRUE;
+        else if (darCedulaAlumno(a->info) > ci)
+            a = a->hizq;
         else
-            a=a->hder;
+            a = a->hder;
     }
     return encontre;
 }
 
-
-
 // Devuelve el subárbol cuyo nodo raíz tiene la cédula.
 // Precondicion: el arbol contiene la Cedula
-AlumnoTree buscarNodoAlumnoPorCI(AlumnoTree a, long int ci){
+AlumnoTree buscarNodoAlumnoPorCI(AlumnoTree a, long int ci)
+{
 
     if (ci == darCedulaAlumno(a->info))
         return a;
@@ -252,9 +251,7 @@ int contarAlumnosFechaNac(AlumnoTree a, Fecha f)
     if (a == NULL)
         return 0;
 
-    return (sonIgualesFechas(darFechaNacAlumno(a->info), f) == TRUE)
-           + contarAlumnosFechaNac(a->hizq, f)
-           + contarAlumnosFechaNac(a->hder, f);
+    return (sonIgualesFechas(darFechaNacAlumno(a->info), f) == TRUE) + contarAlumnosFechaNac(a->hizq, f) + contarAlumnosFechaNac(a->hder, f);
 
     /*if(sonIgualesFechas(darFechaNacAlumno(a->alu), f))
         return 1 + contarAlumnosFechaNac(a->hizq, f) + contarAlumnosFechaNac(a->hder, f);
@@ -266,40 +263,37 @@ int contarAlumnosFechaNac(AlumnoTree a, Fecha f)
 // men: cuántos tienen apellido alfabéticamente menor
 // may: cuántos tienen apellido alfabéticamente mayor
 // ig:  cuántos tienen exactamente ese apellido
-//precondicion: pasar variables int en 0;
+// precondicion: pasar variables int en 0;
 void contarAlumnosPorApellido(AlumnoTree a, String apellido, int &men, int &may, int &ig)
 {
-    if (a!=NULL)
+    if (a != NULL)
     {
         String apeAux;
         strCrear(apeAux);
         darApellidoAlumno(a->info, apeAux);
-        if (strEq(apeAux,apellido))
+        if (strEq(apeAux, apellido))
         {
             ig++;
-
         }
-        else if (strMen(apeAux,apellido))
+        else if (strMen(apeAux, apellido))
         {
             men++;
-
         }
         else
         {
             may++;
-
         }
         strDestruir(apeAux);
         contarAlumnosPorApellido(a->hizq, apellido, men, may, ig);
         contarAlumnosPorApellido(a->hder, apellido, men, may, ig);
     }
-
 }
 
 // Dar el alumno de mayor edad.
 // Precondición: el arbol no esta vacio
-Alumno obtenerAlumnoMayorEdad(AlumnoTree a){
-    //Buscamos obtener la fecha "mas menor/antigua de nacimiento".
+Alumno obtenerAlumnoMayorEdad(AlumnoTree a)
+{
+    // Buscamos obtener la fecha "mas menor/antigua de nacimiento".
 
     Alumno mayor = a->info; // Caso base.
 
@@ -320,7 +314,6 @@ Alumno obtenerAlumnoMayorEdad(AlumnoTree a){
     }
 
     return mayor;
-
 }
 
 /*
@@ -351,30 +344,31 @@ void listarAlumnosSinRegistros(AlumnoTree a, Lista registros)
     if (a != NULL)
     {
         listarAlumnosSinRegistros(a->hizq, registros);
-        if(!existeAlumnoRegistro(registros, darCedulaAlumno(a->info)))
+        if (!existeAlumnoRegistro(registros, darCedulaAlumno(a->info)))
             desplegarAlumno(a->info);
         listarAlumnosSinRegistros(a->hder, registros);
     }
 }
 
-
 // ---------- AB ABB ------------
 
 // Escribe en el archivo los datos de todos los enteros del árbol
 // en forma recursiva. // Precondición: El archivo viene abierto para escritura.
-void Bajar_AlumnoTree_Aux(AlumnoTree a, FILE * f){
+void Bajar_AlumnoTree_Aux(AlumnoTree a, FILE *f)
+{
     if (a != NULL)
     {
-        Bajar_Alumno(a->info,f);
-        Bajar_AlumnoTree_Aux(a -> hizq, f);
-        Bajar_AlumnoTree_Aux(a -> hder, f);
- }
+        Bajar_Alumno(a->info, f);
+        Bajar_AlumnoTree_Aux(a->hizq, f);
+        Bajar_AlumnoTree_Aux(a->hder, f);
+    }
 }
 
 // Abre el archivo para escritura y escribe los datos de todos los
 // enteros del árbol (llamando al procedimiento anterior)
-void Bajar_AlumnoTree(AlumnoTree a, String nomArch){
-    FILE * f = fopen(nomArch, "wb");
+void Bajar_AlumnoTree(AlumnoTree a, String nomArch)
+{
+    FILE *f = fopen(nomArch, "wb");
     Bajar_AlumnoTree_Aux(a, f);
     fclose(f);
 }
@@ -382,17 +376,16 @@ void Bajar_AlumnoTree(AlumnoTree a, String nomArch){
 // Abre el archivo para lectura e inserta en el árbol todos los
 // enteros están en el archivo (llamando al procedimiento Insert).
 // Precondición: El archivo existe.
-void Levantar_AlumnoTree(AlumnoTree &a, String nomArch){
-    FILE * f = fopen(nomArch, "rb");
+void Levantar_AlumnoTree(AlumnoTree &a, String nomArch)
+{
+    FILE *f = fopen(nomArch, "rb");
     Alumno aluBuffer;
     crearAlumnoTree(a);
     Levantar_Alumno(aluBuffer, f);
-    while(!feof(f))
+    while (!feof(f))
     {
         insertarAlumnoOrdenado(a, aluBuffer);
         Levantar_Alumno(aluBuffer, f);
     }
-    fclose (f);
+    fclose(f);
 }
-
-

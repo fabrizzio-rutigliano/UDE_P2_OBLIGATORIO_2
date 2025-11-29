@@ -151,14 +151,19 @@ Registro ultimoRegistro(Lista L)
 // Pre: el alumno con esa cédula existe.
 void listarRegistrosDeAlumno(Lista L, long int ci)
 {
-    while (L != NULL)
+    if (L != NULL)
     {
-        Registro reg = L->info;
-        if (reg.cedula == ci)
+        while (L != NULL)
         {
-            desplegarRegistro(L->info);
+            Registro reg = L->info;
+            if (reg.cedula == ci)
+            {
+                desplegarRegistro(L->info);
+            }
+            L = L->sig;
         }
-        L = L->sig;
+    }else{
+        printf("\nEl alumno con cedula %d no tiene registros ingresados", ci);
     }
 }
 
@@ -166,7 +171,7 @@ void listarRegistrosDeAlumno(Lista L, long int ci)
 // Pre: la fecha es válida.
 void listarRegistrosPosterioresA(Lista L, Fecha f)
 {
-    if(L!=NULL)
+    if (L != NULL)
     {
         while ((!esMayorFechas(darFechaFin(L->info), f)) && (L->sig != NULL))
         {

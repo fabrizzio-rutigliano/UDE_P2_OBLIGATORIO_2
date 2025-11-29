@@ -2,7 +2,7 @@
 
 // ---------- CARGAR ---------------------------------------------
 
-//Precondicion: el alumno no existe. Esto no va aca, es del Tree
+// Precondicion: el alumno no existe. Esto no va aca, es del Tree
 void cargarAlumno(Alumno &alu)
 {
     crearAlumno(alu);
@@ -20,7 +20,7 @@ void cargarAlumno(Alumno &alu)
     do
     {
         cargarFecha(alu.fecha_nacimiento);
-    }while (!esValidaFecha(alu.fecha_nacimiento));
+    } while (!esValidaFecha(alu.fecha_nacimiento));
     fflush(stdin);
 
     printf("Ingrese la direccion: ");
@@ -52,7 +52,7 @@ void destruirAlumno(Alumno &alu)
 // Desplegar todos los datos del alumno por pantalla
 void desplegarAlumno(Alumno alu)
 {
-    String nombre,apellido,direccion;
+    String nombre, apellido, direccion;
     strCrear(nombre);
     strCrear(apellido);
     strCrear(direccion);
@@ -66,64 +66,86 @@ void desplegarAlumno(Alumno alu)
     strPrint(apellido);
     printf("| %ld | ", darCedulaAlumno(alu));
     mostrarFecha(alu.fecha_nacimiento);
-    printf("| ");
+    printf(" | ");
     strPrint(direccion);
-    printf("| %ld ", darTelefonoAlumno(alu));
+    printf(" | %ld ", darTelefonoAlumno(alu));
+    strDestruir(nombre);
+    strDestruir(apellido);
+    strDestruir(direccion);
 }
 
-//Devolver CI de alumno
+// Desplegar datos de cedula, nomre y apellido alumno
+void desplegarAlumnoReducido(Alumno alu)
+{
+    String nombre, apellido;
+    strCrear(nombre);
+    strCrear(apellido);
+    darNombreAlumno(alu, nombre);
+    darApellidoAlumno(alu, apellido);
+    printf("\n");
+    printf(" | ");
+    strPrint(nombre);
+    printf(" | ");
+    strPrint(apellido);
+    printf("| %ld | ", darCedulaAlumno(alu));
+    strDestruir(nombre);
+    strDestruir(apellido);
+}
+
+// Devolver CI de alumno
 long int darCedulaAlumno(Alumno alu)
 {
     return alu.ci;
 }
 
-//Devolver nombre alumno
+// Devolver nombre alumno
 void darNombreAlumno(Alumno alu, String &s)
 {
     strCop(s, alu.nombre);
 }
 
-//Devolver apellido alumno
+// Devolver apellido alumno
 void darApellidoAlumno(Alumno alu, String &s)
 {
     strCop(s, alu.apellido);
 }
 
-//Devolver fecha nacimiento alumno
+// Devolver fecha nacimiento alumno
 Fecha darFechaNacAlumno(Alumno alu)
 {
     return alu.fecha_nacimiento;
 }
 
-//Devolver direccion alumno
+// Devolver direccion alumno
 void darDireccionAlumno(Alumno alu, String &s)
 {
     strCop(s, alu.direccion);
 }
 
-//Devolver telefono alumno
+// Devolver telefono alumno
 long int darTelefonoAlumno(Alumno alu)
 {
     return alu.telefono;
 }
 
-//Copiar un Alumno en otro
+// Copiar un Alumno en otro
 void copAlu(Alumno &al1, Alumno al2)
 {
     crearAlumno(al1);
     darNombreAlumno(al2, al1.nombre);
     darApellidoAlumno(al2, al1.apellido);
     darDireccionAlumno(al2, al1.direccion);
-    al1.ci=al2.ci;
-    al1.telefono=al2.telefono;
-    copFecha(al1.fecha_nacimiento,al2.fecha_nacimiento);
+    al1.ci = al2.ci;
+    al1.telefono = al2.telefono;
+    copFecha(al1.fecha_nacimiento, al2.fecha_nacimiento);
 }
 
 // ---------- ARCHIVO STRUCT ALUMNO --------------
 
 // Escribe en el archivo los datos del alumno alu.
 // Precondición: El archivo viene abierto para escritura.
-void Bajar_Alumno(Alumno alu, FILE * f ){
+void Bajar_Alumno(Alumno alu, FILE *f)
+{
     fwrite(&alu.ci, sizeof(long int), 1, f);
     Bajar_String(alu.nombre, f);
     Bajar_String(alu.apellido, f);
@@ -134,20 +156,21 @@ void Bajar_Alumno(Alumno alu, FILE * f ){
 
 // Lee desde el archivo los datos del registro reg.
 // Precondición: El archivo viene abierto para lectura.
-void Levantar_Alumno(Alumno &alu, FILE * f ){
-    //Cedula
+void Levantar_Alumno(Alumno &alu, FILE *f)
+{
+    // Cedula
     fread(&alu.ci, sizeof(long int), 1, f);
-    //Nombre
+    // Nombre
     strCrear(alu.nombre);
     Levantar_String(alu.nombre, f);
-    //Apellido
+    // Apellido
     strCrear(alu.apellido);
     Levantar_String(alu.apellido, f);
-    //Fecha
+    // Fecha
     Levantar_Fecha(alu.fecha_nacimiento, f);
-    //Direccion
+    // Direccion
     strCrear(alu.direccion);
     Levantar_String(alu.direccion, f);
-    //Telefono
-    fread(&alu.telefono,sizeof(long int), 1, f);
+    // Telefono
+    fread(&alu.telefono, sizeof(long int), 1, f);
 }
