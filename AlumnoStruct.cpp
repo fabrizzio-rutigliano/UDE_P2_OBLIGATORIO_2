@@ -2,7 +2,6 @@
 
 // ---------- CARGAR ---------------------------------------------
 
-// Precondicion: el alumno no existe. Esto no va aca, es del Tree
 void cargarAlumno(Alumno &alu)
 {
     crearAlumno(alu);
