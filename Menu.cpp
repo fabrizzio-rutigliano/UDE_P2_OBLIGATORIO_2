@@ -100,3 +100,32 @@ void desplegarNoExistenciaTallerPopular()
 {
     printf("\nNo existe ningun taller popular\n");
 }
+
+// Muestra si encontro un archivo de alumnos
+void desplegarArchAluEncontrado()
+{
+    printf("\nArchivo de alumnos encontrado. Cargando archivo...\n");
+}
+
+// Muestra si encontro un archivo de registro
+void desplegarArchRegEncontrado()
+{
+    printf("\nArchivo de registros encontrado. Cargando archivo...\n");
+}
+// Muestra que aún no hay registros en alumnos
+void desplegarNoExisteArbolAlumno()
+{
+    printf("\nNo existen alumnos registrados. Por favor, registre un alumno para usar la consulta.\n");
+}
+
+// Muestra que la fecha ingresada es invalida
+void desplegarAdvertenciaFecha(){
+    printf("\nFecha invalida. Reintente \n");
+}
+
+// Muestra que la fecha ingresada es menor a la ultima ingresada en la lista
+void desplegarAdvertenciaFechaList(){
+    printf("\nDebe ingresar una fecha mayor o igual al ultimo registro. \n");
+}
+
+

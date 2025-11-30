@@ -23,19 +23,10 @@ void crearAlumnoTree(AlumnoTree &a);
 // Precondición: en el árbol NO existe un alumno con la misma cédula.
 void insertarAlumnoOrdenado(AlumnoTree &a, Alumno alu);
 
-// Operacion que agrega elemento a la raiz del Arbol
-// Dados dos arboles, agregar un valor como raiz de los dos arboles
-AlumnoTree consAlumnoTree(Alumno alu, AlumnoTree izq, AlumnoTree der);
-
 // ---------- OPERACIONES RECORRIDA  -------------------------------
-//Recorre el árbol en preorden listando sus nodos por pantalla.
-void preOrdenAlumnoTree(AlumnoTree a);
 
 //Recorre el árbol en orden listando sus nodos por pantalla.
 void ordenAlumnoTree(AlumnoTree a);
-
-//Recorre el árbol en posorden listando sus nodos por pantalla.
-void postOrdenAlumnoTree(AlumnoTree a);
 
 // ---------- OPERACIONES ELIMINACION -------------------------------
 
@@ -55,26 +46,11 @@ Boolean esVacioAlumnoTree(AlumnoTree a);
 // Precondición: el arbol no es vacio
 Alumno darRaizAlumnoTree(AlumnoTree a);
 
-// Devuelve el hijo izquierdo del Arbol
-// Precondición: el arbol no es vacio
-AlumnoTree hijoIzqAlumnoTree(AlumnoTree a);
-
-// Devuelve el hijo derecho del arbol
-// Precondición: el arbol no es vacio
-AlumnoTree hijoDerAlumnoTree(AlumnoTree a);
-
-//Devuelve la cantidad de nodos que hay en el árbol.
-int contarNodosAlumnoTree(AlumnoTree a);
-
 //Verifica existencia de alumno en arbol, devolviendo Boolean
 Boolean existeAlumnoTree(AlumnoTree a, Alumno alu);
 
 //esite algun alumno con la CI
 Boolean existeAlumnoTreeCi(AlumnoTree a, long int ci);
-
-// Devuelve el subárbol cuyo nodo raíz tiene la cédula.
-// Precondicion: el arbol contiene la Cedula
-AlumnoTree buscarNodoAlumnoPorCI(AlumnoTree a, long int ci);
 
 // Contar alumnos que nacieron en una fecha dada
 int contarAlumnosFechaNac(AlumnoTree a, Fecha f);

@@ -8,15 +8,6 @@ void crearLista(Lista &L)
     L = NULL;
 }
 
-// Agrega un nodo nuevo al principio de la lista.
-void insFrontLista(Lista &L, Registro reg)
-{
-    Lista aux = new NodoL;
-    aux->info = reg;
-    aux->sig = L;
-    L = aux;
-}
-
 // Insertar registro al final de la lista
 void insBackLista(Lista &L, Registro reg)
 {
@@ -40,16 +31,6 @@ void insBackLista(Lista &L, Registro reg)
 }
 
 // ---------- OPERACIONES ELIMINACION --------------------------------
-
-// Borra el primer nodo y deja la lista apuntando al segundo
-// Pre: lista NO vacía */
-void eliminarPrimeroLista(Lista &L)
-{
-
-    Lista aux = L;
-    L = L->sig;
-    delete aux;
-}
 
 // Eliminar registros con una cedula dada
 void eliminarOcurrenciaLista(Lista &L, long int ci)
@@ -106,35 +87,6 @@ Boolean existeAlumnoRegistro(Lista L, long int ci)
         L = L->sig;
     }
     return es;
-}
-
-// Devuelve la cantidad de elementos de la lista.
-int largoLista(Lista L)
-{
-    int largo = 0;
-    while (L != NULL)
-    {
-        largo++;
-        L = L->sig;
-    }
-    return largo;
-}
-
-// Desplegar elementos de la lista
-void desplegarLista(Lista L)
-{
-    while (L != NULL)
-    {
-        desplegarRegistro(L->info);
-        L = L->sig;
-    }
-}
-
-// Devuelve el primer elemento de la lista
-// Pre: lista NO vacía
-Registro primerRegistro(Lista L)
-{
-    return L->info;
 }
 
 // Devuelve el ultimo elemento de la lista

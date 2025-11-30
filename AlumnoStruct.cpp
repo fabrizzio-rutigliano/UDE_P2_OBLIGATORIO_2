@@ -16,7 +16,7 @@ void cargarAlumno(Alumno &alu)
     printf("Ingrese el apellido: ");
     strScan(alu.apellido);
 
-    printf("Ingrese la fecha de nacimiento (dd/mm/aaaa): ");
+    printf("Ingrese la fecha de nacimiento: ");
     do
     {
         cargarFecha(alu.fecha_nacimiento);

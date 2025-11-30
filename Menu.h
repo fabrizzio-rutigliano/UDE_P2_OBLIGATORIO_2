@@ -43,4 +43,19 @@ void desplegarCantRegistrosFinalizados(int cant);
 //Muestra la no existencia de taller popular
 void desplegarNoExistenciaTallerPopular();
 
+// Muestra si encontro un archivo de registro
+void desplegarArchRegEncontrado();
+
+// Muestra si encontro un archivo de alumnos
+void desplegarArchAluEncontrado();
+
+// Muestra que aún no hay registros en alumnos
+void desplegarNoExisteArbolAlumno();
+
+// Muestra que la fecha ingresada es invalida
+void desplegarAdvertenciaFecha();
+
+// Muestra que la fecha ingresada es menor a la ultima ingresada en la lista
+void desplegarAdvertenciaFechaList();
+
 #endif // MENU_H_INCLUDED
