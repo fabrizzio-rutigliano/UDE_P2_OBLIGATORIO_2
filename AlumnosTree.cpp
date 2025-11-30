@@ -32,29 +32,7 @@ void insertarAlumnoOrdenado(AlumnoTree &a, Alumno alu)
     }
 }
 
-// Operacion que agrega elemento a la raiz del Arbol
-// dados dos arboles, agregar un valor como raiz de los dos arboles
-AlumnoTree consAlumnoTree(Alumno alu, AlumnoTree izq, AlumnoTree der)
-{
-    AlumnoTree aux = new nodoABB;
-    aux->info = alu;
-    aux->hizq = izq;
-    aux->hder = der;
-    return aux;
-}
-
 // ---------- OPERACIONES RECORRIDA  -------------------------------
-
-// Recorre el árbol en preorden listando sus nodos por pantalla.
-void preOrdenAlumnoTree(AlumnoTree a)
-{
-    if (a != NULL)
-    {
-        desplegarAlumno(a->info);
-        preOrdenAlumnoTree(a->hizq);
-        preOrdenAlumnoTree(a->hder);
-    }
-}
 
 // Recorre el árbol en orden listando sus nodos por pantalla.
 void ordenAlumnoTree(AlumnoTree a)
@@ -67,16 +45,6 @@ void ordenAlumnoTree(AlumnoTree a)
     }
 }
 
-// Recorre el árbol en posorden listando sus nodos por pantalla.
-void postOrdenAlumnoTree(AlumnoTree a)
-{
-    if (a != NULL)
-    {
-        postOrdenAlumnoTree(a->hizq);
-        postOrdenAlumnoTree(a->hder);
-        desplegarAlumno(a->info);
-    }
-}
 // ---------- OPERACIONES ELIMINACION -------------------------------
 
 // Elimina del árbol el alumno con cédula.
@@ -171,29 +139,6 @@ Alumno darRaizAlumnoTree(AlumnoTree a)
     return a->info;
 }
 
-// operacion que devuelve el hijo izquierdo del Arbol
-// precondicion: arbol no vacio
-AlumnoTree hijoIzqAlumnoTree(AlumnoTree &a)
-{
-    return a->hizq;
-}
-
-// operacion que devuelve el hijo derecho del arbol
-// precondicion: arbol no vacio
-AlumnoTree hijoDerAlumnoTree(AlumnoTree &a)
-{
-    return a->hder;
-}
-
-// Devuelve la cantidad de nodos que hay en el árbol.
-int contarNodosAlumnoTree(AlumnoTree a)
-{
-    if (a == NULL)
-        return 0;
-    else
-        return 1 + contarNodosAlumnoTree(a->hizq) + contarNodosAlumnoTree(a->hder);
-}
-
 // Verifica existencia de alumno en arbol, devolviendo Boolean
 Boolean existeAlumnoTree(AlumnoTree a, Alumno alu)
 {
@@ -232,19 +177,6 @@ Boolean existeAlumnoTreeCi(AlumnoTree a, long int ci)
     return encontre;
 }
 
-// Devuelve el subárbol cuyo nodo raíz tiene la cédula.
-// Precondicion: el arbol contiene la Cedula
-AlumnoTree buscarNodoAlumnoPorCI(AlumnoTree a, long int ci)
-{
-
-    if (ci == darCedulaAlumno(a->info))
-        return a;
-    else if (ci < darCedulaAlumno(a->info))
-        return buscarNodoAlumnoPorCI(a->hizq, ci);
-    else
-        return buscarNodoAlumnoPorCI(a->hder, ci);
-}
-
 // Contar alumnos que nacieron en una fecha dada
 int contarAlumnosFechaNac(AlumnoTree a, Fecha f)
 {
@@ -252,11 +184,6 @@ int contarAlumnosFechaNac(AlumnoTree a, Fecha f)
         return 0;
 
     return (sonIgualesFechas(darFechaNacAlumno(a->info), f) == TRUE) + contarAlumnosFechaNac(a->hizq, f) + contarAlumnosFechaNac(a->hder, f);
-
-    /*if(sonIgualesFechas(darFechaNacAlumno(a->alu), f))
-        return 1 + contarAlumnosFechaNac(a->hizq, f) + contarAlumnosFechaNac(a->hder, f);
-    else
-        return contarAlumnosFechaNac(a->hizq, f) + contarAlumnosFechaNac(a->hder, f);*/
 }
 
 // Dado un apellido, cuenta:
@@ -315,28 +242,6 @@ Alumno obtenerAlumnoMayorEdad(AlumnoTree a)
 
     return mayor;
 }
-
-/*
-void mayorPorNacimientoRec(ABB a, ABB &maxNodo)
-{
-    if(a!=NULL)
-    {
-        if (esMasViejo(darFecha(a->info), darFecha(maxNodo->info))
-            maxNodo = a; // recorrer sin variables temporales locales adicionales
-        mayorPorNacimientoRec(a->hizq, maxNodo);
-        mayorPorNacimientoRec(a->hder, maxNodo);
-    }
-
-}
-
-void DesplegarMayor(Arbol a)
-{
-    Arbol maxNodo = a;
-    mayorPorNacimientoRec(a, maxNodo);
-    DesplegarDatosAlumno(maxNodo->info);
-}
-
-*/
 
 // Lista por pantalla todos los alumnos que NO tienen registros
 void listarAlumnosSinRegistros(AlumnoTree a, Lista registros)

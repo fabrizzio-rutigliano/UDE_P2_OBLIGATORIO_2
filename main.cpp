@@ -1,48 +1,7 @@
 #include <iostream>
-//------includes utilizados por los modulos de testing, evaluar su eliminación en versión final.
-/*
-#include "RegistroStructTest.h"
-#include "TallerTest.h"
-#include "AlumnoStructTest.h"
-#include "RegistrosListTest.h"
-#include "AlumnosTreeTest.h"
-
-int main()
-{
-
-    // Prueba taller
-    //testCargarDesplegarTaller();
-
-    // Prueba carga y despliegue registro
-    //testCargaDespliegeRegistro();
-
-    // Prueba carga y despliegue alumno
-    testCargaDespliegeAlumno();
-
-    // Pruebas sobre RegistrosList
-    //testListarRegistrosDeAlumno();
-    //testListarRegistrosPosterioresA();
-    //testContarRegistrosEnFecha();
-    //testTallerMasPopular();
-
-    //AlumnoTree alTree;
-    //crearAlumnoTree(alTree);
-    //testCargarDesplegarAlumnos(alTree);
-    //testEliminarAlumno();
-    //testExisteAlumnoTree();
-    //testContarAlumnosFechaNac();
-    //testContarAlumnosPorApellido();
-    //testObtenerAlumnoMayorEdad();
-    //testListarAlumnosSinRegistros();
-    return 0;
-}
-*/
-
 #include "Archivos.h"
 #include "AlumnosTree.h"
 #include "Menu.h"
-
-// using namespace std;
 
 int main()
 {
@@ -66,7 +25,7 @@ int main()
     // cargar en memoria alumnos tree
     if (existeArchivo(fAlu))
     {
-        printf("\nya existe Alumnos");
+        desplegarArchAluEncontrado();
         Levantar_AlumnoTree(aTree, fAlu);
     }
 
@@ -74,11 +33,11 @@ int main()
     // cargar en memoria registroslist
     if (existeArchivo(fReg))
     {
-        printf("\nya existe Registros");
+        desplegarArchRegEncontrado();
         Levantar_Lista(regList, fReg);
     }
 
-    // Menu inicial con opciones AB, Listado y Consultas
+// Menu inicial con opciones AB, Listado y Consultas
 
     do
     {
@@ -108,6 +67,8 @@ int main()
                             insBackLista(regList, reg);
                         else if (esMayorFechas(darFechaFin(reg), darFechaFin(ultimoRegistro(regList))) || sonIgualesFechas(darFechaFin(reg), darFechaFin(ultimoRegistro(regList))))
                             insBackLista(regList, reg);
+                        else
+                            desplegarAdvertenciaFechaList();
                     }
                     else
                         desplegarNoExisteAlumno(darCedula(reg));
@@ -116,6 +77,8 @@ int main()
                     cargarCedula(ci);
                     if (existeAlumnoTreeCi(aTree, ci))
                         eliminarAlumno(aTree, ci);
+                    else
+                        desplegarNoExisteAlumno(ci);
                     if (existeAlumnoRegistro(regList, ci))
                         eliminarOcurrenciaLista(regList, ci);
                     break;
@@ -134,10 +97,16 @@ int main()
                 switch (seleccionSubMenu)
                 {
                 case 1:
-                    ordenAlumnoTree(aTree);
+                    if (!esVacioAlumnoTree(aTree))
+                        ordenAlumnoTree(aTree);
+                    else
+                        desplegarNoExisteArbolAlumno();
                     break;
                 case 2:
-                    listarAlumnosSinRegistros(aTree, regList);
+                    if (esVacioAlumnoTree(aTree))
+                        desplegarNoExisteArbolAlumno();
+                    else
+                        listarAlumnosSinRegistros(aTree, regList);
                     break;
                 case 3:
                     cargarCedula(ci);
@@ -154,6 +123,8 @@ int main()
                     do
                     {
                         cargarFecha(fe);
+                        if(!esValidaFecha(fe))
+                            desplegarAdvertenciaFecha();
                     } while (!esValidaFecha(fe));
                     listarRegistrosPosterioresA(regList, fe);
                     break;
@@ -174,6 +145,8 @@ int main()
                     do
                     {
                         cargarFecha(fe);
+                        if(!esValidaFecha(fe))
+                            desplegarAdvertenciaFecha();
                     } while (!esValidaFecha(fe));
                     desplegarCantAlumnosNacidosEnFecha(contarAlumnosFechaNac(aTree, fe));
                     break;
@@ -191,6 +164,8 @@ int main()
                     do
                     {
                         cargarFecha(fe);
+                        if(!esValidaFecha(fe))
+                            desplegarAdvertenciaFecha();
                     } while (!esValidaFecha(fe));
                     desplegarCantRegistrosFinalizados(contarRegistrosEnFecha(regList, fe));
                     break;
@@ -208,7 +183,10 @@ int main()
                     }
                     break;
                 case 5:
-                    desplegarAlumnoReducido(obtenerAlumnoMayorEdad(aTree));
+                    if (!esVacioAlumnoTree(aTree))
+                        desplegarAlumnoReducido(obtenerAlumnoMayorEdad(aTree));
+                    else
+                        desplegarNoExisteArbolAlumno();
                     break;
                 }
 
@@ -218,11 +196,11 @@ int main()
 
     } while (seleccion != 0);
 
-    // abrir y sobreescribir archivos con todos los datos
+    // Abrir y sobreescribir archivos con todos los datos
     Bajar_AlumnoTree(aTree, fAlu);
     Bajar_Lista(regList, fReg);
 
-    // destruir elementos creados
+    // Destruir elementos creados
     strDestruir(fAlu);
     strDestruir(fReg);
     destruirAlumnoTree(aTree);

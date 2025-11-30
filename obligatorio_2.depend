@@ -64,55 +64,53 @@
 1763811146 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\boolean.h
 	<stdio.h>
 
-1763844055 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\fecha.cpp
+1764212030 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\fecha.cpp
 	"Fecha.h"
 
-1763944642 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\fecha.h
+1764212030 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\fecha.h
 	"Boolean.h"
 
-1764034719 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostree.cpp
+1764469370 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostree.cpp
 	"AlumnosTree.h"
 
-1763844055 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\main.cpp
+1764471542 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\main.cpp
 	<iostream>
-	"RegistroStructTest.h"
-	"TallerTest.h"
-	"AlumnoStructTest.h"
+	"Archivos.h"
 	"AlumnosTree.h"
-	"RegistrosList.h"
+	"Menu.h"
 
-1763943820 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostree.h
+1764469256 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostree.h
 	"AlumnoStruct.h"
 	"RegistrosList.h"
 
-1763844055 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostruct.h
+1764466837 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostruct.h
 	"String.h"
 	"Fecha.h"
 
-1763820812 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\string.h
+1764212030 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\string.h
 	"Boolean.h"
 
-1764034719 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registroslist.h
+1764468751 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registroslist.h
 	"RegistroStruct.h"
+	"String.h"
 
-1763844055 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostruct.h
+1764212030 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostruct.h
 	"Taller.h"
 	"Fecha.h"
 
 1763844055 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\taller.h
 	<stdio.h>
 
-1763822286 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\archivos.cpp
+1764212030 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\archivos.cpp
 	"Archivos.h"
 
-1763810260 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\archivos.h
-	"AlumnosTree.h"
-	"RegistrosList.h"
-
-1763939344 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\string.cpp
+1764212030 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\archivos.h
 	"String.h"
 
-1763844055 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostruct.cpp
+1764212030 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\string.cpp
+	"String.h"
+
+1764468374 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostruct.cpp
 	"RegistroStruct.h"
 
 1763824295 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\taller.cpp
@@ -121,7 +119,7 @@
 1763825166 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostruct.cpp
 	"RegistroStruct.h"
 
-1763844055 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\taller.cpp
+1764361763 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\taller.cpp
 	"Taller.h"
 
 1764208384 /media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/RegistroStruct.h
@@ -158,7 +156,7 @@
 1764286705 source:/media/guille/Datos/Documents/UDE/PII/Ejerccios/Obligatorio-II/UDE_P2_OBLIGATORIO_2/Taller.cpp
 	"Taller.h"
 
-1763941070 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostruct.cpp
+1764468292 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostruct.cpp
 	"AlumnoStruct.h"
 
 1763844055 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\alumnostructtest.cpp
@@ -173,13 +171,13 @@
 1763844055 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\tallertest.h
 	"Taller.h"
 
-1763844055 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\menu.cpp
+1764470521 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\menu.cpp
 	"Menu.h"
 
-1763810260 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\menu.h
+1764471564 c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\menu.h
 	<stdio.h>
 
-1764034719 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registroslist.cpp
+1764468751 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registroslist.cpp
 	"RegistrosList.h"
 
 1763844055 source:c:\users\fabrizzio.rutigliano\documents\01_personal\ude\codeblocks\ude_p2_obligatorio_2\registrostructtest.cpp

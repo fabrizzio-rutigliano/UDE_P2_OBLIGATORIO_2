@@ -19,17 +19,10 @@ typedef NodoL * Lista;
 // Crear lista.
 void crearLista(Lista &L);
 
-// Agrega un nodo nuevo al principio de la lista.
-void insFrontLista(Lista &L, Registro reg);
-
 // Insertar registro al final de la lista
 void insBackLista(Lista &L, Registro reg);
 
 // ---------- OPERACIONES ELIMINACION --------------------------------
-
-// Borra el primer nodo y deja la lista apuntando al segundo
-// Pre: lista NO vacía */
-void eliminarPrimeroLista(Lista &L);
 
 // Eliminar registros con una cedula dada
 void eliminarOcurrenciaLista(Lista &L, long int ci);
@@ -44,16 +37,6 @@ Boolean esListaVacia(Lista L);
 
 // Devuelve TRUE si el alumno existe en la lista
 Boolean existeAlumnoRegistro(Lista L, long int ci);
-
-// Devuelve la cantidad de elementos de la lista.
-int largoLista(Lista L);
-
-// Desplegar elementos de la lista
-void desplegarLista(Lista L);
-
-// Devuelve el primer elemento de la lista
-// Pre: lista NO vacía
-Registro primerRegistro(Lista L);
 
 // Devuelve el ultimo elemento de la lista
 // Pre: lista NO vacía

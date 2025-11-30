@@ -34,13 +34,8 @@
 		</Compiler>
 		<Unit filename="AlumnoStruct.cpp" />
 		<Unit filename="AlumnoStruct.h" />
-		<Unit filename="AlumnoStructTest.cpp" />
-		<Unit filename="AlumnoStructTest.h" />
-		<Unit filename="Alumnos.txt" />
 		<Unit filename="AlumnosTree.cpp" />
 		<Unit filename="AlumnosTree.h" />
-		<Unit filename="AlumnosTreeTest.cpp" />
-		<Unit filename="AlumnosTreeTest.h" />
 		<Unit filename="Archivos.cpp" />
 		<Unit filename="Archivos.h" />
 		<Unit filename="Boolean.cpp" />
@@ -49,22 +44,14 @@
 		<Unit filename="Fecha.h" />
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Menu.h" />
-		<Unit filename="Registro.txt" />
 		<Unit filename="RegistroStruct.cpp" />
 		<Unit filename="RegistroStruct.h" />
-		<Unit filename="RegistroStructTest.cpp" />
-		<Unit filename="RegistroStructTest.h" />
-		<Unit filename="Registros.txt" />
 		<Unit filename="RegistrosList.cpp" />
 		<Unit filename="RegistrosList.h" />
-		<Unit filename="RegistrosListTest.cpp" />
-		<Unit filename="RegistrosListTest.h" />
 		<Unit filename="String.cpp" />
 		<Unit filename="String.h" />
 		<Unit filename="Taller.cpp" />
 		<Unit filename="Taller.h" />
-		<Unit filename="TallerTest.cpp" />
-		<Unit filename="TallerTest.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

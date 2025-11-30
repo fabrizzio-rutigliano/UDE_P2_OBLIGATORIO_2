@@ -17,11 +17,11 @@ void cargarCantDias(int &d)
 void cargarRegistro(Registro &reg)
 {
     nomTaller aux;
-    printf("Ingrese nombre del taller:\n");
+    printf("Ingrese nombre del taller: \n");
     cargarTaller(aux);
     reg.taller = aux;
 
-    printf("Ingrese fecha de finalizacion en formato dd/mm/yy::\n");
+    printf("Ingrese fecha de finalizacion: \n");
     do
     {
         cargarFecha(reg.fecha_fin);
